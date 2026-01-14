@@ -129,15 +129,39 @@ Orchestrates the generate-prove-learn cycle:
 4. Add successful proofs to knowledge base
 5. Update metrics and checkpoints
 
+## Demo Proofs
+
+See **[DEMO_PROOFS.md](DEMO_PROOFS.md)** for a comprehensive showcase of **18 theorems** automatically discovered by the system from a 200-cycle training run, including:
+
+- Detailed proof traces
+- Complexity analysis
+- Pattern identification
+- Training statistics
+
+Also available:
+- **[demo_theorems.json](demo_theorems.json)** - Structured JSON format for programmatic access
+- **[scripts/display_proofs.py](scripts/display_proofs.py)** - Script to display proofs from checkpoints
+
+### Display Proofs
+
+View proven theorems from any checkpoint:
+```bash
+# Display most recent proofs
+python3 scripts/display_proofs.py
+
+# Display specific checkpoint
+python3 scripts/display_proofs.py data/checkpoints/epoch_0_cycle_49.json
+```
+
 ## Examples
 
 ### Simple Theorems
 
-The system can discover theorems like:
+The system has discovered theorems like:
 ```
-∀x. (x + 0) = x          # Right identity of addition
-∀x. (0 + x) = x          # Left identity of addition
-∀x∀y. (x + y) = (y + x)  # Commutativity of addition
+0 = (0 * S((0 + z)))                              # Zero multiplication
+(0 + w) = (((0 * w) * 0) + w)                     # Addition identity
+((((x + 0) + y) * ((z + 0) * (w * 0))) = (y * 0)  # Multi-variable zero product
 ```
 
 ### Monitoring Progress
