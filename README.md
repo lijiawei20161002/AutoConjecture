@@ -139,7 +139,7 @@ See **[DEMO_PROOFS.md](DEMO_PROOFS.md)** for a comprehensive showcase of **18 th
 - Training statistics
 
 Also available:
-- **[demo_theorems.json](demo_theorems.json)** - Structured JSON format for programmatic access
+- **[demo_theorems.json](data/demo_theorems.json)** - Structured JSON format for programmatic access
 - **[scripts/display_proofs.py](scripts/display_proofs.py)** - Script to display proofs from checkpoints
 
 ### Display Proofs
@@ -288,9 +288,9 @@ If you use this code in your research, please cite:
 ```bibtex
 @software{autoconjecture2025,
   title={AutoConjecture: AI Mathematical Reasoning from Scratch},
-  author={AutoConjecture Team},
+  author={Jiawei Li},
   year={2025},
-  url={https://github.com/yourusername/autoconjecture}
+  url={https://github.com/lijiawei20161002/AutoConjecture}
 }
 ```
 
