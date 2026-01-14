@@ -1,2 +1,282 @@
 # AutoConjecture
-Automatic math conjecture generation and verification
+
+An AI system that discovers mathematical theorems from scratch using self-play reinforcement learning.
+
+## Overview
+
+AutoConjecture implements a generate-prove-learn cycle:
+
+1. **Generate**: Produces novel mathematical conjectures about Peano arithmetic
+2. **Prove**: Attempts to prove conjectures using automated theorem proving
+3. **Learn**: Stores proven theorems and uses them to prove more complex statements
+
+The system starts with only Peano axioms and progressively builds a knowledge base of proven theorems.
+
+## Features
+
+- **Custom Proof System**: Built from scratch with formal logic representation
+- **Automated Theorem Prover**: Best-first search with configurable tactics
+- **Knowledge Base**: Persistent storage of proven theorems
+- **Novelty Detection**: Ensures generated conjectures are diverse and interesting
+- **Comprehensive Monitoring**: Tracks success rates, complexity, and proof statistics
+
+## Project Structure
+
+```
+AutoConjecture/
+├── src/
+│   ├── logic/          # Formal logic system (terms, expressions, axioms, parser)
+│   ├── prover/         # Theorem prover (tactics, proof engine)
+│   ├── generation/     # Conjecture generation (random, novelty, heuristics)
+│   ├── knowledge/      # Knowledge base storage
+│   ├── training/       # Training loop
+│   ├── monitoring/     # Logging and metrics
+│   └── utils/          # Utilities
+├── scripts/
+│   └── train.py        # Main training script
+├── configs/
+│   └── default.yaml    # Default configuration
+├── data/
+│   ├── checkpoints/    # Saved knowledge bases
+│   ├── logs/           # Training logs
+│   └── proofs/         # Saved proofs
+└── tests/              # Unit tests
+```
+
+## Installation
+
+1. Create a virtual environment:
+```bash
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+3. Install package in development mode:
+```bash
+pip install -e .
+```
+
+## Quick Start
+
+### Basic Training
+
+Run training with default configuration:
+```bash
+python3 scripts/train.py
+```
+
+### Custom Configuration
+
+Specify a config file:
+```bash
+python3 scripts/train.py --config configs/default.yaml
+```
+
+Override specific parameters:
+```bash
+python3 scripts/train.py --epochs 5 --cycles 500
+```
+
+Named experiment:
+```bash
+python3 scripts/train.py --experiment-name my_experiment
+```
+
+## Configuration
+
+Edit `configs/default.yaml` to customize:
+
+- **Training parameters**: epochs, cycles per epoch, random seed
+- **Generation**: complexity range, conjectures per cycle
+- **Prover**: max proof depth, max iterations
+- **Logging**: log interval, checkpoint interval
+
+## System Architecture
+
+### Logic System (`src/logic/`)
+
+Implements first-order logic over Peano arithmetic:
+- **Terms**: Variables, Zero, Successor, Addition, Multiplication
+- **Expressions**: Equations, Quantifiers (∀, ∃), Logical connectives (∧, ∨, ¬, →)
+- **Axioms**: Peano axioms defining natural numbers
+
+### Prover System (`src/prover/`)
+
+Automated theorem prover with:
+- **Tactics**: Rewrite, Substitute, Simplify, Reflexivity, Assumption
+- **Proof Engine**: Best-first search through proof states
+- **Heuristics**: Guides search toward simpler goals
+
+### Generation System (`src/generation/`)
+
+Generates interesting conjectures:
+- **Random Generator**: Creates valid random expressions
+- **Novelty Scorer**: Measures uniqueness using edit distance
+- **Complexity Estimator**: Estimates proof difficulty
+- **Diversity Filter**: Maintains variety in generated statements
+
+### Training Loop (`src/training/`)
+
+Orchestrates the generate-prove-learn cycle:
+1. Generate N conjectures per cycle
+2. Filter for novelty, complexity, and diversity
+3. Attempt to prove each conjecture
+4. Add successful proofs to knowledge base
+5. Update metrics and checkpoints
+
+## Examples
+
+### Simple Theorems
+
+The system can discover theorems like:
+```
+∀x. (x + 0) = x          # Right identity of addition
+∀x. (0 + x) = x          # Left identity of addition
+∀x∀y. (x + y) = (y + x)  # Commutativity of addition
+```
+
+### Monitoring Progress
+
+Training logs show:
+```
+Epoch 1, Cycle 100: KB size = 15, Success rate = 12.3%, Epoch proofs = 12
+✓ Proved: ∀x.(x + 0 = x)
+  Proof length: 3 steps
+```
+
+### Knowledge Base Growth
+
+The system tracks:
+- Number of proven theorems
+- Average proof length
+- Complexity distribution
+- Success rate over time
+
+## Current Phase: MVP (Phase 1)
+
+This is the **Minimum Viable Product** with:
+- ✅ Complete formal logic system
+- ✅ Rule-based theorem prover (no ML yet)
+- ✅ Random conjecture generator
+- ✅ Knowledge base storage
+- ✅ Training loop skeleton
+- ✅ Basic monitoring
+
+## Future Phases
+
+### Phase 2: Neural Conjecture Generator
+- Replace random generation with transformer-based generation
+- Learn to generate provable conjectures
+- Curriculum learning from simple to complex
+
+### Phase 3: RL-Based Prover
+- Replace search-based prover with policy network
+- PPO training for tactic selection
+- Experience replay from successful proofs
+
+### Phase 4: Full Monitoring
+- Visualization of training curves
+- Proof tree visualization
+- Interactive web dashboard
+
+### Phase 5: Optimization
+- GPU acceleration
+- Multiprocessing for parallel proofs
+- Advanced curriculum strategies
+
+## Technical Details
+
+### Computational Requirements
+
+**Current (Phase 1 - CPU only)**:
+- CPU: Multi-core recommended (4-8 cores)
+- RAM: 8-16GB
+- Storage: 10-20GB for checkpoints
+- Training time: Initial results in 2-4 hours
+
+**Future (with neural networks)**:
+- GPU: NVIDIA GPU with 8GB+ VRAM recommended
+- RAM: 16-32GB
+- Storage: 50-100GB
+- Training time: Results in hours, convergence in days
+
+### Dependencies
+
+Core:
+- Python 3.9+
+- PyYAML (configuration)
+- pytest (testing)
+
+Future:
+- PyTorch (neural networks)
+- Transformers (models)
+- Matplotlib/Plotly (visualization)
+
+## Development
+
+### Running Tests
+
+```bash
+python3 -m pytest tests/ -v
+```
+
+### Adding New Tactics
+
+See `src/prover/tactics.py` for examples. Tactics must:
+1. Inherit from `Tactic` base class
+2. Implement `apply(state, knowledge_base)` method
+3. Return list of new proof states (or empty for QED)
+
+### Extending the Logic System
+
+To add new term types:
+1. Add class in `src/logic/terms.py`
+2. Implement `substitute()`, `free_vars()`, `complexity()`
+3. Update parser in `src/logic/parser.py`
+
+## Troubleshooting
+
+**ImportError**: Make sure to install in development mode: `pip install -e .`
+
+**PermissionError when saving**: Check that `data/` directories exist and are writable
+
+**Slow training**: Reduce `cycles_per_epoch` or `max_proof_iterations` in config
+
+**Out of memory**: Reduce `conjectures_per_cycle` or `max_proof_depth`
+
+## Contributing
+
+This is a research project exploring AI for mathematical reasoning. Contributions welcome!
+
+## License
+
+MIT License - See LICENSE file
+
+## Citation
+
+If you use this code in your research, please cite:
+
+```bibtex
+@software{autoconjecture2025,
+  title={AutoConjecture: AI Mathematical Reasoning from Scratch},
+  author={AutoConjecture Team},
+  year={2025},
+  url={https://github.com/yourusername/autoconjecture}
+}
+```
+
+## Acknowledgments
+
+Inspired by:
+- AlphaZero's self-play approach
+- Automated theorem proving research
+- Peano arithmetic and formal logic
+
+## Contact
+
+For questions or issues, please open a GitHub issue.

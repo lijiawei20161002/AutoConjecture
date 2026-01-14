@@ -1,0 +1,81 @@
+# AutoConjecture Configuration
+
+system:
+  random_seed: 42
+  num_epochs: 10
+  cycles_per_epoch: 1000
+  device: cuda  # cuda or cpu
+  num_workers: 4
+
+logic:
+  max_expression_depth: 20
+  min_expression_depth: 5
+  max_variables: 5
+
+generation:
+  batch_size: 100
+  # Larger model sizes now that we have GPU
+  model_size: 50_000_000  # 50M parameters
+  d_model: 256
+  nhead: 8
+  num_layers: 6
+  dropout: 0.1
+  exploration_epsilon: 0.1
+  temperature: 1.0
+  top_k: 50
+
+  # Novelty and filtering
+  min_novelty_score: 0.3
+  max_duplicates: 10
+
+proving:
+  timeout_steps: 1000
+  max_proof_length: 100
+  beam_size: 5
+
+  # Rewards
+  reward_success: 1.0
+  reward_step: -0.1
+  reward_progress: 0.5
+  reward_contradiction: -1.0
+
+  # Available tactics
+  tactics:
+    - apply_axiom
+    - induction
+    - rewrite
+    - substitute
+    - simplify
+    - split_goal
+    - intro
+    - contradiction
+
+learning:
+  generator_lr: 0.0001
+  prover_lr: 0.0003
+  batch_size: 32
+  replay_buffer_size: 10000
+  update_frequency: 10
+  gamma: 0.99  # discount factor for RL
+
+  # PPO parameters
+  ppo_epochs: 4
+  ppo_clip: 0.2
+  value_loss_coef: 0.5
+  entropy_coef: 0.01
+
+monitoring:
+  log_frequency: 10
+  checkpoint_frequency: 100
+  visualization: true
+  dashboard_port: 8501
+
+  # Metrics to track
+  metrics:
+    - proof_success_rate
+    - avg_conjecture_complexity
+    - avg_proof_length
+    - knowledge_base_size
+    - tactic_diversity
+    - novelty_score
+    - training_time

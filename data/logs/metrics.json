@@ -1,0 +1,135 @@
+{
+  "steps": [
+    50
+  ],
+  "metrics": {
+    "epoch": [
+      0
+    ],
+    "cycle": [
+      49
+    ],
+    "total_conjectures_generated": [
+      500
+    ],
+    "total_proofs_attempted": [
+      311
+    ],
+    "total_proofs_succeeded": [
+      7
+    ],
+    "success_rate": [
+      0.022508038585209004
+    ],
+    "knowledge_base_size": [
+      7
+    ],
+    "num_theorems": [
+      7
+    ],
+    "num_axioms": [
+      6
+    ],
+    "total_statements": [
+      13
+    ],
+    "avg_proof_length": [
+      1.0
+    ],
+    "avg_complexity": [
+      19.857142857142858
+    ],
+    "min_complexity": [
+      14.0
+    ],
+    "max_complexity": [
+      26.0
+    ]
+  },
+  "summary": {
+    "epoch": {
+      "latest": 0,
+      "mean": 0.0,
+      "min": 0,
+      "max": 0
+    },
+    "cycle": {
+      "latest": 49,
+      "mean": 49.0,
+      "min": 49,
+      "max": 49
+    },
+    "total_conjectures_generated": {
+      "latest": 500,
+      "mean": 500.0,
+      "min": 500,
+      "max": 500
+    },
+    "total_proofs_attempted": {
+      "latest": 311,
+      "mean": 311.0,
+      "min": 311,
+      "max": 311
+    },
+    "total_proofs_succeeded": {
+      "latest": 7,
+      "mean": 7.0,
+      "min": 7,
+      "max": 7
+    },
+    "success_rate": {
+      "latest": 0.022508038585209004,
+      "mean": 0.022508038585209004,
+      "min": 0.022508038585209004,
+      "max": 0.022508038585209004
+    },
+    "knowledge_base_size": {
+      "latest": 7,
+      "mean": 7.0,
+      "min": 7,
+      "max": 7
+    },
+    "num_theorems": {
+      "latest": 7,
+      "mean": 7.0,
+      "min": 7,
+      "max": 7
+    },
+    "num_axioms": {
+      "latest": 6,
+      "mean": 6.0,
+      "min": 6,
+      "max": 6
+    },
+    "total_statements": {
+      "latest": 13,
+      "mean": 13.0,
+      "min": 13,
+      "max": 13
+    },
+    "avg_proof_length": {
+      "latest": 1.0,
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "avg_complexity": {
+      "latest": 19.857142857142858,
+      "mean": 19.857142857142858,
+      "min": 19.857142857142858,
+      "max": 19.857142857142858
+    },
+    "min_complexity": {
+      "latest": 14.0,
+      "mean": 14.0,
+      "min": 14.0,
+      "max": 14.0
+    },
+    "max_complexity": {
+      "latest": 26.0,
+      "mean": 26.0,
+      "min": 26.0,
+      "max": 26.0
+    }
+  }
+}
