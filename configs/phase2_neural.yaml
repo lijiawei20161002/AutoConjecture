@@ -1,0 +1,56 @@
+# AutoConjecture Phase 2: Neural Generator Configuration
+
+# System settings
+system:
+  random_seed: 42
+  device: cpu  # Change to 'cuda' if GPU available
+
+# Training parameters
+training:
+  num_epochs: 20
+  cycles_per_epoch: 500
+  conjectures_per_cycle: 10
+
+# Neural model architecture
+model:
+  d_model: 256
+  nhead: 8
+  num_layers: 6
+  dropout: 0.1
+  max_seq_len: 128
+
+# Generator training
+generator:
+  learning_rate: 0.0001
+  batch_size: 32
+  warmup_steps: 500
+  pretrain_epochs: 5  # Supervised pretraining on existing proofs
+
+# Curriculum learning
+curriculum:
+  enabled: true
+  initial_complexity: 2
+  final_complexity: 15
+  complexity_increment: 2
+  success_threshold: 0.3  # Advance when success rate > 30%
+  min_samples_per_stage: 100
+
+  # Temperature scheduling (exploration -> exploitation)
+  initial_temperature: 1.5
+  final_temperature: 0.8
+
+# Sampling parameters
+sampling:
+  temperature: 1.0
+  top_k: 50
+  top_p: null  # Set to 0.9 for nucleus sampling
+
+# Prover parameters
+proving:
+  max_proof_depth: 50
+  max_proof_iterations: 1000
+
+# Logging and checkpointing
+monitoring:
+  log_interval: 50  # Log every N cycles
+  checkpoint_interval: 500  # Save checkpoint every N cycles

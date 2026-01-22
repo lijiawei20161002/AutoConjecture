@@ -27,17 +27,20 @@ AutoConjecture/
 ├── src/
 │   ├── logic/          # Formal logic system (terms, expressions, axioms, parser)
 │   ├── prover/         # Theorem prover (tactics, proof engine)
-│   ├── generation/     # Conjecture generation (random, novelty, heuristics)
+│   ├── generation/     # Conjecture generation (random, neural, novelty)
+│   ├── models/         # Neural models (transformer, tokenizer, curriculum)
 │   ├── knowledge/      # Knowledge base storage
-│   ├── training/       # Training loop
+│   ├── training/       # Training loops (Phase 1 & 2)
 │   ├── monitoring/     # Logging and metrics
 │   └── utils/          # Utilities
 ├── scripts/
-│   └── train.py        # Main training script
+│   ├── train.py        # Phase 1 training script
+│   └── train_neural.py # Phase 2 training script
 ├── configs/
-│   └── default.yaml    # Default configuration
+│   ├── default.yaml    # Phase 1 configuration
+│   └── phase2_neural.yaml  # Phase 2 configuration
 ├── data/
-│   ├── checkpoints/    # Saved knowledge bases
+│   ├── checkpoints/    # Saved knowledge bases & models
 │   ├── logs/           # Training logs
 │   └── proofs/         # Saved proofs
 └── tests/              # Unit tests
@@ -115,10 +118,19 @@ Automated theorem prover with:
 ### Generation System (`src/generation/`)
 
 Generates interesting conjectures:
-- **Random Generator**: Creates valid random expressions
+- **Random Generator** (Phase 1): Creates valid random expressions
+- **Neural Generator** (Phase 2): Transformer-based learned generation
 - **Novelty Scorer**: Measures uniqueness using edit distance
 - **Complexity Estimator**: Estimates proof difficulty
 - **Diversity Filter**: Maintains variety in generated statements
+
+### Neural Models (`src/models/`)
+
+Phase 2 neural components:
+- **Tokenizer**: Converts logical expressions to token sequences
+- **Transformer Generator**: Decoder-only transformer for autoregressive generation
+- **Generator Trainer**: Supervised and reinforcement learning for the generator
+- **Curriculum Scheduler**: Manages progressive difficulty increase
 
 ### Training Loop (`src/training/`)
 
@@ -181,22 +193,39 @@ The system tracks:
 - Complexity distribution
 - Success rate over time
 
-## Current Phase: MVP (Phase 1)
+## Current Phase: Phase 2 (Neural Generator) ✅
 
-This is the **Minimum Viable Product** with:
+**Phase 1 (MVP)** - Complete:
 - ✅ Complete formal logic system
-- ✅ Rule-based theorem prover (no ML yet)
+- ✅ Rule-based theorem prover
 - ✅ Random conjecture generator
 - ✅ Knowledge base storage
 - ✅ Training loop skeleton
 - ✅ Basic monitoring
 
+**Phase 2 (Neural Generator)** - Complete:
+- ✅ Transformer-based neural generator
+- ✅ Expression tokenizer for logical formulas
+- ✅ Curriculum learning (simple to complex)
+- ✅ Supervised pretraining on proven theorems
+- ✅ Online learning from new proofs
+- ✅ Adaptive temperature scheduling
+
+See **[PHASE2_NEURAL.md](PHASE2_NEURAL.md)** for complete Phase 2 documentation.
+
+### Quick Start - Phase 2
+
+Train with neural generator:
+```bash
+python3 scripts/train_neural.py --device cuda  # Use CPU if no GPU
+```
+
 ## Future Phases
 
-### Phase 2: Neural Conjecture Generator
-- Replace random generation with transformer-based generation
-- Learn to generate provable conjectures
-- Curriculum learning from simple to complex
+### Phase 3: RL-Based Prover
+- Replace search-based prover with policy network
+- PPO training for tactic selection
+- Experience replay from successful proofs
 
 ### Phase 3: RL-Based Prover
 - Replace search-based prover with policy network
