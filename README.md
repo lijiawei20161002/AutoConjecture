@@ -288,9 +288,9 @@ If you use this code in your research, please cite:
 ```bibtex
 @software{autoconjecture2025,
   title={AutoConjecture: AI Mathematical Reasoning from Scratch},
-  author={Jiawei Li},
+  author={anonymous},
   year={2025},
-  url={https://github.com/lijiawei20161002/AutoConjecture}
+  url={https://anonymous.4open.science/r/AutoConjecture-11C8}
 }
 ```
 
