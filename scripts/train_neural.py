@@ -31,7 +31,7 @@ import torch
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from src.training.neural_training_loop import NeuralTrainingLoop, NeuralTrainingConfig
-from src.monitoring.logger import SimpleLogger
+from src.monitoring.logger import Logger
 
 
 def parse_args():
@@ -198,7 +198,10 @@ def main():
     Path("data/logs").mkdir(parents=True, exist_ok=True)
 
     # Create logger
-    logger = SimpleLogger(log_file=log_path)
+    logger = Logger(
+        log_dir=str(Path(log_path).parent),
+        experiment_name=args.experiment_name
+    )
 
     # Print configuration
     logger.log("="*60)

@@ -86,6 +86,51 @@ class GeneratorTrainer:
             return step / max(1, self.config.warmup_steps)
         return max(0.1, 1.0 / np.sqrt(step / self.config.warmup_steps))
 
+    def train_on_expressions(
+        self,
+        expressions: List[Expression],
+        num_epochs: Optional[int] = None,
+        curriculum_strategy: str = "complexity"
+    ):
+        """
+        Train on a list of expressions directly.
+
+        Args:
+            expressions: List of expressions to train on
+            num_epochs: Number of training epochs (uses config if None)
+            curriculum_strategy: How to order training examples
+                - "complexity": Simple to complex
+                - "chronological": Keep given order
+                - "random": Random order
+        """
+        if not expressions:
+            raise ValueError("No expressions provided for training")
+
+        num_epochs = num_epochs or self.config.num_epochs
+
+        print(f"Training on {len(expressions)} expressions")
+
+        # Apply curriculum strategy
+        if curriculum_strategy == "complexity":
+            # Sort by complexity (simple first)
+            expressions = sorted(
+                expressions,
+                key=lambda e: e.complexity()
+            )
+        elif curriculum_strategy == "chronological":
+            # Keep given order
+            pass
+        elif curriculum_strategy == "random":
+            np.random.shuffle(expressions)
+
+        # Train for multiple epochs
+        for epoch in range(num_epochs):
+            self.epoch = epoch
+            epoch_loss = self._train_epoch(expressions)
+            self.train_losses.append(epoch_loss)
+
+            print(f"Epoch {epoch + 1}/{num_epochs}, Loss: {epoch_loss:.4f}, LR: {self.optimizer.param_groups[0]['lr']:.6f}")
+
     def train_on_knowledge_base(
         self,
         num_epochs: Optional[int] = None,
@@ -104,38 +149,24 @@ class GeneratorTrainer:
         if self.knowledge_base is None:
             raise ValueError("Knowledge base required for training")
 
-        num_epochs = num_epochs or self.config.num_epochs
-
-        # Get training data from knowledge base
+        # Get training data from knowledge base (axioms + theorems)
         theorems = self.knowledge_base.get_all_theorems()
-        if not theorems:
+        axioms = self.knowledge_base.axioms
+
+        # Combine axioms and theorem statements
+        expressions = axioms + [theorem.statement for theorem in theorems]
+
+        if not expressions:
             raise ValueError("Knowledge base is empty, cannot train")
 
-        # Extract expressions
-        expressions = [theorem['statement'] for theorem in theorems]
+        print(f"Training on {len(axioms)} axioms and {len(theorems)} proven theorems")
 
-        print(f"Training on {len(expressions)} proven theorems")
-
-        # Apply curriculum strategy
-        if curriculum_strategy == "complexity":
-            # Sort by complexity (simple first)
-            expressions = sorted(
-                expressions,
-                key=lambda e: e.complexity()
-            )
-        elif curriculum_strategy == "chronological":
-            # Already in chronological order from knowledge base
-            pass
-        elif curriculum_strategy == "random":
-            np.random.shuffle(expressions)
-
-        # Train for multiple epochs
-        for epoch in range(num_epochs):
-            self.epoch = epoch
-            epoch_loss = self._train_epoch(expressions)
-            self.train_losses.append(epoch_loss)
-
-            print(f"Epoch {epoch + 1}/{num_epochs}, Loss: {epoch_loss:.4f}, LR: {self.optimizer.param_groups[0]['lr']:.6f}")
+        # Use the common training method
+        self.train_on_expressions(
+            expressions=expressions,
+            num_epochs=num_epochs,
+            curriculum_strategy=curriculum_strategy
+        )
 
     def _train_epoch(self, expressions: List[Expression]) -> float:
         """Train for one epoch on expressions."""

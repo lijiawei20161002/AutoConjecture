@@ -1,0 +1,15 @@
+{
+  "axioms": [
+    "('zero_not_succ', \u2200x.\u00ac(S(x) = 0))",
+    "('succ_injective', \u2200x.\u2200y.((S(x) = S(y)) \u2192 (x = y)))",
+    "('add_zero', \u2200x.((x + 0) = x))",
+    "('add_succ', \u2200x.\u2200y.((x + S(y)) = S((x + y))))",
+    "('mul_zero', \u2200x.((x * 0) = 0))",
+    "('mul_succ', \u2200x.\u2200y.((x * S(y)) = ((x * y) + x)))"
+  ],
+  "theorems": [],
+  "metadata": {
+    "num_theorems": 0,
+    "saved_at": "2026-02-01T13:14:21.684705"
+  }
+}

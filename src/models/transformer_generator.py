@@ -239,7 +239,10 @@ class TransformerGenerator(nn.Module):
 
             # Apply top-k filtering
             if top_k is not None:
-                indices_to_remove = next_token_logits < torch.topk(next_token_logits, top_k)[0][..., -1, None]
+                # Clamp k to vocab size
+                vocab_size = next_token_logits.size(-1)
+                k = min(top_k, vocab_size)
+                indices_to_remove = next_token_logits < torch.topk(next_token_logits, k)[0][..., -1, None]
                 next_token_logits[indices_to_remove] = float('-inf')
 
             # Apply top-p (nucleus) filtering
@@ -294,8 +297,8 @@ class TransformerGenerator(nn.Module):
         """
         # Reshape for cross entropy
         # (seq_len * batch_size, vocab_size) and (seq_len * batch_size,)
-        logits_flat = logits.view(-1, self.vocab_size)
-        targets_flat = targets.view(-1)
+        logits_flat = logits.reshape(-1, self.vocab_size)
+        targets_flat = targets.reshape(-1)
 
         # Compute loss (ignore padding)
         loss = F.cross_entropy(

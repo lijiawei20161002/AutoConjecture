@@ -109,6 +109,10 @@ class KnowledgeBase:
         """Get all theorems."""
         return self.theorems
 
+    def get_all_theorems(self) -> List[Theorem]:
+        """Get all theorems (alias for get_theorems for compatibility)."""
+        return self.theorems
+
     def get_recent_theorems(self, n: int = 10) -> List[Theorem]:
         """Get n most recent theorems."""
         return self.theorems[-n:]

@@ -1,0 +1,31 @@
+[2026-02-01 13:12:19] [INFO] ============================================================
+[2026-02-01 13:12:19] [INFO] AutoConjecture Training Log
+[2026-02-01 13:12:19] [INFO] Started: 2026-02-01T13:12:19.289031
+[2026-02-01 13:12:19] [INFO] ============================================================
+
+[2026-02-01 13:12:19] [INFO] ============================================================
+[2026-02-01 13:12:19] [INFO] AutoConjecture Phase 2: Neural Generator Training
+[2026-02-01 13:12:19] [INFO] ============================================================
+[2026-02-01 13:12:19] [INFO] Configuration:
+[2026-02-01 13:12:19] [INFO]   Epochs: 5
+[2026-02-01 13:12:19] [INFO]   Cycles per epoch: 100
+[2026-02-01 13:12:19] [INFO]   Conjectures per cycle: 15
+[2026-02-01 13:12:19] [INFO]   Model: d_model=256, heads=8, layers=6
+[2026-02-01 13:12:19] [INFO]   Device: cuda
+[2026-02-01 13:12:19] [INFO]   Curriculum: enabled
+[2026-02-01 13:12:19] [INFO]     Complexity: 2 -> 15
+[2026-02-01 13:12:19] [INFO]   Pretrain epochs: 3
+[2026-02-01 13:12:19] [INFO]   Random seed: 42
+[2026-02-01 13:12:19] [INFO] ============================================================
+
+[2026-02-01 13:12:24] [INFO] Starting Phase 2 neural training with config: NeuralTrainingConfig(num_epochs=5, cycles_per_epoch=100, random_seed=42, conjectures_per_cycle=15, initial_complexity=2, final_complexity=15, d_model=256, nhead=8, num_layers=6, dropout=0.1, generator_lr=0.0001, generator_batch_size=32, generator_warmup_steps=500, use_curriculum=True, curriculum_progression='success_rate', success_threshold=0.3, max_proof_depth=50, max_proof_iterations=1000, pretrain_epochs=3, mixed_generation=True, neural_ratio=0.8, device='cuda', log_interval=100, checkpoint_interval=1000)
+[2026-02-01 13:12:24] [INFO] Device: cuda
+[2026-02-01 13:12:24] [INFO] Model parameters: 6,329,361
+[2026-02-01 13:12:24] [INFO] 
+============================================================
+[2026-02-01 13:12:24] [INFO] Phase 2: Curriculum Learning
+[2026-02-01 13:12:24] [INFO] ============================================================
+[2026-02-01 13:12:24] [INFO] 
+============================================================
+[2026-02-01 13:12:24] [INFO] Epoch 1/5
+[2026-02-01 13:12:24] [INFO] ============================================================

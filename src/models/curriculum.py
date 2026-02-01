@@ -23,8 +23,8 @@ class CurriculumConfig:
     min_samples_per_stage: int = 100  # Minimum samples before advancing
 
     # Temperature scheduling
-    initial_temperature: float = 1.5  # Higher temperature for exploration
-    final_temperature: float = 0.8   # Lower temperature for exploitation
+    initial_temperature: float = 0.5  # Lower temperature for undertrained models
+    final_temperature: float = 0.3   # Even lower for focused generation
 
 
 class CurriculumScheduler:

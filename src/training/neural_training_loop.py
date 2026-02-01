@@ -8,8 +8,9 @@ from dataclasses import dataclass
 import time
 import torch
 
-from ..logic.axioms import PEANO_AXIOMS
+from ..logic.axioms import get_all_axioms
 from ..generation.neural_generator import NeuralConjectureGenerator
+from ..generation.random_generator import RandomConjectureGenerator
 from ..generation.novelty import NoveltyScorer
 from ..generation.heuristics import ComplexityEstimator, DiversityFilter
 from ..prover.proof_engine import ProofEngine, ProofResult
@@ -56,7 +57,7 @@ class NeuralTrainingConfig:
     # Training strategy
     pretrain_epochs: int = 5  # Epochs of supervised pretraining
     mixed_generation: bool = True  # Mix neural and random generation
-    neural_ratio: float = 0.8  # Ratio of neural vs random (if mixed)
+    neural_ratio: float = 0.3  # Ratio of neural vs random (if mixed) - start low for undertrained models
 
     # Device
     device: str = "cpu"  # "cuda" or "cpu"
@@ -117,8 +118,16 @@ class NeuralTrainingLoop:
             top_k=50
         )
 
+        # Initialize random generator for mixed generation
+        self.random_generator = RandomConjectureGenerator(
+            min_complexity=config.initial_complexity,
+            max_complexity=config.final_complexity,
+            var_names=["x", "y", "z", "w"],
+            seed=config.random_seed
+        )
+
         # Initialize knowledge base
-        self.knowledge_base = KnowledgeBase(axioms=PEANO_AXIOMS)
+        self.knowledge_base = KnowledgeBase(axioms=get_all_axioms())
 
         # Initialize prover
         self.prover = ProofEngine(
@@ -172,8 +181,8 @@ class NeuralTrainingLoop:
 
         start_time = time.time()
 
-        # Phase 1: Pretrain on existing knowledge (if available)
-        if self.knowledge_base.size() > 0 and self.config.pretrain_epochs > 0:
+        # Phase 1: Pretrain on existing knowledge (axioms + theorems)
+        if self.knowledge_base.total_size() > 0 and self.config.pretrain_epochs > 0:
             self._log("\n" + "="*60)
             self._log("Phase 1: Supervised Pretraining")
             self._log("="*60)
@@ -245,13 +254,25 @@ class NeuralTrainingLoop:
         self._checkpoint()
 
     def _pretrain(self):
-        """Pretrain generator on existing proven theorems."""
-        self._log(f"Pretraining on {self.knowledge_base.size()} existing theorems")
+        """Pretrain generator on axioms and existing proven theorems."""
+        num_axioms = len(self.knowledge_base.axioms)
+        num_theorems = self.knowledge_base.size()
+        self._log(f"Pretraining on {num_axioms} axioms and {num_theorems} existing theorems")
 
-        self.generator_trainer.train_on_knowledge_base(
-            num_epochs=self.config.pretrain_epochs,
-            curriculum_strategy="complexity"
-        )
+        if num_theorems > 0:
+            # Have existing theorems, use normal knowledge base training
+            self.generator_trainer.train_on_knowledge_base(
+                num_epochs=self.config.pretrain_epochs,
+                curriculum_strategy="complexity"
+            )
+        else:
+            # No theorems yet, bootstrap with axioms only
+            self._log("Bootstrapping with axioms only")
+            axiom_expressions = self.knowledge_base.axioms
+            self.generator_trainer.train_on_expressions(
+                expressions=axiom_expressions,
+                num_epochs=self.config.pretrain_epochs
+            )
 
         self._log("Pretraining completed")
 
@@ -264,38 +285,79 @@ class NeuralTrainingLoop:
         """
         proofs_found = 0
 
-        # Generate conjectures using neural generator
+        # Generate conjectures using mixed generation strategy
         self.generator.eval_mode()
+        conjectures = []
 
-        # Filter out None values (invalid generations)
-        conjectures = [c for c in self.generator.generate(self.config.conjectures_per_cycle) if c is not None]
+        if self.config.mixed_generation:
+            # Mix neural and random generation
+            num_neural = int(self.config.conjectures_per_cycle * self.config.neural_ratio)
+            num_random = self.config.conjectures_per_cycle - num_neural
+
+            # Generate from neural model
+            neural_conjectures = [c for c in self.generator.generate(num_neural) if c is not None]
+            conjectures.extend(neural_conjectures)
+
+            # Generate from random generator
+            random_conjectures = self.random_generator.generate(num_random)
+            conjectures.extend(random_conjectures)
+        else:
+            # Pure neural generation
+            conjectures = [c for c in self.generator.generate(self.config.conjectures_per_cycle) if c is not None]
+
         self.total_conjectures_generated += len(conjectures)
+        print(f"  Generated {len(conjectures)} conjectures")
+        if len(conjectures) > 0:
+            print(f"  Sample conjectures:")
+            for i, conj in enumerate(conjectures[:3]):  # Show first 3
+                print(f"    [{i+1}] {conj} (complexity: {conj.complexity()})")
 
         # Apply curriculum filtering if enabled
         if self.curriculum:
+            before_curriculum = len(conjectures)
+            min_c, max_c = self.curriculum.get_current_complexity_range()
+            print(f"  Curriculum range: [{min_c}, {max_c}]")
             conjectures = self.curriculum.filter_by_complexity(conjectures)
+            print(f"  After curriculum filter: {len(conjectures)}/{before_curriculum}")
 
         # Filter conjectures
         filtered_conjectures = []
+        filter_stats = {
+            "malformed": 0,
+            "not_novel": 0,
+            "not_diverse": 0,
+            "already_known": 0
+        }
+
         for conj in conjectures:
             # Check if well-formed
             if not self.complexity_estimator.is_well_formed(conj):
+                filter_stats["malformed"] += 1
                 continue
 
             # Check if novel
             novelty = self.novelty_scorer.score(conj)
             if novelty < 0.3:
+                filter_stats["not_novel"] += 1
                 continue
 
             # Check if diverse
             if not self.diversity_filter.should_keep(conj):
+                filter_stats["not_diverse"] += 1
                 continue
 
             # Check if already proven
             if self.knowledge_base.contains(conj):
+                filter_stats["already_known"] += 1
                 continue
 
             filtered_conjectures.append(conj)
+
+        print(f"  Filtering: malformed={filter_stats['malformed']}, "
+              f"not_novel={filter_stats['not_novel']}, "
+              f"not_diverse={filter_stats['not_diverse']}, "
+              f"already_known={filter_stats['already_known']}")
+        print(f"  Conjectures after filtering: {len(filtered_conjectures)}")
 
         # Attempt to prove each conjecture
         for conj in filtered_conjectures:
