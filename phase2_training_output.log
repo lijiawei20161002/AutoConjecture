@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "/mnt/nw/home/j.li/AutoConjecture/scripts/train_neural.py", line 34, in <module>
-    from src.monitoring.logger import SimpleLogger
-ImportError: cannot import name 'SimpleLogger' from 'src.monitoring.logger' (/mnt/nw/home/j.li/AutoConjecture/src/monitoring/logger.py)
