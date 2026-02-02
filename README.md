@@ -43,8 +43,30 @@ AutoConjecture/
 │   ├── checkpoints/    # Saved knowledge bases & models
 │   ├── logs/           # Training logs
 │   └── proofs/         # Saved proofs
+├── docs/               # Documentation (see docs/README.md)
+│   ├── getting-started/    # Quick start guides
+│   ├── phase2/            # Phase 2 documentation
+│   ├── examples/          # Example theorems
+│   └── development/       # Development notes
 └── tests/              # Unit tests
+    └── phase2/         # Phase 2 (Neural) tests
 ```
+
+## Documentation
+
+Comprehensive documentation is available in the [`docs/`](docs/) directory:
+
+- **[Getting Started](docs/getting-started/)** - Quick start guides and tutorials
+- **[Phase 2](docs/phase2/)** - Neural generator documentation
+- **[Examples](docs/examples/)** - Real theorem examples
+- **[Development](docs/development/)** - Technical notes
+
+**Quick Links:**
+- 📖 [Documentation Index](docs/README.md)
+- 🚀 [Quick Start Guide](docs/getting-started/quickstart.md)
+- 🧠 [Phase 2 Quick Start](docs/getting-started/quickstart-phase2.md)
+- 📊 [Phase 2 Data Documentation](docs/phase2/data-documentation.md)
+- 💡 [Demo Proofs](docs/examples/demo-proofs.md)
 
 ## Installation
 
