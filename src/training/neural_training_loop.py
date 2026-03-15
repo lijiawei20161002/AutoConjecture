@@ -66,6 +66,9 @@ class NeuralTrainingConfig:
     log_interval: int = 100
     checkpoint_interval: int = 1000
 
+    # Resume support
+    start_epoch: int = 0
+
 
 class NeuralTrainingLoop:
     """
@@ -193,7 +196,7 @@ class NeuralTrainingLoop:
         self._log("Phase 2: Curriculum Learning")
         self._log("="*60)
 
-        for epoch in range(self.config.num_epochs):
+        for epoch in range(self.config.start_epoch, self.config.num_epochs):
             self.current_epoch = epoch
             self._log(f"\n{'='*60}")
             self._log(f"Epoch {epoch + 1}/{self.config.num_epochs}")
@@ -201,6 +204,7 @@ class NeuralTrainingLoop:
 
             epoch_start = time.time()
             epoch_proofs = 0
+            self.novelty_scorer.reset()  # Reset per-epoch so model can explore fresh each epoch
 
             for cycle in range(self.config.cycles_per_epoch):
                 self.current_cycle = cycle
@@ -406,7 +410,7 @@ class NeuralTrainingLoop:
             return
 
         theorems = self.knowledge_base.get_all_theorems()[-recent_count:]
-        expressions = [t['statement'] for t in theorems]
+        expressions = [t.statement for t in theorems]
 
         # Quick training step
         self.generator.train_mode()

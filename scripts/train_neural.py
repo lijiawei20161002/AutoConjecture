@@ -139,7 +139,19 @@ def parse_args():
         "--resume",
         type=str,
         default=None,
-        help="Resume from checkpoint"
+        help="Resume generator/trainer from checkpoint (.pt file)"
+    )
+    parser.add_argument(
+        "--resume-kb",
+        type=str,
+        default=None,
+        help="Resume knowledge base from checkpoint (.json file)"
+    )
+    parser.add_argument(
+        "--start-epoch",
+        type=int,
+        default=0,
+        help="Start training from this epoch index (0-based, default: 0)"
     )
     parser.add_argument(
         "--checkpoint-interval",
@@ -182,7 +194,8 @@ def main():
         final_complexity=args.final_complexity,
         pretrain_epochs=args.pretrain_epochs,
         device=args.device,
-        checkpoint_interval=args.checkpoint_interval
+        checkpoint_interval=args.checkpoint_interval,
+        start_epoch=args.start_epoch,
     )
 
     # Create experiment directory
@@ -230,6 +243,9 @@ def main():
     if args.resume:
         logger.log(f"Resuming from checkpoint: {args.resume}")
         training_loop.generator_trainer.load_checkpoint(args.resume)
+    if args.resume_kb:
+        logger.log(f"Resuming knowledge base from: {args.resume_kb}")
+        training_loop.knowledge_base.load(args.resume_kb)
 
     # Train
     try:

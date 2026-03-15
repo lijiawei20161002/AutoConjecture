@@ -1,0 +1,522 @@
+[2026-03-15 02:37:27] [INFO] ============================================================
+[2026-03-15 02:37:27] [INFO] AutoConjecture Training Log
+[2026-03-15 02:37:27] [INFO] Started: 2026-03-15T02:37:27.689659
+[2026-03-15 02:37:27] [INFO] ============================================================
+
+[2026-03-15 02:37:27] [INFO] ============================================================
+[2026-03-15 02:37:27] [INFO] AutoConjecture Phase 2: Neural Generator Training
+[2026-03-15 02:37:27] [INFO] ============================================================
+[2026-03-15 02:37:27] [INFO] Configuration:
+[2026-03-15 02:37:27] [INFO]   Epochs: 20
+[2026-03-15 02:37:27] [INFO]   Cycles per epoch: 1000
+[2026-03-15 02:37:27] [INFO]   Conjectures per cycle: 20
+[2026-03-15 02:37:27] [INFO]   Model: d_model=512, heads=8, layers=8
+[2026-03-15 02:37:27] [INFO]   Device: cuda
+[2026-03-15 02:37:27] [INFO]   Curriculum: disabled
+[2026-03-15 02:37:27] [INFO]   Pretrain epochs: 10
+[2026-03-15 02:37:27] [INFO]   Random seed: 42
+[2026-03-15 02:37:27] [INFO] ============================================================
+
+[2026-03-15 02:37:30] [INFO] Starting Phase 2 neural training with config: NeuralTrainingConfig(num_epochs=20, cycles_per_epoch=1000, random_seed=42, conjectures_per_cycle=20, initial_complexity=2, final_complexity=20, d_model=512, nhead=8, num_layers=8, dropout=0.1, generator_lr=0.0001, generator_batch_size=32, generator_warmup_steps=500, use_curriculum=False, curriculum_progression='success_rate', success_threshold=0.3, max_proof_depth=50, max_proof_iterations=1000, pretrain_epochs=10, mixed_generation=True, neural_ratio=0.3, device='cuda', log_interval=100, checkpoint_interval=500)
+[2026-03-15 02:37:30] [INFO] Device: cuda
+[2026-03-15 02:37:30] [INFO] Model parameters: 25,252,881
+[2026-03-15 02:37:30] [INFO] 
+============================================================
+[2026-03-15 02:37:30] [INFO] Phase 1: Supervised Pretraining
+[2026-03-15 02:37:30] [INFO] ============================================================
+[2026-03-15 02:37:30] [INFO] Pretraining on 6 axioms and 0 existing theorems
+[2026-03-15 02:37:30] [INFO] Bootstrapping with axioms only
+[2026-03-15 02:37:30] [INFO] Pretraining completed
+[2026-03-15 02:37:30] [INFO] 
+============================================================
+[2026-03-15 02:37:30] [INFO] Phase 2: Curriculum Learning
+[2026-03-15 02:37:30] [INFO] ============================================================
+[2026-03-15 02:37:30] [INFO] 
+============================================================
+[2026-03-15 02:37:30] [INFO] Epoch 1/20
+[2026-03-15 02:37:30] [INFO] ============================================================
+[2026-03-15 02:37:31] [INFO] Epoch 1, Cycle 0/1000: KB size = 0, Success rate = 0.00%, Epoch proofs = 0
+[2026-03-15 02:37:33] [INFO]   ✓ Proved: (0 = (0 * S((0 + z))))
+[2026-03-15 02:37:33] [INFO]     Proof length: 1 steps
+[2026-03-15 02:37:33] [INFO]     Complexity: 14.0
+[2026-03-15 02:37:34] [INFO]   ✓ Proved: ((0 * ((0 + 0) + w)) = 0)
+[2026-03-15 02:37:34] [INFO]     Proof length: 1 steps
+[2026-03-15 02:37:34] [INFO]     Complexity: 15.0
+[2026-03-15 02:37:34] [INFO]   ✓ Proved: ((0 * (0 + (0 * z))) = 0)
+[2026-03-15 02:37:34] [INFO]     Proof length: 1 steps
+[2026-03-15 02:37:34] [INFO]     Complexity: 15.0
+[2026-03-15 02:37:34] [INFO]   ✓ Proved: (((S(0) + (0 + 0)) * 0) = (((y + 0) * 0) + 0))
+[2026-03-15 02:37:34] [INFO]     Proof length: 1 steps
+[2026-03-15 02:37:34] [INFO]     Complexity: 22.0
+[2026-03-15 02:37:37] [INFO]   ✓ Proved: ((((y + w) + 0) * 0) = ((0 * 0) * (0 + S(w))))
+[2026-03-15 02:37:37] [INFO]     Proof length: 1 steps
+[2026-03-15 02:37:37] [INFO]     Complexity: 23.0
+[2026-03-15 02:37:41] [INFO]   ✓ Proved: ((0 + w) = (((0 * w) * 0) + w))
+[2026-03-15 02:37:41] [INFO]     Proof length: 1 steps
+[2026-03-15 02:37:41] [INFO]     Complexity: 17.0
+[2026-03-15 02:37:43] [INFO]   ✓ Proved: ((((x + 0) + y) * ((z + 0) * (w * 0))) = (y * 0))
+[2026-03-15 02:37:43] [INFO]     Proof length: 1 steps
+[2026-03-15 02:37:43] [INFO]     Complexity: 26.0
+[2026-03-15 02:37:50] [INFO]   ✓ Proved: ((((z + w) * (0 * 0)) * (S(z) * S(0))) = 0)
+[2026-03-15 02:37:50] [INFO]     Proof length: 1 steps
+[2026-03-15 02:37:50] [INFO]     Complexity: 22.0
+[2026-03-15 02:37:53] [INFO]   ✓ Proved: (0 = ((S(w) * (x * x)) * 0))
+[2026-03-15 02:37:53] [INFO]     Proof length: 1 steps
+[2026-03-15 02:37:53] [INFO]     Complexity: 17.0
+[2026-03-15 02:37:55] [INFO]   ✓ Proved: ((0 + 0) = ((S(w) * (0 + z)) * (w * 0)))
+[2026-03-15 02:37:55] [INFO]     Proof length: 1 steps
+[2026-03-15 02:37:55] [INFO]     Complexity: 21.0
+[2026-03-15 02:37:55] [INFO]   ✓ Proved: (((0 * (0 + 0)) * 0) = (0 * z))
+[2026-03-15 02:37:55] [INFO]     Proof length: 1 steps
+[2026-03-15 02:37:55] [INFO]     Complexity: 17.0
+[2026-03-15 02:37:56] [INFO]   ✓ Proved: (0 = (0 + 0))
+[2026-03-15 02:37:56] [INFO]     Proof length: 1 steps
+[2026-03-15 02:37:56] [INFO]     Complexity: 8.0
+[2026-03-15 02:37:56] [INFO]   ✓ Proved: (((0 * w) * 0) = (0 * (0 + w)))
+[2026-03-15 02:37:56] [INFO]     Proof length: 1 steps
+[2026-03-15 02:37:56] [INFO]     Complexity: 16.0
+[2026-03-15 02:38:01] [INFO]   ✓ Proved: (S(0) = S(((0 + 0) * (0 + z))))
+[2026-03-15 02:38:01] [INFO]     Proof length: 1 steps
+[2026-03-15 02:38:01] [INFO]     Complexity: 17.0
+[2026-03-15 02:38:03] [INFO]   ✓ Proved: (S((0 + (0 * w))) = (0 + S(0)))
+[2026-03-15 02:38:03] [INFO]     Proof length: 1 steps
+[2026-03-15 02:38:03] [INFO]     Complexity: 17.0
+[2026-03-15 02:38:05] [INFO]   ✓ Proved: ((0 * (x * w)) = ((S(w) * 0) + ((0 + 0) + 0)))
+[2026-03-15 02:38:05] [INFO]     Proof length: 1 steps
+[2026-03-15 02:38:05] [INFO]     Complexity: 23.0
+[2026-03-15 02:38:06] [INFO]   ✓ Proved: ((x * (0 * (0 * 0))) = ((0 * w) * ((w * 0) * (x + 0))))
+[2026-03-15 02:38:06] [INFO]     Proof length: 1 steps
+[2026-03-15 02:38:06] [INFO]     Complexity: 26.0
+[2026-03-15 02:38:27] [INFO]   ✓ Proved: ((((w * 0) + 0) * ((0 + 0) * x)) = ((0 + 0) * S((0 * 0))))
+[2026-03-15 02:38:27] [INFO]     Proof length: 1 steps
+[2026-03-15 02:38:27] [INFO]     Complexity: 27.0
+[2026-03-15 02:38:30] [INFO] Epoch 1, Cycle 100/1000: KB size = 18, Success rate = 3.09%, Epoch proofs = 18
+[2026-03-15 02:38:30] [INFO]   Online training step, loss: 4.0685
+[2026-03-15 02:38:42] [INFO]   ✓ Proved: (((0 * S(y)) * (S(0) * y)) = ((y * (y * 0)) * 0))
+[2026-03-15 02:38:42] [INFO]     Proof length: 1 steps
+[2026-03-15 02:38:42] [INFO]     Complexity: 23.0
+[2026-03-15 02:38:57] [INFO]   ✓ Proved: (((S(0) + x) * (0 + (0 + 0))) = (0 * S(0)))
+[2026-03-15 02:38:57] [INFO]     Proof length: 1 steps
+[2026-03-15 02:38:57] [INFO]     Complexity: 21.0
+[2026-03-15 02:39:12] [INFO]   ✓ Proved: (((S(w) + y) * 0) = ((w * (0 * x)) * S(0)))
+[2026-03-15 02:39:12] [INFO]     Proof length: 1 steps
+[2026-03-15 02:39:12] [INFO]     Complexity: 23.0
+[2026-03-15 02:39:22] [INFO]   ✓ Proved: ((((0 * x) + (0 + y)) * (0 + (0 + 0))) = 0)
+[2026-03-15 02:39:22] [INFO]     Proof length: 1 steps
+[2026-03-15 02:39:22] [INFO]     Complexity: 22.0
+[2026-03-15 02:39:25] [INFO] Epoch 1, Cycle 200/1000: KB size = 22, Success rate = 2.34%, Epoch proofs = 22
+[2026-03-15 02:39:25] [INFO]   Online training step, loss: 3.9991
+[2026-03-15 02:39:33] [INFO]   ✓ Proved: ((S(0) * 0) = ((0 + (0 * 0)) + ((z + w) * 0)))
+[2026-03-15 02:39:33] [INFO]     Proof length: 1 steps
+[2026-03-15 02:39:33] [INFO]     Complexity: 23.0
+[2026-03-15 02:39:34] [INFO]   ✓ Proved: ((S(S(0)) * ((w * 0) * 0)) = ((0 + 0) + 0))
+[2026-03-15 02:39:34] [INFO]     Proof length: 1 steps
+[2026-03-15 02:39:34] [INFO]     Complexity: 21.0
+[2026-03-15 02:39:44] [INFO]   ✓ Proved: ((((z + 0) + z) * (0 * y)) = 0)
+[2026-03-15 02:39:44] [INFO]     Proof length: 1 steps
+[2026-03-15 02:39:44] [INFO]     Complexity: 18.0
+[2026-03-15 02:39:48] [INFO]   ✓ Proved: (((z + S(w)) * 0) = (0 + 0))
+[2026-03-15 02:39:48] [INFO]     Proof length: 1 steps
+[2026-03-15 02:39:48] [INFO]     Complexity: 17.0
+[2026-03-15 02:39:49] [INFO]   ✓ Proved: (((0 * S(x)) + 0) = 0)
+[2026-03-15 02:39:49] [INFO]     Proof length: 1 steps
+[2026-03-15 02:39:49] [INFO]     Complexity: 14.0
+[2026-03-15 02:39:50] [INFO]   ✓ Proved: ((0 * 0) = ((x * 0) * 0))
+[2026-03-15 02:39:50] [INFO]     Proof length: 1 steps
+[2026-03-15 02:39:50] [INFO]     Complexity: 14.0
+[2026-03-15 02:39:50] [INFO]   ✓ Proved: (S(0) = (((y * 0) * (x * 0)) + S(0)))
+[2026-03-15 02:39:50] [INFO]     Proof length: 1 steps
+[2026-03-15 02:39:50] [INFO]     Complexity: 20.0
+[2026-03-15 02:40:01] [INFO]   ✓ Proved: ((0 * S((y * 0))) = (((0 * 0) * (0 + y)) * 0))
+[2026-03-15 02:40:01] [INFO]     Proof length: 1 steps
+[2026-03-15 02:40:01] [INFO]     Complexity: 22.0
+[2026-03-15 02:40:18] [INFO] Epoch 1, Cycle 300/1000: KB size = 30, Success rate = 2.09%, Epoch proofs = 30
+[2026-03-15 02:40:18] [INFO]   Online training step, loss: 3.9255
+[2026-03-15 02:40:44] [INFO]   ✓ Proved: (((S(z) * (0 + 0)) * 0) = (0 * (w + (0 + z))))
+[2026-03-15 02:40:44] [INFO]     Proof length: 1 steps
+[2026-03-15 02:40:44] [INFO]     Complexity: 23.0
+[2026-03-15 02:40:48] [INFO]   ✓ Proved: (((0 + (0 * 0)) * (0 * (x + 0))) = (0 + 0))
+[2026-03-15 02:40:48] [INFO]     Proof length: 1 steps
+[2026-03-15 02:40:48] [INFO]     Complexity: 21.0
+[2026-03-15 02:40:53] [INFO]   ✓ Proved: (S((z * 0)) = S((S(w) * (0 * 0))))
+[2026-03-15 02:40:53] [INFO]     Proof length: 1 steps
+[2026-03-15 02:40:53] [INFO]     Complexity: 19.0
+[2026-03-15 02:41:11] [INFO]   ✓ Proved: (((S(x) + 0) * (0 * x)) = (S(z) * (x * (0 * 0))))
+[2026-03-15 02:41:11] [INFO]     Proof length: 1 steps
+[2026-03-15 02:41:11] [INFO]     Complexity: 24.0
+[2026-03-15 02:41:14] [INFO] Epoch 1, Cycle 400/1000: KB size = 34, Success rate = 1.82%, Epoch proofs = 34
+[2026-03-15 02:41:14] [INFO]   Online training step, loss: 3.8293
+[2026-03-15 02:41:16] [INFO]   ✓ Proved: ((((z * 0) * x) * 0) = ((0 + (0 * 0)) * z))
+[2026-03-15 02:41:16] [INFO]     Proof length: 1 steps
+[2026-03-15 02:41:16] [INFO]     Complexity: 22.0
+[2026-03-15 02:41:20] [INFO]   ✓ Proved: ((0 * (w * x)) = ((0 * (0 * 0)) * (S(0) * S(z))))
+[2026-03-15 02:41:20] [INFO]     Proof length: 1 steps
+[2026-03-15 02:41:20] [INFO]     Complexity: 25.0
+[2026-03-15 02:41:56] [INFO]   ✓ Proved: ((S(S(y)) + (0 * S(x))) = S(((y * 0) + S(y))))
+[2026-03-15 02:41:56] [INFO]     Proof length: 1 steps
+[2026-03-15 02:41:56] [INFO]     Complexity: 23.0
+[2026-03-15 02:42:04] [INFO]   ✓ Proved: ((S(0) * ((y * 0) + 0)) = (0 * ((0 + 0) + (0 + 0))))
+[2026-03-15 02:42:04] [INFO]     Proof length: 1 steps
+[2026-03-15 02:42:04] [INFO]     Complexity: 24.0
+[2026-03-15 02:42:06] [INFO]   ✓ Proved: ((((0 * 0) + S(w)) * (0 * 0)) = (y * ((0 * x) * z)))
+[2026-03-15 02:42:06] [INFO]     Proof length: 1 steps
+[2026-03-15 02:42:06] [INFO]     Complexity: 27.0
+[2026-03-15 02:42:11] [INFO] Epoch 1, Cycle 500/1000: KB size = 39, Success rate = 1.82%, Epoch proofs = 39
+[2026-03-15 02:42:12] [INFO] Checkpoint saved: epoch 0, cycle 500
+[2026-03-15 02:42:12] [INFO]   Online training step, loss: 3.7523
+[2026-03-15 02:43:11] [INFO] Epoch 1, Cycle 600/1000: KB size = 39, Success rate = 1.66%, Epoch proofs = 39
+[2026-03-15 02:43:11] [INFO]   Online training step, loss: 3.6469
+[2026-03-15 02:44:10] [INFO] Epoch 1, Cycle 700/1000: KB size = 39, Success rate = 1.53%, Epoch proofs = 39
+[2026-03-15 02:44:10] [INFO]   Online training step, loss: 3.5749
+[2026-03-15 02:45:04] [INFO] Epoch 1, Cycle 800/1000: KB size = 39, Success rate = 1.43%, Epoch proofs = 39
+[2026-03-15 02:45:04] [INFO]   Online training step, loss: 3.4717
+[2026-03-15 02:45:59] [INFO] Epoch 1, Cycle 900/1000: KB size = 39, Success rate = 1.33%, Epoch proofs = 39
+[2026-03-15 02:45:59] [INFO]   Online training step, loss: 3.3419
+[2026-03-15 02:46:02] [INFO]   ✓ Proved: (((0 * w) + 0) = ((0 + 0) + (S(0) * (0 * 0))))
+[2026-03-15 02:46:02] [INFO]     Proof length: 1 steps
+[2026-03-15 02:46:02] [INFO]     Complexity: 22.0
+[2026-03-15 02:46:05] [INFO]   ✓ Proved: ((0 * (z + y)) = (S((0 * 0)) * (x * (w * 0))))
+[2026-03-15 02:46:05] [INFO]     Proof length: 1 steps
+[2026-03-15 02:46:05] [INFO]     Complexity: 25.0
+[2026-03-15 02:46:42] [INFO]   ✓ Proved: ((0 * ((z + 0) + y)) = (0 + ((z + 0) * 0)))
+[2026-03-15 02:46:42] [INFO]     Proof length: 1 steps
+[2026-03-15 02:46:42] [INFO]     Complexity: 22.0
+[2026-03-15 02:46:54] [INFO] 
+Epoch 1 completed in 563.08s
+[2026-03-15 02:46:54] [INFO] Proofs found: 42
+[2026-03-15 02:46:54] [INFO] Success rate: 4.20%
+[2026-03-15 02:46:54] [INFO] Knowledge base size: 42
+[2026-03-15 02:46:54] [INFO] 
+============================================================
+[2026-03-15 02:46:54] [INFO] Epoch 2/20
+[2026-03-15 02:46:54] [INFO] ============================================================
+[2026-03-15 02:46:54] [INFO] Epoch 2, Cycle 0/1000: KB size = 42, Success rate = 1.30%, Epoch proofs = 0
+[2026-03-15 02:47:10] [INFO]   ✓ Proved: (0 = ((0 * (0 * x)) + (0 + (x * 0))))
+[2026-03-15 02:47:10] [INFO]     Proof length: 1 steps
+[2026-03-15 02:47:10] [INFO]     Complexity: 19.0
+[2026-03-15 02:47:12] [INFO]   ✓ Proved: ((0 + (0 * (0 + 0))) = ((z + 0) * 0))
+[2026-03-15 02:47:12] [INFO]     Proof length: 1 steps
+[2026-03-15 02:47:12] [INFO]     Complexity: 19.0
+[2026-03-15 02:47:15] [INFO]   ✓ Proved: ((0 * 0) = ((0 * S(0)) * S((z * w))))
+[2026-03-15 02:47:15] [INFO]     Proof length: 1 steps
+[2026-03-15 02:47:15] [INFO]     Complexity: 20.0
+[2026-03-15 02:47:24] [INFO]   ✓ Proved: ((0 * (0 * 0)) = (y * (x * (0 + 0))))
+[2026-03-15 02:47:24] [INFO]     Proof length: 1 steps
+[2026-03-15 02:47:24] [INFO]     Complexity: 20.0
+[2026-03-15 02:47:24] [INFO]   ✓ Proved: ((0 + ((0 * 0) * (z * z))) = (0 * x))
+[2026-03-15 02:47:24] [INFO]     Proof length: 1 steps
+[2026-03-15 02:47:24] [INFO]     Complexity: 20.0
+[2026-03-15 02:47:57] [INFO] Epoch 2, Cycle 100/1000: KB size = 47, Success rate = 1.27%, Epoch proofs = 5
+[2026-03-15 02:47:57] [INFO]   Online training step, loss: 3.2519
+[2026-03-15 02:47:59] [INFO]   ✓ Proved: (S(((x + 0) + (0 * 0))) = S(x))
+[2026-03-15 02:47:59] [INFO]     Proof length: 1 steps
+[2026-03-15 02:47:59] [INFO]     Complexity: 17.0
+[2026-03-15 02:48:01] [INFO]   ✓ Proved: (0 = ((z + S(w)) * 0))
+[2026-03-15 02:48:01] [INFO]     Proof length: 1 steps
+[2026-03-15 02:48:01] [INFO]     Complexity: 15.0
+[2026-03-15 02:48:02] [INFO]   ✓ Proved: ((0 * 0) = (((0 + z) + S(0)) * ((0 * x) + 0)))
+[2026-03-15 02:48:02] [INFO]     Proof length: 1 steps
+[2026-03-15 02:48:02] [INFO]     Complexity: 23.0
+[2026-03-15 02:48:58] [INFO] Epoch 2, Cycle 200/1000: KB size = 50, Success rate = 1.24%, Epoch proofs = 8
+[2026-03-15 02:48:58] [INFO]   Online training step, loss: 3.1290
+[2026-03-15 02:50:00] [INFO] Epoch 2, Cycle 300/1000: KB size = 50, Success rate = 1.16%, Epoch proofs = 8
+[2026-03-15 02:50:00] [INFO]   Online training step, loss: 3.0301
+[2026-03-15 02:50:14] [INFO]   ✓ Proved: (((x + S(0)) * ((0 * 0) * (y * 0))) = (0 + (z * 0)))
+[2026-03-15 02:50:14] [INFO]     Proof length: 1 steps
+[2026-03-15 02:50:14] [INFO]     Complexity: 26.0
+[2026-03-15 02:51:01] [INFO] Epoch 2, Cycle 400/1000: KB size = 51, Success rate = 1.13%, Epoch proofs = 9
+[2026-03-15 02:51:01] [INFO]   Online training step, loss: 2.8989
+[2026-03-15 02:52:02] [INFO] Epoch 2, Cycle 500/1000: KB size = 51, Success rate = 1.09%, Epoch proofs = 9
+[2026-03-15 02:52:03] [INFO] Checkpoint saved: epoch 1, cycle 500
+[2026-03-15 02:52:04] [INFO]   Online training step, loss: 2.8231
+[2026-03-15 02:53:09] [INFO] Epoch 2, Cycle 600/1000: KB size = 51, Success rate = 1.06%, Epoch proofs = 9
+[2026-03-15 02:53:09] [INFO]   Online training step, loss: 2.7012
+[2026-03-15 02:54:12] [INFO] Epoch 2, Cycle 700/1000: KB size = 51, Success rate = 1.02%, Epoch proofs = 9
+[2026-03-15 02:54:12] [INFO]   Online training step, loss: 2.6312
+[2026-03-15 02:55:00] [INFO]   ✓ Proved: (((S(y) * 0) * x) = ((0 * (0 + 0)) * (w * (z * y))))
+[2026-03-15 02:55:00] [INFO]     Proof length: 1 steps
+[2026-03-15 02:55:00] [INFO]     Complexity: 27.0
+[2026-03-15 02:55:12] [INFO] Epoch 2, Cycle 800/1000: KB size = 52, Success rate = 1.01%, Epoch proofs = 10
+[2026-03-15 02:55:12] [INFO]   Online training step, loss: 2.5486
+[2026-03-15 02:55:35] [INFO]   ✓ Proved: ((0 * x) = (((x * 0) + (y + 0)) * (0 + (0 * y))))
+[2026-03-15 02:55:35] [INFO]     Proof length: 1 steps
+[2026-03-15 02:55:35] [INFO]     Complexity: 24.0
+[2026-03-15 02:56:14] [INFO]   ✓ Proved: (((x + (y + w)) * 0) = ((x * S(w)) * ((y + 0) * 0)))
+[2026-03-15 02:56:14] [INFO]     Proof length: 1 steps
+[2026-03-15 02:56:14] [INFO]     Complexity: 26.0
+[2026-03-15 02:56:15] [INFO] Epoch 2, Cycle 900/1000: KB size = 54, Success rate = 1.01%, Epoch proofs = 12
+[2026-03-15 02:56:15] [INFO]   Online training step, loss: 2.4852
+[2026-03-15 02:57:18] [INFO] 
+Epoch 2 completed in 624.21s
+[2026-03-15 02:57:18] [INFO] Proofs found: 12
+[2026-03-15 02:57:18] [INFO] Success rate: 1.20%
+[2026-03-15 02:57:18] [INFO] Knowledge base size: 54
+[2026-03-15 02:57:18] [INFO] 
+============================================================
+[2026-03-15 02:57:18] [INFO] Epoch 3/20
+[2026-03-15 02:57:18] [INFO] ============================================================
+[2026-03-15 02:57:18] [INFO] Epoch 3, Cycle 0/1000: KB size = 54, Success rate = 0.98%, Epoch proofs = 0
+[2026-03-15 02:58:22] [INFO] Epoch 3, Cycle 100/1000: KB size = 54, Success rate = 0.95%, Epoch proofs = 0
+[2026-03-15 02:58:23] [INFO]   Online training step, loss: 2.4165
+[2026-03-15 02:58:48] [INFO]   ✓ Proved: ((y * ((x * 0) + 0)) = ((S(0) * 0) * (S(w) * 0)))
+[2026-03-15 02:58:48] [INFO]     Proof length: 1 steps
+[2026-03-15 02:58:48] [INFO]     Complexity: 25.0
+[2026-03-15 02:59:27] [INFO] Epoch 3, Cycle 200/1000: KB size = 55, Success rate = 0.94%, Epoch proofs = 1
+[2026-03-15 02:59:28] [INFO]   Online training step, loss: 2.3798
+[2026-03-15 02:59:59] [INFO]   ✓ Proved: ((((0 * 0) * (0 + 0)) + ((w * 0) + (x * 0))) = (0 * S(S(y))))
+[2026-03-15 02:59:59] [INFO]     Proof length: 1 steps
+[2026-03-15 02:59:59] [INFO]     Complexity: 29.0
+[2026-03-15 03:00:11] [INFO]   ✓ Proved: ((((x * 0) * (0 * 0)) + ((0 * z) * y)) = ((y + z) * 0))
+[2026-03-15 03:00:11] [INFO]     Proof length: 1 steps
+[2026-03-15 03:00:11] [INFO]     Complexity: 27.0
+[2026-03-15 03:00:33] [INFO] Epoch 3, Cycle 300/1000: KB size = 57, Success rate = 0.95%, Epoch proofs = 3
+[2026-03-15 03:00:33] [INFO]   Online training step, loss: 2.3166
+[2026-03-15 03:00:41] [INFO]   ✓ Proved: (((0 + (0 + z)) + (0 * (0 + 0))) = (((y * 0) * S(0)) + z))
+[2026-03-15 03:00:41] [INFO]     Proof length: 1 steps
+[2026-03-15 03:00:41] [INFO]     Complexity: 27.0
+[2026-03-15 03:01:17] [INFO]   ✓ Proved: (((0 + (z * 0)) * (S(y) + w)) = (0 * ((x * z) + 0)))
+[2026-03-15 03:01:17] [INFO]     Proof length: 1 steps
+[2026-03-15 03:01:17] [INFO]     Complexity: 27.0
+[2026-03-15 03:01:39] [INFO] Epoch 3, Cycle 400/1000: KB size = 59, Success rate = 0.96%, Epoch proofs = 5
+[2026-03-15 03:01:39] [INFO]   Online training step, loss: 2.3064
+[2026-03-15 03:02:48] [INFO] Epoch 3, Cycle 500/1000: KB size = 59, Success rate = 0.94%, Epoch proofs = 5
+[2026-03-15 03:02:49] [INFO] Checkpoint saved: epoch 2, cycle 500
+[2026-03-15 03:02:49] [INFO]   Online training step, loss: 2.2784
+[2026-03-15 03:03:59] [INFO] Epoch 3, Cycle 600/1000: KB size = 59, Success rate = 0.91%, Epoch proofs = 5
+[2026-03-15 03:03:59] [INFO]   Online training step, loss: 2.2522
+[2026-03-15 03:05:08] [INFO] Epoch 3, Cycle 700/1000: KB size = 59, Success rate = 0.89%, Epoch proofs = 5
+[2026-03-15 03:05:08] [INFO]   Online training step, loss: 2.2360
+[2026-03-15 03:06:20] [INFO] Epoch 3, Cycle 800/1000: KB size = 59, Success rate = 0.87%, Epoch proofs = 5
+[2026-03-15 03:06:20] [INFO]   Online training step, loss: 2.2035
+[2026-03-15 03:07:35] [INFO] Epoch 3, Cycle 900/1000: KB size = 59, Success rate = 0.85%, Epoch proofs = 5
+[2026-03-15 03:07:35] [INFO]   Online training step, loss: 2.2039
+[2026-03-15 03:08:44] [INFO] 
+Epoch 3 completed in 685.71s
+[2026-03-15 03:08:44] [INFO] Proofs found: 5
+[2026-03-15 03:08:44] [INFO] Success rate: 0.50%
+[2026-03-15 03:08:44] [INFO] Knowledge base size: 59
+[2026-03-15 03:08:44] [INFO] 
+============================================================
+[2026-03-15 03:08:44] [INFO] Epoch 4/20
+[2026-03-15 03:08:44] [INFO] ============================================================
+[2026-03-15 03:08:44] [INFO] Epoch 4, Cycle 0/1000: KB size = 59, Success rate = 0.83%, Epoch proofs = 0
+[2026-03-15 03:09:26] [INFO]   ✓ Proved: (((w + (0 * z)) * (x * (w * 0))) = (0 * (0 + (y + z))))
+[2026-03-15 03:09:26] [INFO]     Proof length: 1 steps
+[2026-03-15 03:09:26] [INFO]     Complexity: 28.0
+[2026-03-15 03:09:59] [INFO] Epoch 4, Cycle 100/1000: KB size = 60, Success rate = 0.83%, Epoch proofs = 1
+[2026-03-15 03:09:59] [INFO]   Online training step, loss: 2.1490
+[2026-03-15 03:11:14] [INFO] Epoch 4, Cycle 200/1000: KB size = 60, Success rate = 0.81%, Epoch proofs = 1
+[2026-03-15 03:11:14] [INFO]   Online training step, loss: 2.1206
+[2026-03-15 03:12:26] [INFO] Epoch 4, Cycle 300/1000: KB size = 60, Success rate = 0.80%, Epoch proofs = 1
+[2026-03-15 03:12:26] [INFO]   Online training step, loss: 2.0837
+[2026-03-15 03:13:41] [INFO] Epoch 4, Cycle 400/1000: KB size = 60, Success rate = 0.78%, Epoch proofs = 1
+[2026-03-15 03:13:41] [INFO]   Online training step, loss: 2.0393
+[2026-03-15 03:14:51] [INFO] Epoch 4, Cycle 500/1000: KB size = 60, Success rate = 0.77%, Epoch proofs = 1
+[2026-03-15 03:14:52] [INFO] Checkpoint saved: epoch 3, cycle 500
+[2026-03-15 03:14:52] [INFO]   Online training step, loss: 2.0168
+[2026-03-15 03:14:53] [INFO]   ✓ Proved: ((S(y) * (0 * x)) = (S((y + y)) * (S(0) * 0)))
+[2026-03-15 03:14:53] [INFO]     Proof length: 1 steps
+[2026-03-15 03:14:53] [INFO]     Complexity: 23.0
+[2026-03-15 03:16:06] [INFO] Epoch 4, Cycle 600/1000: KB size = 61, Success rate = 0.76%, Epoch proofs = 2
+[2026-03-15 03:16:06] [INFO]   Online training step, loss: 2.0001
+[2026-03-15 03:17:01] [INFO]   ✓ Proved: ((0 * S(0)) = (0 * (S(y) + S(y))))
+[2026-03-15 03:17:01] [INFO]     Proof length: 1 steps
+[2026-03-15 03:17:01] [INFO]     Complexity: 18.0
+[2026-03-15 03:17:09] [INFO]   ✓ Proved: ((w * (0 * S(0))) = ((z + 0) * (0 * S(w))))
+[2026-03-15 03:17:09] [INFO]     Proof length: 1 steps
+[2026-03-15 03:17:09] [INFO]     Complexity: 22.0
+[2026-03-15 03:17:16] [INFO] Epoch 4, Cycle 700/1000: KB size = 63, Success rate = 0.75%, Epoch proofs = 4
+[2026-03-15 03:17:16] [INFO]   Online training step, loss: 1.9549
+[2026-03-15 03:18:15] [INFO]   ✓ Proved: ((0 + 0) = (S((z + y)) * ((0 * 0) * (0 + 0))))
+[2026-03-15 03:18:15] [INFO]     Proof length: 1 steps
+[2026-03-15 03:18:15] [INFO]     Complexity: 23.0
+[2026-03-15 03:18:24] [INFO]   ✓ Proved: ((0 * S((0 + y))) = (0 + ((0 * w) * (y + 0))))
+[2026-03-15 03:18:24] [INFO]     Proof length: 1 steps
+[2026-03-15 03:18:24] [INFO]     Complexity: 23.0
+[2026-03-15 03:18:28] [INFO] Epoch 4, Cycle 800/1000: KB size = 65, Success rate = 0.74%, Epoch proofs = 6
+[2026-03-15 03:18:28] [INFO]   Online training step, loss: 1.9258
+[2026-03-15 03:18:35] [INFO]   ✓ Proved: ((y * ((z * 0) + 0)) = (y * (0 * S(y))))
+[2026-03-15 03:18:35] [INFO]     Proof length: 1 steps
+[2026-03-15 03:18:35] [INFO]     Complexity: 21.0
+[2026-03-15 03:18:39] [INFO]   ✓ Proved: ((S((0 * 0)) + ((z * 0) * (0 + x))) = S(((y * 0) * 0)))
+[2026-03-15 03:18:39] [INFO]     Proof length: 1 steps
+[2026-03-15 03:18:39] [INFO]     Complexity: 27.0
+[2026-03-15 03:19:16] [INFO]   ✓ Proved: ((0 * ((y + y) * (0 * w))) = (S(S(z)) * ((x + z) * 0)))
+[2026-03-15 03:19:16] [INFO]     Proof length: 1 steps
+[2026-03-15 03:19:16] [INFO]     Complexity: 28.0
+[2026-03-15 03:19:36] [INFO] Epoch 4, Cycle 900/1000: KB size = 68, Success rate = 0.76%, Epoch proofs = 9
+[2026-03-15 03:19:36] [INFO]   Online training step, loss: 1.9150
+[2026-03-15 03:20:42] [INFO] 
+Epoch 4 completed in 718.87s
+[2026-03-15 03:20:42] [INFO] Proofs found: 9
+[2026-03-15 03:20:42] [INFO] Success rate: 0.90%
+[2026-03-15 03:20:42] [INFO] Knowledge base size: 68
+[2026-03-15 03:20:42] [INFO] 
+============================================================
+[2026-03-15 03:20:42] [INFO] Epoch 5/20
+[2026-03-15 03:20:42] [INFO] ============================================================
+[2026-03-15 03:20:43] [INFO] Epoch 5, Cycle 0/1000: KB size = 68, Success rate = 0.75%, Epoch proofs = 0
+[2026-03-15 03:20:46] [INFO]   ✓ Proved: (((S(0) * (0 * 0)) * ((w * w) + x)) = ((S(w) * x) * ((w + 0) * 0)))
+[2026-03-15 03:20:46] [INFO]     Proof length: 1 steps
+[2026-03-15 03:20:46] [INFO]     Complexity: 30.0
+[2026-03-15 03:21:49] [INFO] Epoch 5, Cycle 100/1000: KB size = 69, Success rate = 0.76%, Epoch proofs = 1
+[2026-03-15 03:21:50] [INFO]   Online training step, loss: 1.8785
+[2026-03-15 03:22:53] [INFO] Epoch 5, Cycle 200/1000: KB size = 69, Success rate = 0.76%, Epoch proofs = 1
+[2026-03-15 03:22:53] [INFO]   Online training step, loss: 1.8453
+[2026-03-15 03:23:57] [INFO] Epoch 5, Cycle 300/1000: KB size = 69, Success rate = 0.76%, Epoch proofs = 1
+[2026-03-15 03:23:57] [INFO]   Online training step, loss: 1.7848
+[2026-03-15 03:25:02] [INFO] Epoch 5, Cycle 400/1000: KB size = 69, Success rate = 0.76%, Epoch proofs = 1
+[2026-03-15 03:25:02] [INFO]   Online training step, loss: 1.7635
+[2026-03-15 03:26:06] [INFO] Epoch 5, Cycle 500/1000: KB size = 69, Success rate = 0.75%, Epoch proofs = 1
+[2026-03-15 03:26:07] [INFO] Checkpoint saved: epoch 4, cycle 500
+[2026-03-15 03:26:07] [INFO]   Online training step, loss: 1.7484
+[2026-03-15 03:27:11] [INFO] Epoch 5, Cycle 600/1000: KB size = 69, Success rate = 0.75%, Epoch proofs = 1
+[2026-03-15 03:27:11] [INFO]   Online training step, loss: 1.7146
+[2026-03-15 03:28:16] [INFO] Epoch 5, Cycle 700/1000: KB size = 69, Success rate = 0.75%, Epoch proofs = 1
+[2026-03-15 03:28:16] [INFO]   Online training step, loss: 1.6765
+[2026-03-15 03:29:24] [INFO] Epoch 5, Cycle 800/1000: KB size = 69, Success rate = 0.75%, Epoch proofs = 1
+[2026-03-15 03:29:24] [INFO]   Online training step, loss: 1.6484
+[2026-03-15 03:30:32] [INFO] Epoch 5, Cycle 900/1000: KB size = 69, Success rate = 0.75%, Epoch proofs = 1
+[2026-03-15 03:30:32] [INFO]   Online training step, loss: 1.6251
+[2026-03-15 03:31:40] [INFO] 
+Epoch 5 completed in 657.92s
+[2026-03-15 03:31:40] [INFO] Proofs found: 1
+[2026-03-15 03:31:40] [INFO] Success rate: 0.10%
+[2026-03-15 03:31:40] [INFO] Knowledge base size: 69
+[2026-03-15 03:31:40] [INFO] 
+============================================================
+[2026-03-15 03:31:40] [INFO] Epoch 6/20
+[2026-03-15 03:31:40] [INFO] ============================================================
+[2026-03-15 03:31:41] [INFO] Epoch 6, Cycle 0/1000: KB size = 69, Success rate = 0.74%, Epoch proofs = 0
+[2026-03-15 03:32:51] [INFO] Epoch 6, Cycle 100/1000: KB size = 69, Success rate = 0.74%, Epoch proofs = 0
+[2026-03-15 03:32:51] [INFO]   Online training step, loss: 1.5778
+[2026-03-15 03:34:01] [INFO] Epoch 6, Cycle 200/1000: KB size = 69, Success rate = 0.74%, Epoch proofs = 0
+[2026-03-15 03:34:01] [INFO]   Online training step, loss: 1.5533
+[2026-03-15 03:35:13] [INFO] Epoch 6, Cycle 300/1000: KB size = 69, Success rate = 0.74%, Epoch proofs = 0
+[2026-03-15 03:35:13] [INFO]   Online training step, loss: 1.5284
+[2026-03-15 03:36:22] [INFO] Epoch 6, Cycle 400/1000: KB size = 69, Success rate = 0.74%, Epoch proofs = 0
+[2026-03-15 03:36:22] [INFO]   Online training step, loss: 1.5019
+[2026-03-15 03:37:31] [INFO] Epoch 6, Cycle 500/1000: KB size = 69, Success rate = 0.73%, Epoch proofs = 0
+[2026-03-15 03:37:32] [INFO] Checkpoint saved: epoch 5, cycle 500
+[2026-03-15 03:37:32] [INFO]   Online training step, loss: 1.4581
+[2026-03-15 03:38:37] [INFO] Epoch 6, Cycle 600/1000: KB size = 69, Success rate = 0.73%, Epoch proofs = 0
+[2026-03-15 03:38:37] [INFO]   Online training step, loss: 1.4260
+[2026-03-15 03:39:40] [INFO] Epoch 6, Cycle 700/1000: KB size = 69, Success rate = 0.73%, Epoch proofs = 0
+[2026-03-15 03:39:40] [INFO]   Online training step, loss: 1.3963
+[2026-03-15 03:40:43] [INFO] Epoch 6, Cycle 800/1000: KB size = 69, Success rate = 0.73%, Epoch proofs = 0
+[2026-03-15 03:40:43] [INFO]   Online training step, loss: 1.3769
+[2026-03-15 03:41:45] [INFO] Epoch 6, Cycle 900/1000: KB size = 69, Success rate = 0.73%, Epoch proofs = 0
+[2026-03-15 03:41:45] [INFO]   Online training step, loss: 1.3388
+[2026-03-15 03:42:44] [INFO] 
+Epoch 6 completed in 663.56s
+[2026-03-15 03:42:44] [INFO] Proofs found: 0
+[2026-03-15 03:42:44] [INFO] Success rate: 0.00%
+[2026-03-15 03:42:44] [INFO] Knowledge base size: 69
+[2026-03-15 03:42:44] [INFO] 
+============================================================
+[2026-03-15 03:42:44] [INFO] Epoch 7/20
+[2026-03-15 03:42:44] [INFO] ============================================================
+[2026-03-15 03:42:45] [INFO] Epoch 7, Cycle 0/1000: KB size = 69, Success rate = 0.73%, Epoch proofs = 0
+[2026-03-15 03:43:45] [INFO] Epoch 7, Cycle 100/1000: KB size = 69, Success rate = 0.72%, Epoch proofs = 0
+[2026-03-15 03:43:45] [INFO]   Online training step, loss: 1.3141
+[2026-03-15 03:44:45] [INFO] Epoch 7, Cycle 200/1000: KB size = 69, Success rate = 0.72%, Epoch proofs = 0
+[2026-03-15 03:44:45] [INFO]   Online training step, loss: 1.2834
+[2026-03-15 03:45:44] [INFO] Epoch 7, Cycle 300/1000: KB size = 69, Success rate = 0.72%, Epoch proofs = 0
+[2026-03-15 03:45:44] [INFO]   Online training step, loss: 1.2518
+[2026-03-15 03:46:43] [INFO] Epoch 7, Cycle 400/1000: KB size = 69, Success rate = 0.72%, Epoch proofs = 0
+[2026-03-15 03:46:43] [INFO]   Online training step, loss: 1.2435
+[2026-03-15 03:47:45] [INFO] Epoch 7, Cycle 500/1000: KB size = 69, Success rate = 0.72%, Epoch proofs = 0
+[2026-03-15 03:47:47] [INFO] Checkpoint saved: epoch 6, cycle 500
+[2026-03-15 03:47:47] [INFO]   Online training step, loss: 1.2183
+[2026-03-15 03:48:47] [INFO] Epoch 7, Cycle 600/1000: KB size = 69, Success rate = 0.72%, Epoch proofs = 0
+[2026-03-15 03:48:47] [INFO]   Online training step, loss: 1.2067
+[2026-03-15 03:49:49] [INFO] Epoch 7, Cycle 700/1000: KB size = 69, Success rate = 0.71%, Epoch proofs = 0
+[2026-03-15 03:49:49] [INFO]   Online training step, loss: 1.1795
+[2026-03-15 03:50:52] [INFO] Epoch 7, Cycle 800/1000: KB size = 69, Success rate = 0.71%, Epoch proofs = 0
+[2026-03-15 03:50:53] [INFO]   Online training step, loss: 1.1596
+[2026-03-15 03:51:54] [INFO] Epoch 7, Cycle 900/1000: KB size = 69, Success rate = 0.71%, Epoch proofs = 0
+[2026-03-15 03:51:55] [INFO]   Online training step, loss: 1.1536
+[2026-03-15 03:52:55] [INFO] 
+Epoch 7 completed in 611.30s
+[2026-03-15 03:52:55] [INFO] Proofs found: 0
+[2026-03-15 03:52:55] [INFO] Success rate: 0.00%
+[2026-03-15 03:52:55] [INFO] Knowledge base size: 69
+[2026-03-15 03:52:55] [INFO] 
+============================================================
+[2026-03-15 03:52:55] [INFO] Epoch 8/20
+[2026-03-15 03:52:55] [INFO] ============================================================
+[2026-03-15 03:52:56] [INFO] Epoch 8, Cycle 0/1000: KB size = 69, Success rate = 0.71%, Epoch proofs = 0
+[2026-03-15 03:53:57] [INFO] Epoch 8, Cycle 100/1000: KB size = 69, Success rate = 0.71%, Epoch proofs = 0
+[2026-03-15 03:53:57] [INFO]   Online training step, loss: 1.1403
+[2026-03-15 03:54:58] [INFO] Epoch 8, Cycle 200/1000: KB size = 69, Success rate = 0.71%, Epoch proofs = 0
+[2026-03-15 03:54:58] [INFO]   Online training step, loss: 1.1291
+[2026-03-15 03:55:43] [INFO]   ✓ Proved: ((((w * x) + (z + w)) * 0) = (((0 + w) + w) * ((0 * 0) + (0 * 0))))
+[2026-03-15 03:55:43] [INFO]     Proof length: 1 steps
+[2026-03-15 03:55:43] [INFO]     Complexity: 31.0
+[2026-03-15 03:55:59] [INFO] Epoch 8, Cycle 300/1000: KB size = 70, Success rate = 0.71%, Epoch proofs = 1
+[2026-03-15 03:55:59] [INFO]   Online training step, loss: 1.1333
+[2026-03-15 03:56:59] [INFO] Epoch 8, Cycle 400/1000: KB size = 70, Success rate = 0.71%, Epoch proofs = 1
+[2026-03-15 03:56:59] [INFO]   Online training step, loss: 1.1060
+[2026-03-15 03:57:59] [INFO] Epoch 8, Cycle 500/1000: KB size = 70, Success rate = 0.71%, Epoch proofs = 1
+[2026-03-15 03:58:01] [INFO] Checkpoint saved: epoch 7, cycle 500
+[2026-03-15 03:58:01] [INFO]   Online training step, loss: 1.0971
+[2026-03-15 03:59:01] [INFO] Epoch 8, Cycle 600/1000: KB size = 70, Success rate = 0.71%, Epoch proofs = 1
+[2026-03-15 03:59:01] [INFO]   Online training step, loss: 1.0992
+[2026-03-15 04:00:03] [INFO] Epoch 8, Cycle 700/1000: KB size = 70, Success rate = 0.71%, Epoch proofs = 1
+[2026-03-15 04:00:03] [INFO]   Online training step, loss: 1.1037
+[2026-03-15 04:01:04] [INFO] Epoch 8, Cycle 800/1000: KB size = 70, Success rate = 0.71%, Epoch proofs = 1
+[2026-03-15 04:01:04] [INFO]   Online training step, loss: 1.0866
+[2026-03-15 04:02:05] [INFO] Epoch 8, Cycle 900/1000: KB size = 70, Success rate = 0.70%, Epoch proofs = 1
+[2026-03-15 04:02:05] [INFO]   Online training step, loss: 1.0969
+[2026-03-15 04:03:06] [INFO] 
+Epoch 8 completed in 610.71s
+[2026-03-15 04:03:06] [INFO] Proofs found: 1
+[2026-03-15 04:03:06] [INFO] Success rate: 0.10%
+[2026-03-15 04:03:06] [INFO] Knowledge base size: 70
+[2026-03-15 04:03:06] [INFO] 
+============================================================
+[2026-03-15 04:03:06] [INFO] Epoch 9/20
+[2026-03-15 04:03:06] [INFO] ============================================================
+[2026-03-15 04:03:07] [INFO] Epoch 9, Cycle 0/1000: KB size = 70, Success rate = 0.70%, Epoch proofs = 0
+[2026-03-15 04:04:08] [INFO] Epoch 9, Cycle 100/1000: KB size = 70, Success rate = 0.70%, Epoch proofs = 0
+[2026-03-15 04:04:08] [INFO]   Online training step, loss: 1.0660
+[2026-03-15 04:05:10] [INFO] Epoch 9, Cycle 200/1000: KB size = 70, Success rate = 0.70%, Epoch proofs = 0
+[2026-03-15 04:05:10] [INFO]   Online training step, loss: 1.0684
+[2026-03-15 04:06:10] [INFO] Epoch 9, Cycle 300/1000: KB size = 70, Success rate = 0.70%, Epoch proofs = 0
+[2026-03-15 04:06:10] [INFO]   Online training step, loss: 1.0357
+[2026-03-15 04:07:10] [INFO] Epoch 9, Cycle 400/1000: KB size = 70, Success rate = 0.70%, Epoch proofs = 0
+[2026-03-15 04:07:10] [INFO]   Online training step, loss: 1.0565
+[2026-03-15 04:08:11] [INFO] Epoch 9, Cycle 500/1000: KB size = 70, Success rate = 0.69%, Epoch proofs = 0
+[2026-03-15 04:08:12] [INFO] Checkpoint saved: epoch 8, cycle 500
+[2026-03-15 04:08:12] [INFO]   Online training step, loss: 1.0332
+[2026-03-15 04:09:13] [INFO] Epoch 9, Cycle 600/1000: KB size = 70, Success rate = 0.69%, Epoch proofs = 0
+[2026-03-15 04:09:13] [INFO]   Online training step, loss: 1.0316
+[2026-03-15 04:10:13] [INFO] Epoch 9, Cycle 700/1000: KB size = 70, Success rate = 0.69%, Epoch proofs = 0
+[2026-03-15 04:10:13] [INFO]   Online training step, loss: 1.0405
+[2026-03-15 04:11:14] [INFO] Epoch 9, Cycle 800/1000: KB size = 70, Success rate = 0.69%, Epoch proofs = 0
+[2026-03-15 04:11:15] [INFO]   Online training step, loss: 1.0269
+[2026-03-15 04:12:15] [INFO] Epoch 9, Cycle 900/1000: KB size = 70, Success rate = 0.69%, Epoch proofs = 0
+[2026-03-15 04:12:15] [INFO]   Online training step, loss: 1.0317
+[2026-03-15 04:13:13] [INFO] 
+Epoch 9 completed in 606.92s
+[2026-03-15 04:13:13] [INFO] Proofs found: 0
+[2026-03-15 04:13:13] [INFO] Success rate: 0.00%
+[2026-03-15 04:13:13] [INFO] Knowledge base size: 70
+[2026-03-15 04:13:13] [INFO] 
+============================================================
+[2026-03-15 04:13:13] [INFO] Epoch 10/20
+[2026-03-15 04:13:13] [INFO] ============================================================
+[2026-03-15 04:13:14] [INFO] Epoch 10, Cycle 0/1000: KB size = 70, Success rate = 0.69%, Epoch proofs = 0
+[2026-03-15 04:14:14] [INFO] Epoch 10, Cycle 100/1000: KB size = 70, Success rate = 0.69%, Epoch proofs = 0
+[2026-03-15 04:14:14] [INFO]   Online training step, loss: 1.0162
+[2026-03-15 04:15:13] [INFO] Epoch 10, Cycle 200/1000: KB size = 70, Success rate = 0.68%, Epoch proofs = 0
+[2026-03-15 04:15:13] [INFO]   Online training step, loss: 1.0209
+[2026-03-15 04:16:13] [INFO] Epoch 10, Cycle 300/1000: KB size = 70, Success rate = 0.68%, Epoch proofs = 0
+[2026-03-15 04:16:13] [INFO]   Online training step, loss: 1.0007
+[2026-03-15 04:17:14] [INFO] Epoch 10, Cycle 400/1000: KB size = 70, Success rate = 0.68%, Epoch proofs = 0
+[2026-03-15 04:17:14] [INFO]   Online training step, loss: 0.9971
+[2026-03-15 04:18:18] [INFO] Epoch 10, Cycle 500/1000: KB size = 70, Success rate = 0.68%, Epoch proofs = 0
+[2026-03-15 04:18:19] [INFO] Checkpoint saved: epoch 9, cycle 500
+[2026-03-15 04:18:19] [INFO]   Online training step, loss: 1.0072
+[2026-03-15 04:19:25] [INFO] Epoch 10, Cycle 600/1000: KB size = 70, Success rate = 0.68%, Epoch proofs = 0
+[2026-03-15 04:19:25] [INFO]   Online training step, loss: 0.9924

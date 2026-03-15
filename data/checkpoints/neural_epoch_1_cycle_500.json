@@ -1,0 +1,973 @@
+{
+  "axioms": [
+    "\u2200x.\u00ac(S(x) = 0)",
+    "\u2200x.\u2200y.((S(x) = S(y)) \u2192 (x = y))",
+    "\u2200x.((x + 0) = x)",
+    "\u2200x.\u2200y.((x + S(y)) = S((x + y)))",
+    "\u2200x.((x * 0) = 0)",
+    "\u2200x.\u2200y.((x * S(y)) = ((x * y) + x))"
+  ],
+  "theorems": [
+    {
+      "statement": "(0 = (0 * S((0 + z))))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 14.0,
+      "timestamp": "2026-03-15T04:26:11.332141",
+      "epoch": 0,
+      "cycle": 3
+    },
+    {
+      "statement": "((0 * ((0 + 0) + w)) = 0)",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 15.0,
+      "timestamp": "2026-03-15T04:26:12.315284",
+      "epoch": 0,
+      "cycle": 7
+    },
+    {
+      "statement": "((0 * (0 + (0 * z))) = 0)",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 15.0,
+      "timestamp": "2026-03-15T04:26:12.341287",
+      "epoch": 0,
+      "cycle": 7
+    },
+    {
+      "statement": "(((S(0) + (0 + 0)) * 0) = (((y + 0) * 0) + 0))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 22.0,
+      "timestamp": "2026-03-15T04:26:12.615956",
+      "epoch": 0,
+      "cycle": 8
+    },
+    {
+      "statement": "((((y + w) + 0) * 0) = ((0 * 0) * (0 + S(w))))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 23.0,
+      "timestamp": "2026-03-15T04:26:13.927035",
+      "epoch": 0,
+      "cycle": 13
+    },
+    {
+      "statement": "((0 + w) = (((0 * w) * 0) + w))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 17.0,
+      "timestamp": "2026-03-15T04:26:16.669745",
+      "epoch": 0,
+      "cycle": 22
+    },
+    {
+      "statement": "((((x + 0) + y) * ((z + 0) * (w * 0))) = (y * 0))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 26.0,
+      "timestamp": "2026-03-15T04:26:17.193615",
+      "epoch": 0,
+      "cycle": 24
+    },
+    {
+      "statement": "((((z + w) * (0 * 0)) * (S(z) * S(0))) = 0)",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 22.0,
+      "timestamp": "2026-03-15T04:26:20.382604",
+      "epoch": 0,
+      "cycle": 35
+    },
+    {
+      "statement": "(0 = ((S(w) * (x * x)) * 0))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 17.0,
+      "timestamp": "2026-03-15T04:26:21.546953",
+      "epoch": 0,
+      "cycle": 39
+    },
+    {
+      "statement": "((0 + 0) = ((S(w) * (0 + z)) * (w * 0)))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 21.0,
+      "timestamp": "2026-03-15T04:26:22.796200",
+      "epoch": 0,
+      "cycle": 43
+    },
+    {
+      "statement": "(((0 * (0 + 0)) * 0) = (0 * z))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 17.0,
+      "timestamp": "2026-03-15T04:26:22.812797",
+      "epoch": 0,
+      "cycle": 43
+    },
+    {
+      "statement": "((0 * x) = 0)",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 9.0,
+      "timestamp": "2026-03-15T04:26:23.120628",
+      "epoch": 0,
+      "cycle": 44
+    },
+    {
+      "statement": "(0 = (0 + 0))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 8.0,
+      "timestamp": "2026-03-15T04:26:23.137263",
+      "epoch": 0,
+      "cycle": 44
+    },
+    {
+      "statement": "(((0 * w) * 0) = (0 * (0 + w)))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 16.0,
+      "timestamp": "2026-03-15T04:26:23.151644",
+      "epoch": 0,
+      "cycle": 44
+    },
+    {
+      "statement": "(S(0) = S(((0 + 0) * (0 + z))))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 17.0,
+      "timestamp": "2026-03-15T04:26:25.432762",
+      "epoch": 0,
+      "cycle": 51
+    },
+    {
+      "statement": "(S((0 + (0 * w))) = (0 + S(0)))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 17.0,
+      "timestamp": "2026-03-15T04:26:26.363537",
+      "epoch": 0,
+      "cycle": 54
+    },
+    {
+      "statement": "((0 * (x * w)) = ((S(w) * 0) + ((0 + 0) + 0)))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 23.0,
+      "timestamp": "2026-03-15T04:26:27.535551",
+      "epoch": 0,
+      "cycle": 58
+    },
+    {
+      "statement": "((x * (0 * (0 * 0))) = ((0 * w) * ((w * 0) * (x + 0))))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 26.0,
+      "timestamp": "2026-03-15T04:26:28.151949",
+      "epoch": 0,
+      "cycle": 60
+    },
+    {
+      "statement": "((((w * 0) + 0) * ((0 + 0) * x)) = ((0 + 0) * S((0 * 0))))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 27.0,
+      "timestamp": "2026-03-15T04:26:39.796920",
+      "epoch": 0,
+      "cycle": 95
+    },
+    {
+      "statement": "(((0 * S(y)) * (S(0) * y)) = ((y * (y * 0)) * 0))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 23.0,
+      "timestamp": "2026-03-15T04:26:50.876695",
+      "epoch": 0,
+      "cycle": 128
+    },
+    {
+      "statement": "(((S(0) + x) * (0 + (0 + 0))) = (0 * S(0)))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 21.0,
+      "timestamp": "2026-03-15T04:26:58.489762",
+      "epoch": 0,
+      "cycle": 151
+    },
+    {
+      "statement": "(((S(w) + y) * 0) = ((w * (0 * x)) * S(0)))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 23.0,
+      "timestamp": "2026-03-15T04:27:08.064254",
+      "epoch": 0,
+      "cycle": 178
+    },
+    {
+      "statement": "((((0 * x) + (0 + y)) * (0 + (0 + 0))) = 0)",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 22.0,
+      "timestamp": "2026-03-15T04:27:13.384833",
+      "epoch": 0,
+      "cycle": 194
+    },
+    {
+      "statement": "((S(0) * 0) = ((0 + (0 * 0)) + ((z + w) * 0)))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 23.0,
+      "timestamp": "2026-03-15T04:27:20.551492",
+      "epoch": 0,
+      "cycle": 215
+    },
+    {
+      "statement": "((S(S(0)) * ((w * 0) * 0)) = ((0 + 0) + 0))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 21.0,
+      "timestamp": "2026-03-15T04:27:20.888097",
+      "epoch": 0,
+      "cycle": 216
+    },
+    {
+      "statement": "((((z + 0) + z) * (0 * y)) = 0)",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 18.0,
+      "timestamp": "2026-03-15T04:27:28.951042",
+      "epoch": 0,
+      "cycle": 239
+    },
+    {
+      "statement": "(((z + S(w)) * 0) = (0 + 0))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 17.0,
+      "timestamp": "2026-03-15T04:27:31.426984",
+      "epoch": 0,
+      "cycle": 246
+    },
+    {
+      "statement": "(((0 * S(x)) + 0) = 0)",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 14.0,
+      "timestamp": "2026-03-15T04:27:31.741686",
+      "epoch": 0,
+      "cycle": 247
+    },
+    {
+      "statement": "((0 * 0) = ((x * 0) * 0))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 14.0,
+      "timestamp": "2026-03-15T04:27:32.368496",
+      "epoch": 0,
+      "cycle": 249
+    },
+    {
+      "statement": "(S(0) = (((y * 0) * (x * 0)) + S(0)))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 20.0,
+      "timestamp": "2026-03-15T04:27:32.766085",
+      "epoch": 0,
+      "cycle": 250
+    },
+    {
+      "statement": "((0 * S((y * 0))) = (((0 * 0) * (0 + y)) * 0))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 22.0,
+      "timestamp": "2026-03-15T04:27:39.704851",
+      "epoch": 0,
+      "cycle": 269
+    },
+    {
+      "statement": "(((S(z) * (0 + 0)) * 0) = (0 * (w + (0 + z))))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 23.0,
+      "timestamp": "2026-03-15T04:28:07.259289",
+      "epoch": 0,
+      "cycle": 348
+    },
+    {
+      "statement": "(((0 + (0 * 0)) * (0 * (x + 0))) = (0 + 0))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 21.0,
+      "timestamp": "2026-03-15T04:28:09.761872",
+      "epoch": 0,
+      "cycle": 355
+    },
+    {
+      "statement": "(S((z * 0)) = S((S(w) * (0 * 0))))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 19.0,
+      "timestamp": "2026-03-15T04:28:12.968370",
+      "epoch": 0,
+      "cycle": 364
+    },
+    {
+      "statement": "(((S(x) + 0) * (0 * x)) = (S(z) * (x * (0 * 0))))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 24.0,
+      "timestamp": "2026-03-15T04:28:23.855869",
+      "epoch": 0,
+      "cycle": 396
+    },
+    {
+      "statement": "((((z * 0) * x) * 0) = ((0 + (0 * 0)) * z))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 22.0,
+      "timestamp": "2026-03-15T04:28:26.777143",
+      "epoch": 0,
+      "cycle": 404
+    },
+    {
+      "statement": "((0 * (w * x)) = ((0 * (0 * 0)) * (S(0) * S(z))))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 25.0,
+      "timestamp": "2026-03-15T04:28:29.376943",
+      "epoch": 0,
+      "cycle": 411
+    },
+    {
+      "statement": "((S(S(y)) + (0 * S(x))) = S(((y * 0) + S(y))))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 23.0,
+      "timestamp": "2026-03-15T04:28:54.076886",
+      "epoch": 0,
+      "cycle": 477
+    },
+    {
+      "statement": "((S(0) * ((y * 0) + 0)) = (0 * ((0 + 0) + (0 + 0))))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 24.0,
+      "timestamp": "2026-03-15T04:28:58.163133",
+      "epoch": 0,
+      "cycle": 487
+    },
+    {
+      "statement": "((((0 * 0) + S(w)) * (0 * 0)) = (y * ((0 * x) * z)))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 27.0,
+      "timestamp": "2026-03-15T04:28:59.279499",
+      "epoch": 0,
+      "cycle": 490
+    },
+    {
+      "statement": "(((0 * w) + 0) = ((0 + 0) + (S(0) * (0 * 0))))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 22.0,
+      "timestamp": "2026-03-15T04:32:13.596782",
+      "epoch": 0,
+      "cycle": 905
+    },
+    {
+      "statement": "((0 * (z + y)) = (S((0 * 0)) * (x * (w * 0))))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 25.0,
+      "timestamp": "2026-03-15T04:32:16.330343",
+      "epoch": 0,
+      "cycle": 910
+    },
+    {
+      "statement": "((0 * ((z + 0) + y)) = (0 + ((z + 0) * 0)))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 22.0,
+      "timestamp": "2026-03-15T04:32:52.339730",
+      "epoch": 0,
+      "cycle": 977
+    },
+    {
+      "statement": "((0 + (0 + (0 * 0))) = 0)",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 14.0,
+      "timestamp": "2026-03-15T04:33:04.815488",
+      "epoch": 1,
+      "cycle": 1
+    },
+    {
+      "statement": "((0 + 0) = (0 * S(w)))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 13.0,
+      "timestamp": "2026-03-15T04:33:04.827633",
+      "epoch": 1,
+      "cycle": 1
+    },
+    {
+      "statement": "((y * 0) = 0)",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 9.0,
+      "timestamp": "2026-03-15T04:33:05.955752",
+      "epoch": 1,
+      "cycle": 4
+    },
+    {
+      "statement": "(0 = (0 * 0))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 8.0,
+      "timestamp": "2026-03-15T04:33:08.317711",
+      "epoch": 1,
+      "cycle": 10
+    },
+    {
+      "statement": "((0 * w) = (y * 0))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 12.0,
+      "timestamp": "2026-03-15T04:33:08.330212",
+      "epoch": 1,
+      "cycle": 10
+    },
+    {
+      "statement": "(((0 + 0) * (S(w) * (0 + 0))) = 0)",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 18.0,
+      "timestamp": "2026-03-15T04:33:12.386051",
+      "epoch": 1,
+      "cycle": 21
+    },
+    {
+      "statement": "((0 * (0 * x)) = (((y * 0) * 0) * 0))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 20.0,
+      "timestamp": "2026-03-15T04:33:13.227645",
+      "epoch": 1,
+      "cycle": 23
+    },
+    {
+      "statement": "(0 = ((0 * (0 * x)) + (0 + (x * 0))))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 19.0,
+      "timestamp": "2026-03-15T04:33:14.732218",
+      "epoch": 1,
+      "cycle": 27
+    },
+    {
+      "statement": "(0 = ((0 * S(0)) * ((z * w) * z)))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 19.0,
+      "timestamp": "2026-03-15T04:33:14.747383",
+      "epoch": 1,
+      "cycle": 27
+    },
+    {
+      "statement": "((0 + (0 * (0 + 0))) = ((z + 0) * 0))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 19.0,
+      "timestamp": "2026-03-15T04:33:16.771865",
+      "epoch": 1,
+      "cycle": 32
+    },
+    {
+      "statement": "((S((x + y)) * 0) = (0 + 0))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 17.0,
+      "timestamp": "2026-03-15T04:33:19.520519",
+      "epoch": 1,
+      "cycle": 39
+    },
+    {
+      "statement": "((0 + (z * 0)) = (S(x) * 0))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 16.0,
+      "timestamp": "2026-03-15T04:33:20.310326",
+      "epoch": 1,
+      "cycle": 41
+    },
+    {
+      "statement": "((0 + ((0 * 0) * (z * z))) = (0 * x))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 20.0,
+      "timestamp": "2026-03-15T04:33:24.289852",
+      "epoch": 1,
+      "cycle": 51
+    },
+    {
+      "statement": "(((S(y) * (0 * 0)) * (S(0) * (z + y))) = (0 * w))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 25.0,
+      "timestamp": "2026-03-15T04:33:33.196234",
+      "epoch": 1,
+      "cycle": 73
+    },
+    {
+      "statement": "((0 * 0) = (((0 + z) + S(0)) * ((0 * x) + 0)))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 23.0,
+      "timestamp": "2026-03-15T04:33:47.360694",
+      "epoch": 1,
+      "cycle": 108
+    },
+    {
+      "statement": "((((w * z) * 0) * ((0 + y) * 0)) = 0)",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 21.0,
+      "timestamp": "2026-03-15T04:33:54.005595",
+      "epoch": 1,
+      "cycle": 125
+    },
+    {
+      "statement": "(((0 + 0) * ((0 * y) * S(0))) = (0 * 0))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 20.0,
+      "timestamp": "2026-03-15T04:33:55.072105",
+      "epoch": 1,
+      "cycle": 128
+    },
+    {
+      "statement": "(0 = ((0 * (0 * y)) * S(y)))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 16.0,
+      "timestamp": "2026-03-15T04:33:57.878824",
+      "epoch": 1,
+      "cycle": 135
+    },
+    {
+      "statement": "(0 = (((z + 0) + z) * (0 * x)))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 18.0,
+      "timestamp": "2026-03-15T04:33:58.356387",
+      "epoch": 1,
+      "cycle": 136
+    },
+    {
+      "statement": "(0 = (((0 + 0) * w) + 0))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 15.0,
+      "timestamp": "2026-03-15T04:34:03.198036",
+      "epoch": 1,
+      "cycle": 148
+    },
+    {
+      "statement": "(0 = (0 + (x * (0 * x))))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 15.0,
+      "timestamp": "2026-03-15T04:34:05.236651",
+      "epoch": 1,
+      "cycle": 153
+    },
+    {
+      "statement": "(S(0) = S((S(0) * 0)))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 13.0,
+      "timestamp": "2026-03-15T04:34:05.738710",
+      "epoch": 1,
+      "cycle": 154
+    },
+    {
+      "statement": "((S((0 * 0)) * 0) = 0)",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 13.0,
+      "timestamp": "2026-03-15T04:34:07.013539",
+      "epoch": 1,
+      "cycle": 157
+    },
+    {
+      "statement": "(0 = (0 * ((y * 0) + w)))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 16.0,
+      "timestamp": "2026-03-15T04:34:09.135838",
+      "epoch": 1,
+      "cycle": 162
+    },
+    {
+      "statement": "((z * 0) = ((S(0) * S(y)) * (z * (0 * w))))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 23.0,
+      "timestamp": "2026-03-15T04:34:10.436452",
+      "epoch": 1,
+      "cycle": 165
+    },
+    {
+      "statement": "((((0 + 0) + 0) * 0) = (((w * 0) + 0) * x))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 22.0,
+      "timestamp": "2026-03-15T04:34:11.237665",
+      "epoch": 1,
+      "cycle": 167
+    },
+    {
+      "statement": "(((0 * 0) * (S(0) * 0)) = ((S(w) * 0) * (0 + S(0))))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 24.0,
+      "timestamp": "2026-03-15T04:34:15.543026",
+      "epoch": 1,
+      "cycle": 177
+    },
+    {
+      "statement": "(((0 * 0) * y) = ((0 * x) + ((z + w) * 0)))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 24.0,
+      "timestamp": "2026-03-15T04:34:19.331309",
+      "epoch": 1,
+      "cycle": 186
+    },
+    {
+      "statement": "((S((0 * x)) + (0 * (0 * w))) = S((0 + 0)))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 22.0,
+      "timestamp": "2026-03-15T04:34:25.123435",
+      "epoch": 1,
+      "cycle": 199
+    },
+    {
+      "statement": "(((y + 0) * 0) = (0 + (0 * S(x))))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 19.0,
+      "timestamp": "2026-03-15T04:35:02.287090",
+      "epoch": 1,
+      "cycle": 288
+    },
+    {
+      "statement": "((0 * (x * (z + 0))) = (0 * ((z * z) + y)))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 23.0,
+      "timestamp": "2026-03-15T04:35:03.579056",
+      "epoch": 1,
+      "cycle": 291
+    },
+    {
+      "statement": "(((w * (x * z)) * ((0 * z) + 0)) = (0 * 0))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 23.0,
+      "timestamp": "2026-03-15T04:35:08.676979",
+      "epoch": 1,
+      "cycle": 304
+    },
+    {
+      "statement": "((((y + 0) + 0) * ((0 * 0) * (w * y))) = 0)",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 22.0,
+      "timestamp": "2026-03-15T04:35:15.313713",
+      "epoch": 1,
+      "cycle": 321
+    },
+    {
+      "statement": "((((0 * x) * (0 + 0)) + ((0 * x) + x)) = x)",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 21.0,
+      "timestamp": "2026-03-15T04:35:16.086821",
+      "epoch": 1,
+      "cycle": 323
+    },
+    {
+      "statement": "(((x + S(0)) * ((0 * 0) * (y * 0))) = (0 + (z * 0)))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 26.0,
+      "timestamp": "2026-03-15T04:35:16.889828",
+      "epoch": 1,
+      "cycle": 325
+    },
+    {
+      "statement": "(((x * (0 * 0)) + S((0 + 0))) = S((0 * (0 * 0))))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 23.0,
+      "timestamp": "2026-03-15T04:35:21.062090",
+      "epoch": 1,
+      "cycle": 335
+    },
+    {
+      "statement": "(S(((w * 0) + 0)) = ((0 * (0 + y)) + S(0)))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 22.0,
+      "timestamp": "2026-03-15T04:35:26.297386",
+      "epoch": 1,
+      "cycle": 349
+    },
+    {
+      "statement": "((z * 0) = ((0 + 0) * ((0 + x) * x)))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 20.0,
+      "timestamp": "2026-03-15T04:35:40.524971",
+      "epoch": 1,
+      "cycle": 387
+    },
+    {
+      "statement": "(((z * (0 * z)) * z) = (0 * (w + (x + x))))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 23.0,
+      "timestamp": "2026-03-15T04:35:48.754251",
+      "epoch": 1,
+      "cycle": 409
+    },
+    {
+      "statement": "(((y * S(z)) * (0 + 0)) = (0 + 0))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 19.0,
+      "timestamp": "2026-03-15T04:35:58.129470",
+      "epoch": 1,
+      "cycle": 434
+    },
+    {
+      "statement": "((((y * 0) + (0 + 0)) * w) = 0)",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 18.0,
+      "timestamp": "2026-03-15T04:36:03.619598",
+      "epoch": 1,
+      "cycle": 448
+    },
+    {
+      "statement": "(0 = (((y + x) * (0 + 0)) * 0))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 18.0,
+      "timestamp": "2026-03-15T04:36:06.391246",
+      "epoch": 1,
+      "cycle": 455
+    },
+    {
+      "statement": "(S(((0 * 0) * (0 + 0))) = S(0))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 16.0,
+      "timestamp": "2026-03-15T04:36:09.195603",
+      "epoch": 1,
+      "cycle": 462
+    },
+    {
+      "statement": "((((z * z) * 0) * 0) = (y * 0))",
+      "proof_length": 1,
+      "proof_steps": [
+        "  simplify \u2192 QED"
+      ],
+      "complexity": 18.0,
+      "timestamp": "2026-03-15T04:36:18.859626",
+      "epoch": 1,
+      "cycle": 487
+    }
+  ],
+  "metadata": {
+    "num_theorems": 87,
+    "saved_at": "2026-03-15T04:36:23.800777"
+  }
+}

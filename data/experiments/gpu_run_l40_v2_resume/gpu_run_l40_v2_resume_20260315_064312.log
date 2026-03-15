@@ -1,0 +1,401 @@
+[2026-03-15 06:43:12] [INFO] ============================================================
+[2026-03-15 06:43:12] [INFO] AutoConjecture Training Log
+[2026-03-15 06:43:12] [INFO] Started: 2026-03-15T06:43:12.380940
+[2026-03-15 06:43:12] [INFO] ============================================================
+
+[2026-03-15 06:43:12] [INFO] ============================================================
+[2026-03-15 06:43:12] [INFO] AutoConjecture Phase 2: Neural Generator Training
+[2026-03-15 06:43:12] [INFO] ============================================================
+[2026-03-15 06:43:12] [INFO] Configuration:
+[2026-03-15 06:43:12] [INFO]   Epochs: 20
+[2026-03-15 06:43:12] [INFO]   Cycles per epoch: 1000
+[2026-03-15 06:43:12] [INFO]   Conjectures per cycle: 20
+[2026-03-15 06:43:12] [INFO]   Model: d_model=512, heads=8, layers=8
+[2026-03-15 06:43:12] [INFO]   Device: cuda
+[2026-03-15 06:43:12] [INFO]   Curriculum: disabled
+[2026-03-15 06:43:12] [INFO]   Pretrain epochs: 5
+[2026-03-15 06:43:12] [INFO]   Random seed: 42
+[2026-03-15 06:43:12] [INFO] ============================================================
+
+[2026-03-15 06:43:15] [INFO] Resuming from checkpoint: data/checkpoints/trainer_epoch_18_cycle_500.pt
+[2026-03-15 06:43:16] [INFO] Resuming knowledge base from: data/checkpoints/neural_epoch_18_cycle_500.json
+[2026-03-15 06:43:16] [INFO] Starting Phase 2 neural training with config: NeuralTrainingConfig(num_epochs=20, cycles_per_epoch=1000, random_seed=42, conjectures_per_cycle=20, initial_complexity=2, final_complexity=15, d_model=512, nhead=8, num_layers=8, dropout=0.1, generator_lr=0.0001, generator_batch_size=32, generator_warmup_steps=500, use_curriculum=False, curriculum_progression='success_rate', success_threshold=0.3, max_proof_depth=50, max_proof_iterations=1000, pretrain_epochs=5, mixed_generation=True, neural_ratio=0.3, device='cuda', log_interval=100, checkpoint_interval=500, start_epoch=18)
+[2026-03-15 06:43:16] [INFO] Device: cuda
+[2026-03-15 06:43:16] [INFO] Model parameters: 25,252,881
+[2026-03-15 06:43:16] [INFO] 
+============================================================
+[2026-03-15 06:43:16] [INFO] Phase 1: Supervised Pretraining
+[2026-03-15 06:43:16] [INFO] ============================================================
+[2026-03-15 06:43:16] [INFO] Pretraining on 6 axioms and 0 existing theorems
+[2026-03-15 06:43:16] [INFO] Bootstrapping with axioms only
+[2026-03-15 06:43:18] [INFO] Pretraining completed
+[2026-03-15 06:43:18] [INFO] 
+============================================================
+[2026-03-15 06:43:18] [INFO] Phase 2: Curriculum Learning
+[2026-03-15 06:43:18] [INFO] ============================================================
+[2026-03-15 06:43:18] [INFO] 
+============================================================
+[2026-03-15 06:43:18] [INFO] Epoch 19/20
+[2026-03-15 06:43:18] [INFO] ============================================================
+[2026-03-15 06:43:18] [INFO] Epoch 19, Cycle 0/1000: KB size = 0, Success rate = 0.00%, Epoch proofs = 0
+[2026-03-15 06:43:22] [INFO]   ✓ Proved: ((y * ((0 * 0) * S(x))) = 0)
+[2026-03-15 06:43:22] [INFO]     Proof length: 1 steps
+[2026-03-15 06:43:22] [INFO]     Complexity: 17.0
+[2026-03-15 06:43:24] [INFO]   ✓ Proved: (((0 + 0) + 0) = 0)
+[2026-03-15 06:43:24] [INFO]     Proof length: 1 steps
+[2026-03-15 06:43:24] [INFO]     Complexity: 11.0
+[2026-03-15 06:43:25] [INFO]   ✓ Proved: (0 = (x * ((0 * z) * w)))
+[2026-03-15 06:43:25] [INFO]     Proof length: 1 steps
+[2026-03-15 06:43:25] [INFO]     Complexity: 17.0
+[2026-03-15 06:43:26] [INFO]   ✓ Proved: ((0 * w) = 0)
+[2026-03-15 06:43:26] [INFO]     Proof length: 1 steps
+[2026-03-15 06:43:26] [INFO]     Complexity: 9.0
+[2026-03-15 06:43:26] [INFO]   ✓ Proved: ((0 * (S(y) * y)) = 0)
+[2026-03-15 06:43:26] [INFO]     Proof length: 1 steps
+[2026-03-15 06:43:26] [INFO]     Complexity: 14.0
+[2026-03-15 06:43:26] [INFO]   ✓ Proved: (0 = (S((x + y)) * 0))
+[2026-03-15 06:43:26] [INFO]     Proof length: 1 steps
+[2026-03-15 06:43:26] [INFO]     Complexity: 15.0
+[2026-03-15 06:43:27] [INFO]   ✓ Proved: ((y * 0) = (x * 0))
+[2026-03-15 06:43:27] [INFO]     Proof length: 1 steps
+[2026-03-15 06:43:27] [INFO]     Complexity: 12.0
+[2026-03-15 06:43:33] [INFO]   ✓ Proved: ((S((w * 0)) * (0 * 0)) = 0)
+[2026-03-15 06:43:33] [INFO]     Proof length: 1 steps
+[2026-03-15 06:43:33] [INFO]     Complexity: 16.0
+[2026-03-15 06:43:38] [INFO]   ✓ Proved: (((y * x) + 0) = ((0 + y) * x))
+[2026-03-15 06:43:38] [INFO]     Proof length: 1 steps
+[2026-03-15 06:43:38] [INFO]     Complexity: 17.0
+[2026-03-15 06:43:51] [INFO]   ✓ Proved: (S(0) = (S(0) + (0 * z)))
+[2026-03-15 06:43:51] [INFO]     Proof length: 1 steps
+[2026-03-15 06:43:51] [INFO]     Complexity: 14.0
+[2026-03-15 06:43:57] [INFO]   ✓ Proved: ((((0 * x) + 0) * 0) = (0 + 0))
+[2026-03-15 06:43:57] [INFO]     Proof length: 1 steps
+[2026-03-15 06:43:57] [INFO]     Complexity: 17.0
+[2026-03-15 06:44:00] [INFO]   ✓ Proved: ((0 * 0) = (0 + ((x * 0) * S(0))))
+[2026-03-15 06:44:00] [INFO]     Proof length: 1 steps
+[2026-03-15 06:44:00] [INFO]     Complexity: 18.0
+[2026-03-15 06:44:07] [INFO] Epoch 19, Cycle 100/1000: KB size = 12, Success rate = 1.36%, Epoch proofs = 12
+[2026-03-15 06:44:07] [INFO]   Online training step, loss: 1.0022
+[2026-03-15 06:44:10] [INFO]   ✓ Proved: ((0 * w) = (0 * (0 + (x + z))))
+[2026-03-15 06:44:10] [INFO]     Proof length: 1 steps
+[2026-03-15 06:44:10] [INFO]     Complexity: 19.0
+[2026-03-15 06:44:11] [INFO]   ✓ Proved: ((0 * (0 + 0)) = (((y + 0) + 0) * 0))
+[2026-03-15 06:44:11] [INFO]     Proof length: 1 steps
+[2026-03-15 06:44:11] [INFO]     Complexity: 19.0
+[2026-03-15 06:44:19] [INFO]   ✓ Proved: ((S((0 + w)) * 0) = (0 * S((0 + 0))))
+[2026-03-15 06:44:19] [INFO]     Proof length: 1 steps
+[2026-03-15 06:44:19] [INFO]     Complexity: 19.0
+[2026-03-15 06:44:21] [INFO]   ✓ Proved: ((((y * 0) + 0) * z) = ((S(x) + 0) * (w * 0)))
+[2026-03-15 06:44:21] [INFO]     Proof length: 1 steps
+[2026-03-15 06:44:21] [INFO]     Complexity: 25.0
+[2026-03-15 06:44:53] [INFO] Epoch 19, Cycle 200/1000: KB size = 16, Success rate = 1.22%, Epoch proofs = 16
+[2026-03-15 06:44:53] [INFO]   Online training step, loss: 1.1925
+[2026-03-15 06:45:29] [INFO] Epoch 19, Cycle 300/1000: KB size = 16, Success rate = 0.95%, Epoch proofs = 16
+[2026-03-15 06:45:29] [INFO]   Online training step, loss: 1.1457
+[2026-03-15 06:45:39] [INFO]   ✓ Proved: ((((0 + 0) * (x * y)) * (0 * (y * 0))) = 0)
+[2026-03-15 06:45:39] [INFO]     Proof length: 1 steps
+[2026-03-15 06:45:39] [INFO]     Complexity: 22.0
+[2026-03-15 06:45:52] [INFO]   ✓ Proved: (((0 * (w * 0)) * w) = ((z * 0) * y))
+[2026-03-15 06:45:52] [INFO]     Proof length: 1 steps
+[2026-03-15 06:45:52] [INFO]     Complexity: 21.0
+[2026-03-15 06:45:56] [INFO]   ✓ Proved: (((S(0) + (y + 0)) * 0) = (S(w) * (S(y) * 0)))
+[2026-03-15 06:45:56] [INFO]     Proof length: 1 steps
+[2026-03-15 06:45:56] [INFO]     Complexity: 23.0
+[2026-03-15 06:45:58] [INFO]   ✓ Proved: ((0 + 0) = (((w + z) * (w * 0)) + 0))
+[2026-03-15 06:45:58] [INFO]     Proof length: 1 steps
+[2026-03-15 06:45:58] [INFO]     Complexity: 20.0
+[2026-03-15 06:46:00] [INFO] Epoch 19, Cycle 400/1000: KB size = 20, Success rate = 0.96%, Epoch proofs = 20
+[2026-03-15 06:46:00] [INFO]   Online training step, loss: 1.1057
+[2026-03-15 06:46:00] [INFO]   ✓ Proved: (((x + 0) * 0) = ((0 * 0) + (0 * 0)))
+[2026-03-15 06:46:00] [INFO]     Proof length: 1 steps
+[2026-03-15 06:46:00] [INFO]     Complexity: 18.0
+[2026-03-15 06:46:02] [INFO]   ✓ Proved: ((0 * (0 * (x + 0))) = (0 * y))
+[2026-03-15 06:46:02] [INFO]     Proof length: 1 steps
+[2026-03-15 06:46:02] [INFO]     Complexity: 18.0
+[2026-03-15 06:46:08] [INFO]   ✓ Proved: ((((x + w) * y) * (S(0) * (0 + 0))) = 0)
+[2026-03-15 06:46:08] [INFO]     Proof length: 1 steps
+[2026-03-15 06:46:08] [INFO]     Complexity: 22.0
+[2026-03-15 06:46:13] [INFO]   ✓ Proved: ((0 + 0) = (((0 + 0) * (0 * z)) * S((0 * y))))
+[2026-03-15 06:46:13] [INFO]     Proof length: 1 steps
+[2026-03-15 06:46:13] [INFO]     Complexity: 23.0
+[2026-03-15 06:46:33] [INFO] Epoch 19, Cycle 500/1000: KB size = 24, Success rate = 0.95%, Epoch proofs = 24
+[2026-03-15 06:46:35] [INFO] Checkpoint saved: epoch 18, cycle 500
+[2026-03-15 06:46:35] [INFO]   Online training step, loss: 1.1148
+[2026-03-15 06:46:53] [INFO] Epoch 19, Cycle 600/1000: KB size = 24, Success rate = 0.84%, Epoch proofs = 24
+[2026-03-15 06:46:53] [INFO]   Online training step, loss: 0.9878
+[2026-03-15 06:46:54] [INFO]   ✓ Proved: ((S(y) * 0) = ((y * z) * (0 * (0 + 0))))
+[2026-03-15 06:46:54] [INFO]     Proof length: 1 steps
+[2026-03-15 06:46:54] [INFO]     Complexity: 21.0
+[2026-03-15 06:46:58] [INFO]   ✓ Proved: (((y * (0 + y)) * (0 * z)) = (0 * 0))
+[2026-03-15 06:46:58] [INFO]     Proof length: 1 steps
+[2026-03-15 06:46:58] [INFO]     Complexity: 20.0
+[2026-03-15 06:47:11] [INFO]   ✓ Proved: ((0 * 0) = ((w * (0 + 0)) * (0 + x)))
+[2026-03-15 06:47:11] [INFO]     Proof length: 1 steps
+[2026-03-15 06:47:11] [INFO]     Complexity: 20.0
+[2026-03-15 06:47:13] [INFO]   ✓ Proved: ((0 + ((w * 0) * 0)) = (S(S(z)) * 0))
+[2026-03-15 06:47:13] [INFO]     Proof length: 1 steps
+[2026-03-15 06:47:13] [INFO]     Complexity: 20.0
+[2026-03-15 06:47:14] [INFO] Epoch 19, Cycle 700/1000: KB size = 28, Success rate = 0.84%, Epoch proofs = 28
+[2026-03-15 06:47:14] [INFO]   Online training step, loss: 0.9202
+[2026-03-15 06:47:19] [INFO]   ✓ Proved: (S((0 * 0)) = S((x * (0 * w))))
+[2026-03-15 06:47:19] [INFO]     Proof length: 1 steps
+[2026-03-15 06:47:19] [INFO]     Complexity: 18.0
+[2026-03-15 06:47:19] [INFO]   ✓ Proved: ((0 * (0 + S(0))) = ((x * 0) * 0))
+[2026-03-15 06:47:19] [INFO]     Proof length: 1 steps
+[2026-03-15 06:47:19] [INFO]     Complexity: 18.0
+[2026-03-15 06:47:22] [INFO]   ✓ Proved: ((0 * (x * 0)) = (0 * S(0)))
+[2026-03-15 06:47:22] [INFO]     Proof length: 1 steps
+[2026-03-15 06:47:22] [INFO]     Complexity: 15.0
+[2026-03-15 06:47:22] [INFO]   ✓ Proved: (((S(x) * (0 + 0)) * y) = 0)
+[2026-03-15 06:47:22] [INFO]     Proof length: 1 steps
+[2026-03-15 06:47:22] [INFO]     Complexity: 17.0
+[2026-03-15 06:47:26] [INFO]   ✓ Proved: ((S(0) * ((y * 0) + (S(z) * 0))) = 0)
+[2026-03-15 06:47:26] [INFO]     Proof length: 1 steps
+[2026-03-15 06:47:26] [INFO]     Complexity: 21.0
+[2026-03-15 06:47:33] [INFO]   ✓ Proved: ((S(x) * (S(z) * (0 * 0))) = (z * 0))
+[2026-03-15 06:47:33] [INFO]     Proof length: 1 steps
+[2026-03-15 06:47:33] [INFO]     Complexity: 20.0
+[2026-03-15 06:47:38] [INFO]   ✓ Proved: (0 = ((0 * S(z)) * S((0 + x))))
+[2026-03-15 06:47:38] [INFO]     Proof length: 1 steps
+[2026-03-15 06:47:38] [INFO]     Complexity: 18.0
+[2026-03-15 06:47:40] [INFO]   ✓ Proved: ((0 * (0 * 0)) = ((0 * x) * S((x + w))))
+[2026-03-15 06:47:40] [INFO]     Proof length: 1 steps
+[2026-03-15 06:47:40] [INFO]     Complexity: 21.0
+[2026-03-15 06:47:41] [INFO]   ✓ Proved: ((S(z) * 0) = ((S(0) * 0) * (y * z)))
+[2026-03-15 06:47:41] [INFO]     Proof length: 1 steps
+[2026-03-15 06:47:41] [INFO]     Complexity: 20.0
+[2026-03-15 06:47:41] [INFO]   ✓ Proved: (((S(y) + S(0)) * 0) = ((y * w) * 0))
+[2026-03-15 06:47:41] [INFO]     Proof length: 1 steps
+[2026-03-15 06:47:41] [INFO]     Complexity: 20.0
+[2026-03-15 06:47:43] [INFO] Epoch 19, Cycle 800/1000: KB size = 38, Success rate = 0.99%, Epoch proofs = 38
+[2026-03-15 06:47:43] [INFO]   Online training step, loss: 0.8605
+[2026-03-15 06:47:45] [INFO]   ✓ Proved: ((S((z * y)) * 0) = ((y * (x * 0)) * z))
+[2026-03-15 06:47:45] [INFO]     Proof length: 1 steps
+[2026-03-15 06:47:45] [INFO]     Complexity: 22.0
+[2026-03-15 06:47:46] [INFO]   ✓ Proved: ((((0 + 0) + 0) * (0 * 0)) = ((0 + 0) * (0 + 0)))
+[2026-03-15 06:47:46] [INFO]     Proof length: 1 steps
+[2026-03-15 06:47:46] [INFO]     Complexity: 22.0
+[2026-03-15 06:47:47] [INFO]   ✓ Proved: ((0 * (((0 + 0) * S(0)) + 0)) = (0 * (0 * S(x))))
+[2026-03-15 06:47:47] [INFO]     Proof length: 1 steps
+[2026-03-15 06:47:47] [INFO]     Complexity: 24.0
+[2026-03-15 06:47:51] [INFO]   ✓ Proved: ((y * (0 * 0)) = (((y * 0) + 0) * (x + (x * w))))
+[2026-03-15 06:47:51] [INFO]     Proof length: 1 steps
+[2026-03-15 06:47:51] [INFO]     Complexity: 25.0
+[2026-03-15 06:48:07] [INFO]   ✓ Proved: (((0 + 0) * ((0 + 0) * w)) = (0 * (x + y)))
+[2026-03-15 06:48:07] [INFO]     Proof length: 1 steps
+[2026-03-15 06:48:07] [INFO]     Complexity: 23.0
+[2026-03-15 06:48:20] [INFO] Epoch 19, Cycle 900/1000: KB size = 43, Success rate = 1.04%, Epoch proofs = 43
+[2026-03-15 06:48:20] [INFO]   Online training step, loss: 0.8144
+[2026-03-15 06:48:33] [INFO]   ✓ Proved: ((((y + 0) * w) * 0) = (0 * S(S(x))))
+[2026-03-15 06:48:33] [INFO]     Proof length: 1 steps
+[2026-03-15 06:48:33] [INFO]     Complexity: 21.0
+[2026-03-15 06:48:34] [INFO]   ✓ Proved: (((0 + 0) * (0 * S(S(z)))) = 0)
+[2026-03-15 06:48:34] [INFO]     Proof length: 1 steps
+[2026-03-15 06:48:34] [INFO]     Complexity: 18.0
+[2026-03-15 06:48:39] [INFO]   ✓ Proved: (0 = ((0 * (z * 0)) * (x + (y * x))))
+[2026-03-15 06:48:39] [INFO]     Proof length: 1 steps
+[2026-03-15 06:48:39] [INFO]     Complexity: 21.0
+[2026-03-15 06:48:40] [INFO]   ✓ Proved: ((((y * 0) * 0) * 0) = (S((0 * w)) * 0))
+[2026-03-15 06:48:40] [INFO]     Proof length: 1 steps
+[2026-03-15 06:48:40] [INFO]     Complexity: 21.0
+[2026-03-15 06:48:56] [INFO]   ✓ Proved: (((x * 0) + 0) = (0 * ((x * (0 * z)) * 0)))
+[2026-03-15 06:48:56] [INFO]     Proof length: 1 steps
+[2026-03-15 06:48:56] [INFO]     Complexity: 23.0
+[2026-03-15 06:49:01] [INFO] 
+Epoch 19 completed in 343.14s
+[2026-03-15 06:49:01] [INFO] Proofs found: 48
+[2026-03-15 06:49:01] [INFO] Success rate: 4.80%
+[2026-03-15 06:49:01] [INFO] Knowledge base size: 48
+[2026-03-15 06:49:01] [INFO] 
+============================================================
+[2026-03-15 06:49:01] [INFO] Epoch 20/20
+[2026-03-15 06:49:01] [INFO] ============================================================
+[2026-03-15 06:49:01] [INFO] Epoch 20, Cycle 0/1000: KB size = 48, Success rate = 1.05%, Epoch proofs = 0
+[2026-03-15 06:49:01] [INFO]   ✓ Proved: ((((z * 0) + 0) * (0 + 0)) = 0)
+[2026-03-15 06:49:01] [INFO]     Proof length: 1 steps
+[2026-03-15 06:49:01] [INFO]     Complexity: 17.0
+[2026-03-15 06:49:02] [INFO]   ✓ Proved: ((((0 * x) + 0) + 0) = (0 * ((0 * z) * y)))
+[2026-03-15 06:49:02] [INFO]     Proof length: 1 steps
+[2026-03-15 06:49:02] [INFO]     Complexity: 23.0
+[2026-03-15 06:49:02] [INFO]   ✓ Proved: (0 = ((0 * w) * (0 * S(x))))
+[2026-03-15 06:49:02] [INFO]     Proof length: 1 steps
+[2026-03-15 06:49:02] [INFO]     Complexity: 17.0
+[2026-03-15 06:49:02] [INFO]   ✓ Proved: (((0 + 0) * 0) = ((0 * (y + z)) * 0))
+[2026-03-15 06:49:02] [INFO]     Proof length: 1 steps
+[2026-03-15 06:49:02] [INFO]     Complexity: 20.0
+[2026-03-15 06:49:03] [INFO]   ✓ Proved: ((0 * 0) = (((w + 0) + w) * (0 * (0 * z))))
+[2026-03-15 06:49:03] [INFO]     Proof length: 1 steps
+[2026-03-15 06:49:03] [INFO]     Complexity: 22.0
+[2026-03-15 06:49:03] [INFO]   ✓ Proved: ((0 * ((0 * 0) + 0)) = ((0 * S(0)) * 0))
+[2026-03-15 06:49:03] [INFO]     Proof length: 1 steps
+[2026-03-15 06:49:03] [INFO]     Complexity: 19.0
+[2026-03-15 06:49:03] [INFO]   ✓ Proved: ((0 * x) = (S(0) * 0))
+[2026-03-15 06:49:03] [INFO]     Proof length: 1 steps
+[2026-03-15 06:49:03] [INFO]     Complexity: 13.0
+[2026-03-15 06:49:03] [INFO]   ✓ Proved: ((0 + (w + (0 * 0))) = (w + 0))
+[2026-03-15 06:49:03] [INFO]     Proof length: 1 steps
+[2026-03-15 06:49:03] [INFO]     Complexity: 17.0
+[2026-03-15 06:49:04] [INFO]   ✓ Proved: ((0 + (0 + 0)) = (((x + 0) * (0 * y)) * 0))
+[2026-03-15 06:49:04] [INFO]     Proof length: 1 steps
+[2026-03-15 06:49:04] [INFO]     Complexity: 22.0
+[2026-03-15 06:49:04] [INFO]   ✓ Proved: (((y + 0) * ((0 + 0) * 0)) = (0 * (0 * (0 + S(x)))))
+[2026-03-15 06:49:04] [INFO]     Proof length: 1 steps
+[2026-03-15 06:49:04] [INFO]     Complexity: 26.0
+[2026-03-15 06:49:11] [INFO]   ✓ Proved: ((0 * 0) = ((0 * S(0)) * S((z * w))))
+[2026-03-15 06:49:11] [INFO]     Proof length: 1 steps
+[2026-03-15 06:49:11] [INFO]     Complexity: 20.0
+[2026-03-15 06:49:13] [INFO]   ✓ Proved: ((0 + 0) = (((y * 0) + S(z)) * 0))
+[2026-03-15 06:49:13] [INFO]     Proof length: 1 steps
+[2026-03-15 06:49:13] [INFO]     Complexity: 19.0
+[2026-03-15 06:49:14] [INFO]   ✓ Proved: ((0 * S(0)) = ((x + y) * (x * 0)))
+[2026-03-15 06:49:14] [INFO]     Proof length: 1 steps
+[2026-03-15 06:49:14] [INFO]     Complexity: 18.0
+[2026-03-15 06:49:14] [INFO]   ✓ Proved: (((w * 0) * (0 + S(0))) = (0 * 0))
+[2026-03-15 06:49:14] [INFO]     Proof length: 1 steps
+[2026-03-15 06:49:14] [INFO]     Complexity: 18.0
+[2026-03-15 06:49:15] [INFO]   ✓ Proved: (0 = (0 * (x * w)))
+[2026-03-15 06:49:15] [INFO]     Proof length: 1 steps
+[2026-03-15 06:49:15] [INFO]     Complexity: 13.0
+[2026-03-15 06:49:15] [INFO]   ✓ Proved: ((0 * (x + 0)) = ((0 + z) * ((0 + w) * (0 * 0))))
+[2026-03-15 06:49:15] [INFO]     Proof length: 1 steps
+[2026-03-15 06:49:15] [INFO]     Complexity: 25.0
+[2026-03-15 06:49:15] [INFO]   ✓ Proved: ((0 * (0 * 0)) = (y * (x * (0 + 0))))
+[2026-03-15 06:49:15] [INFO]     Proof length: 1 steps
+[2026-03-15 06:49:15] [INFO]     Complexity: 20.0
+[2026-03-15 06:49:16] [INFO]   ✓ Proved: (0 = (S(x) * ((0 * y) + 0)))
+[2026-03-15 06:49:16] [INFO]     Proof length: 1 steps
+[2026-03-15 06:49:16] [INFO]     Complexity: 17.0
+[2026-03-15 06:49:17] [INFO]   ✓ Proved: (((y * 0) * (w * 0)) = 0)
+[2026-03-15 06:49:17] [INFO]     Proof length: 1 steps
+[2026-03-15 06:49:17] [INFO]     Complexity: 15.0
+[2026-03-15 06:49:17] [INFO]   ✓ Proved: ((0 * 0) = (0 + (z * 0)))
+[2026-03-15 06:49:17] [INFO]     Proof length: 1 steps
+[2026-03-15 06:49:17] [INFO]     Complexity: 14.0
+[2026-03-15 06:49:19] [INFO]   ✓ Proved: ((0 + (z * 0)) = 0)
+[2026-03-15 06:49:19] [INFO]     Proof length: 1 steps
+[2026-03-15 06:49:19] [INFO]     Complexity: 12.0
+[2026-03-15 06:49:19] [INFO]   ✓ Proved: ((0 * (z + 0)) = ((0 * w) * 0))
+[2026-03-15 06:49:19] [INFO]     Proof length: 1 steps
+[2026-03-15 06:49:19] [INFO]     Complexity: 17.0
+[2026-03-15 06:49:22] [INFO]   ✓ Proved: (((S(0) + (z + z)) * 0) = (0 * w))
+[2026-03-15 06:49:22] [INFO]     Proof length: 1 steps
+[2026-03-15 06:49:22] [INFO]     Complexity: 19.0
+[2026-03-15 06:49:24] [INFO]   ✓ Proved: ((0 * (x * (x + 0))) = ((S(0) * 0) * z))
+[2026-03-15 06:49:24] [INFO]     Proof length: 1 steps
+[2026-03-15 06:49:24] [INFO]     Complexity: 21.0
+[2026-03-15 06:49:27] [INFO]   ✓ Proved: (((0 + S(0)) * (0 + (0 * x))) = 0)
+[2026-03-15 06:49:27] [INFO]     Proof length: 1 steps
+[2026-03-15 06:49:27] [INFO]     Complexity: 18.0
+[2026-03-15 06:49:30] [INFO]   ✓ Proved: ((S(0) * (0 * 0)) = (((0 + 0) * 0) * w))
+[2026-03-15 06:49:30] [INFO]     Proof length: 1 steps
+[2026-03-15 06:49:30] [INFO]     Complexity: 20.0
+[2026-03-15 06:49:32] [INFO] Epoch 20, Cycle 100/1000: KB size = 74, Success rate = 1.40%, Epoch proofs = 26
+[2026-03-15 06:49:32] [INFO]   Online training step, loss: 0.7543
+[2026-03-15 06:49:35] [INFO]   ✓ Proved: (((0 * y) * (y * 0)) = (0 * (y * 0)))
+[2026-03-15 06:49:35] [INFO]     Proof length: 1 steps
+[2026-03-15 06:49:35] [INFO]     Complexity: 18.0
+[2026-03-15 06:49:58] [INFO]   ✓ Proved: ((((x * 0) * z) * 0) = ((z * 0) + 0))
+[2026-03-15 06:49:58] [INFO]     Proof length: 1 steps
+[2026-03-15 06:49:58] [INFO]     Complexity: 20.0
+[2026-03-15 06:50:06] [INFO] Epoch 20, Cycle 200/1000: KB size = 76, Success rate = 1.31%, Epoch proofs = 28
+[2026-03-15 06:50:06] [INFO]   Online training step, loss: 0.7879
+[2026-03-15 06:50:08] [INFO]   ✓ Proved: ((y * 0) = (((z + z) * 0) * (w * 0)))
+[2026-03-15 06:50:08] [INFO]     Proof length: 1 steps
+[2026-03-15 06:50:08] [INFO]     Complexity: 21.0
+[2026-03-15 06:50:16] [INFO]   ✓ Proved: (0 = (((0 * 0) * x) * ((0 + 0) * 0)))
+[2026-03-15 06:50:16] [INFO]     Proof length: 1 steps
+[2026-03-15 06:50:16] [INFO]     Complexity: 19.0
+[2026-03-15 06:50:21] [INFO]   ✓ Proved: (0 = ((S(0) * (0 + 0)) * (S(0) + (y + w))))
+[2026-03-15 06:50:21] [INFO]     Proof length: 1 steps
+[2026-03-15 06:50:21] [INFO]     Complexity: 22.0
+[2026-03-15 06:50:29] [INFO]   ✓ Proved: ((((x + 0) * 0) * ((y + y) * (0 + 0))) = 0)
+[2026-03-15 06:50:29] [INFO]     Proof length: 1 steps
+[2026-03-15 06:50:29] [INFO]     Complexity: 22.0
+[2026-03-15 06:50:35] [INFO]   ✓ Proved: ((0 * y) = (((x + S(w)) * (y + 0)) * 0))
+[2026-03-15 06:50:35] [INFO]     Proof length: 1 steps
+[2026-03-15 06:50:35] [INFO]     Complexity: 23.0
+[2026-03-15 06:50:41] [INFO] Epoch 20, Cycle 300/1000: KB size = 81, Success rate = 1.29%, Epoch proofs = 33
+[2026-03-15 06:50:41] [INFO]   Online training step, loss: 0.7814
+[2026-03-15 06:50:58] [INFO]   ✓ Proved: (((0 * (w * 0)) * S(S(y))) = 0)
+[2026-03-15 06:50:58] [INFO]     Proof length: 1 steps
+[2026-03-15 06:50:58] [INFO]     Complexity: 18.0
+[2026-03-15 06:50:59] [INFO]   ✓ Proved: ((S(S(z)) * (0 * (y * 0))) = (0 * 0))
+[2026-03-15 06:50:59] [INFO]     Proof length: 1 steps
+[2026-03-15 06:50:59] [INFO]     Complexity: 20.0
+[2026-03-15 06:51:09] [INFO]   ✓ Proved: (((S(y) * (0 * 0)) * (y * 0)) = ((0 + 0) * (w + w)))
+[2026-03-15 06:51:09] [INFO]     Proof length: 1 steps
+[2026-03-15 06:51:09] [INFO]     Complexity: 25.0
+[2026-03-15 06:51:18] [INFO] Epoch 20, Cycle 400/1000: KB size = 84, Success rate = 1.25%, Epoch proofs = 36
+[2026-03-15 06:51:18] [INFO]   Online training step, loss: 0.7425
+[2026-03-15 06:51:20] [INFO]   ✓ Proved: ((0 + ((0 + 0) + (0 * w))) = (S(z) * (z * 0)))
+[2026-03-15 06:51:20] [INFO]     Proof length: 1 steps
+[2026-03-15 06:51:20] [INFO]     Complexity: 23.0
+[2026-03-15 06:51:53] [INFO]   ✓ Proved: (((y * 0) * (0 * w)) = ((0 + 0) + ((z + 0) * 0)))
+[2026-03-15 06:51:53] [INFO]     Proof length: 1 steps
+[2026-03-15 06:51:53] [INFO]     Complexity: 25.0
+[2026-03-15 06:51:57] [INFO] Epoch 20, Cycle 500/1000: KB size = 86, Success rate = 1.23%, Epoch proofs = 38
+[2026-03-15 06:51:58] [INFO] Checkpoint saved: epoch 19, cycle 500
+[2026-03-15 06:51:58] [INFO]   Online training step, loss: 0.7619
+[2026-03-15 06:52:01] [INFO]   ✓ Proved: (((0 * 0) * (0 * 0)) = (x * ((z + z) * (z * 0))))
+[2026-03-15 06:52:01] [INFO]     Proof length: 1 steps
+[2026-03-15 06:52:01] [INFO]     Complexity: 24.0
+[2026-03-15 06:52:17] [INFO]   ✓ Proved: ((0 * (y * (0 + w))) = ((0 * w) * (z * S(0))))
+[2026-03-15 06:52:17] [INFO]     Proof length: 1 steps
+[2026-03-15 06:52:17] [INFO]     Complexity: 24.0
+[2026-03-15 06:52:25] [INFO]   ✓ Proved: ((S(z) * 0) = ((0 + S(0)) * (0 * S(S(z)))))
+[2026-03-15 06:52:25] [INFO]     Proof length: 1 steps
+[2026-03-15 06:52:25] [INFO]     Complexity: 22.0
+[2026-03-15 06:52:28] [INFO]   ✓ Proved: ((((x * 0) * 0) * (z * 0)) = (0 * (w + S(w))))
+[2026-03-15 06:52:28] [INFO]     Proof length: 1 steps
+[2026-03-15 06:52:28] [INFO]     Complexity: 24.0
+[2026-03-15 06:52:39] [INFO] Epoch 20, Cycle 600/1000: KB size = 90, Success rate = 1.24%, Epoch proofs = 42
+[2026-03-15 06:52:39] [INFO]   Online training step, loss: 0.7459
+[2026-03-15 06:53:19] [INFO] Epoch 20, Cycle 700/1000: KB size = 90, Success rate = 1.19%, Epoch proofs = 42
+[2026-03-15 06:53:20] [INFO]   Online training step, loss: 0.7222
+[2026-03-15 06:53:23] [INFO]   ✓ Proved: (((y * (0 * x)) * ((y * w) * z)) = (0 * 0))
+[2026-03-15 06:53:23] [INFO]     Proof length: 1 steps
+[2026-03-15 06:53:23] [INFO]     Complexity: 24.0
+[2026-03-15 06:53:59] [INFO] Epoch 20, Cycle 800/1000: KB size = 91, Success rate = 1.15%, Epoch proofs = 43
+[2026-03-15 06:53:59] [INFO]   Online training step, loss: 0.7307
+[2026-03-15 06:54:07] [INFO]   ✓ Proved: (((S(y) * 0) * 0) = (0 * S(z)))
+[2026-03-15 06:54:07] [INFO]     Proof length: 1 steps
+[2026-03-15 06:54:07] [INFO]     Complexity: 18.0
+[2026-03-15 06:54:12] [INFO]   ✓ Proved: (S(((0 + 0) * (x + w))) = S(0))
+[2026-03-15 06:54:12] [INFO]     Proof length: 1 steps
+[2026-03-15 06:54:12] [INFO]     Complexity: 18.0
+[2026-03-15 06:54:13] [INFO]   ✓ Proved: ((S((0 * 0)) * 0) = (z * (S(w) * 0)))
+[2026-03-15 06:54:13] [INFO]     Proof length: 1 steps
+[2026-03-15 06:54:13] [INFO]     Complexity: 20.0
+[2026-03-15 06:54:41] [INFO]   ✓ Proved: ((S((0 * w)) * (y * (0 * 0))) = (0 * S(S(0))))
+[2026-03-15 06:54:41] [INFO]     Proof length: 1 steps
+[2026-03-15 06:54:41] [INFO]     Complexity: 23.0
+[2026-03-15 06:54:43] [INFO] Epoch 20, Cycle 900/1000: KB size = 95, Success rate = 1.13%, Epoch proofs = 47
+[2026-03-15 06:54:43] [INFO]   Online training step, loss: 0.7326
+[2026-03-15 06:55:08] [INFO]   ✓ Proved: (((0 + 0) * ((0 * 0) * (0 * S(0)))) = 0)
+[2026-03-15 06:55:08] [INFO]     Proof length: 1 steps
+[2026-03-15 06:55:08] [INFO]     Complexity: 20.0
+[2026-03-15 06:55:26] [INFO] 
+Epoch 20 completed in 385.59s
+[2026-03-15 06:55:26] [INFO] Proofs found: 48
+[2026-03-15 06:55:26] [INFO] Success rate: 4.80%
+[2026-03-15 06:55:26] [INFO] Knowledge base size: 96
+[2026-03-15 06:55:26] [INFO] 
+============================================================
+[2026-03-15 06:55:26] [INFO] Training completed!
+[2026-03-15 06:55:26] [INFO] ============================================================
+[2026-03-15 06:55:26] [INFO] Total time: 730.24s
+[2026-03-15 06:55:26] [INFO] Total conjectures generated: 29441
+[2026-03-15 06:55:26] [INFO] Total proofs attempted: 8756
+[2026-03-15 06:55:26] [INFO] Total proofs succeeded: 96
+[2026-03-15 06:55:26] [INFO] Overall success rate: 1.10%
+[2026-03-15 06:55:28] [INFO] Checkpoint saved: epoch 19, cycle 999
+[2026-03-15 06:55:28] [INFO] 
+============================================================
+[2026-03-15 06:55:28] [INFO] Final Statistics:
+[2026-03-15 06:55:28] [INFO] ============================================================
+[2026-03-15 06:55:28] [INFO] Knowledge base size: 96
+[2026-03-15 06:55:28] [INFO] Total proofs found: 96
+[2026-03-15 06:55:28] [INFO] Success rate: 1.10%
+[2026-03-15 06:55:28] [INFO] Average complexity: 19.479166666666668
+[2026-03-15 06:55:28] [INFO] 
+Training completed successfully!

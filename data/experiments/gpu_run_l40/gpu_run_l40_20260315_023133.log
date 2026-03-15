@@ -1,0 +1,40 @@
+[2026-03-15 02:31:33] [INFO] ============================================================
+[2026-03-15 02:31:34] [INFO] AutoConjecture Training Log
+[2026-03-15 02:31:34] [INFO] Started: 2026-03-15T02:31:34.013867
+[2026-03-15 02:31:34] [INFO] ============================================================
+
+[2026-03-15 02:31:34] [INFO] ============================================================
+[2026-03-15 02:31:34] [INFO] AutoConjecture Phase 2: Neural Generator Training
+[2026-03-15 02:31:34] [INFO] ============================================================
+[2026-03-15 02:31:34] [INFO] Configuration:
+[2026-03-15 02:31:34] [INFO]   Epochs: 20
+[2026-03-15 02:31:34] [INFO]   Cycles per epoch: 1000
+[2026-03-15 02:31:34] [INFO]   Conjectures per cycle: 20
+[2026-03-15 02:31:34] [INFO]   Model: d_model=512, heads=8, layers=8
+[2026-03-15 02:31:34] [INFO]   Device: cuda
+[2026-03-15 02:31:34] [INFO]   Curriculum: enabled
+[2026-03-15 02:31:34] [INFO]     Complexity: 2 -> 20
+[2026-03-15 02:31:34] [INFO]   Pretrain epochs: 10
+[2026-03-15 02:31:34] [INFO]   Random seed: 42
+[2026-03-15 02:31:34] [INFO] ============================================================
+
+[2026-03-15 02:31:37] [INFO] Starting Phase 2 neural training with config: NeuralTrainingConfig(num_epochs=20, cycles_per_epoch=1000, random_seed=42, conjectures_per_cycle=20, initial_complexity=2, final_complexity=20, d_model=512, nhead=8, num_layers=8, dropout=0.1, generator_lr=0.0001, generator_batch_size=32, generator_warmup_steps=500, use_curriculum=True, curriculum_progression='success_rate', success_threshold=0.3, max_proof_depth=50, max_proof_iterations=1000, pretrain_epochs=10, mixed_generation=True, neural_ratio=0.3, device='cuda', log_interval=100, checkpoint_interval=500)
+[2026-03-15 02:31:37] [INFO] Device: cuda
+[2026-03-15 02:31:37] [INFO] Model parameters: 25,252,881
+[2026-03-15 02:31:37] [INFO] 
+============================================================
+[2026-03-15 02:31:37] [INFO] Phase 1: Supervised Pretraining
+[2026-03-15 02:31:37] [INFO] ============================================================
+[2026-03-15 02:31:37] [INFO] Pretraining on 6 axioms and 0 existing theorems
+[2026-03-15 02:31:37] [INFO] Bootstrapping with axioms only
+[2026-03-15 02:31:39] [INFO] Pretraining completed
+[2026-03-15 02:31:39] [INFO] 
+============================================================
+[2026-03-15 02:31:39] [INFO] Phase 2: Curriculum Learning
+[2026-03-15 02:31:39] [INFO] ============================================================
+[2026-03-15 02:31:39] [INFO] 
+============================================================
+[2026-03-15 02:31:39] [INFO] Epoch 1/20
+[2026-03-15 02:31:39] [INFO] ============================================================
+[2026-03-15 02:31:40] [INFO] Epoch 1, Cycle 0/1000: KB size = 0, Success rate = 0.00%, Epoch proofs = 0, Complexity = 2, Temp = 0.50
+[2026-03-15 02:32:34] [INFO] Epoch 1, Cycle 100/1000: KB size = 0, Success rate = 0.00%, Epoch proofs = 0, Complexity = 2, Temp = 0.50

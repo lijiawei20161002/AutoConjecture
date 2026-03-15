@@ -289,7 +289,35 @@ class Theorem:
 
 ## Statistics
 
-### Typical Phase 2 Results (After 10 Epochs)
+### Actual Results: `gpu_run_l40_v2` (20 Epochs, NVIDIA L40, 2026-03-15)
+
+| Metric | Value |
+|--------|-------|
+| **Total Theorems Proven** | 865 |
+| **Average Complexity** | 20.46 |
+| **Overall Success Rate** | 1.66% |
+| **Training Time (GPU)** | 8426s (~2.3 hours) |
+| **Total Conjectures Generated** | 289,239 |
+| **Total Proofs Attempted** | 52,097 |
+
+#### Epoch-by-Epoch Proof Counts
+
+| Epoch | Proofs | Epoch | Proofs |
+|-------|--------|-------|--------|
+| 1  | 43 | 11 | 38 |
+| 2  | 51 | 12 | 43 |
+| 3  | 51 | 13 | 43 |
+| 4  | 40 | 14 | 51 |
+| 5  | 46 | 15 | 49 |
+| 6  | 47 | 16 | 43 |
+| 7  | 38 | 17 | 39 |
+| 8  | 37 | 18 | 38 |
+| 9  | 38 | 19 | 38 |
+| 10 | 51 | 20 | 41 |
+
+Range: 37–51 per epoch, average ~43.
+
+### Typical Phase 2 Results (After 10 Epochs, Projected)
 
 | Metric | Value |
 |--------|-------|
@@ -439,6 +467,6 @@ cat data/checkpoints/neural_epoch_9_cycle_500.json | jq '.metadata'
 
 ---
 
-**Last Updated**: 2026-02-02
-**Status**: Phase 2 Complete ✅
+**Last Updated**: 2026-03-15
+**Status**: Phase 2 Complete ✅ (gpu_run_l40_v2: 865 proofs, 20 epochs)
 **Next**: Phase 3 - RL-Based Prover

@@ -204,14 +204,27 @@ README.md                          (MODIFIED - Phase 2 completion notes)
 - Adaptive temperature scheduling
 - Filtering and sampling at current level
 
+## Actual Results: `gpu_run_l40_v2` (2026-03-15, NVIDIA L40)
+
+20-epoch run, 1000 cycles/epoch, d_model=512, 8 heads, 8 layers, no curriculum:
+
+| Metric | Value |
+|--------|-------|
+| **Total proofs** | 865 |
+| **Proofs/epoch** | 37–51 (avg ~43) |
+| **Overall success rate** | 1.66% |
+| **Average complexity** | 20.46 |
+| **Training time** | ~2.3 hours |
+| **Total conjectures generated** | 289,239 |
+
 ## Expected Improvements Over Phase 1
 
-| Metric | Phase 1 (Random) | Phase 2 (Neural) | Improvement |
-|--------|-----------------|------------------|-------------|
-| Success Rate | 2-5% | 10-30% | **4-6x** |
-| KB Growth Rate | 20-50/epoch | 100-200/epoch | **4-5x** |
-| Conjecture Quality | Random | Learned | **Qualitative** |
-| Adaptability | None | High | **New capability** |
+| Metric | Phase 1 (Random) | Phase 2 (Neural, projected) | Phase 2 (Actual) |
+|--------|-----------------|------------------------------|------------------|
+| Success Rate | 2-5% | 10-30% | 1.66% overall |
+| KB Growth Rate | 20-50/epoch | 100-200/epoch | ~43/epoch |
+| Conjecture Quality | Random | Learned | Learned |
+| Adaptability | None | High | High |
 
 ## How to Use
 
@@ -285,5 +298,6 @@ The foundation is set for Phase 3 (RL-based proving) and beyond!
 ---
 
 **Implementation Date**: January 22, 2026
+**Last Run**: March 15, 2026 (gpu_run_l40_v2 — 865 proofs, 20 epochs)
 **Status**: ✅ Complete
 **Next Phase**: Phase 3 - RL-Based Prover
