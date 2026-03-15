@@ -28,17 +28,19 @@ AutoConjecture/
 │   ├── logic/          # Formal logic system (terms, expressions, axioms, parser)
 │   ├── prover/         # Theorem prover (tactics, proof engine)
 │   ├── generation/     # Conjecture generation (random, neural, novelty)
-│   ├── models/         # Neural models (transformer, tokenizer, curriculum)
+│   ├── models/         # Neural models (transformer, tokenizer, curriculum, actor-critic)
 │   ├── knowledge/      # Knowledge base storage
-│   ├── training/       # Training loops (Phase 1 & 2)
+│   ├── training/       # Training loops (Phase 1, 2 & 3)
 │   ├── monitoring/     # Logging and metrics
 │   └── utils/          # Utilities
 ├── scripts/
 │   ├── train.py        # Phase 1 training script
-│   └── train_neural.py # Phase 2 training script
+│   ├── train_neural.py # Phase 2 training script
+│   └── train_phase3.py # Phase 3 training script
 ├── configs/
-│   ├── default.yaml    # Phase 1 configuration
-│   └── phase2_neural.yaml  # Phase 2 configuration
+│   ├── default.yaml        # Phase 1 configuration
+│   ├── phase2_neural.yaml  # Phase 2 configuration
+│   └── phase3_rl.yaml      # Phase 3 configuration
 ├── data/
 │   ├── checkpoints/    # Saved knowledge bases & models
 │   ├── logs/           # Training logs
@@ -46,6 +48,7 @@ AutoConjecture/
 ├── docs/               # Documentation (see docs/README.md)
 │   ├── getting-started/    # Quick start guides
 │   ├── phase2/            # Phase 2 documentation
+│   ├── phase3/            # Phase 3 documentation & experiment results
 │   ├── examples/          # Example theorems
 │   └── development/       # Development notes
 └── tests/              # Unit tests
@@ -58,6 +61,7 @@ Comprehensive documentation is available in the [`docs/`](docs/) directory:
 
 - **[Getting Started](docs/getting-started/)** - Quick start guides and tutorials
 - **[Phase 2](docs/phase2/)** - Neural generator documentation
+- **[Phase 3](docs/phase3/)** - RL-based prover documentation & experiment results
 - **[Examples](docs/examples/)** - Real theorem examples
 - **[Development](docs/development/)** - Technical notes
 
@@ -66,6 +70,7 @@ Comprehensive documentation is available in the [`docs/`](docs/) directory:
 - 🚀 [Quick Start Guide](docs/getting-started/quickstart.md)
 - 🧠 [Phase 2 Quick Start](docs/getting-started/quickstart-phase2.md)
 - 📊 [Phase 2 Data Documentation](docs/phase2/data-documentation.md)
+- 🤖 [Phase 3 Experiment Results](docs/phase3/experiment-results-phase3-a100-fixed.md)
 - 💡 [Demo Proofs](docs/examples/demo-proofs.md)
 
 ## Installation
@@ -148,11 +153,12 @@ Generates interesting conjectures:
 
 ### Neural Models (`src/models/`)
 
-Phase 2 neural components:
+Phase 2 & 3 neural components:
 - **Tokenizer**: Converts logical expressions to token sequences
 - **Transformer Generator**: Decoder-only transformer for autoregressive generation
 - **Generator Trainer**: Supervised and reinforcement learning for the generator
 - **Curriculum Scheduler**: Manages progressive difficulty increase
+- **Actor-Critic (Phase 3)**: Transformer encoder + policy/value heads for tactic selection
 
 ### Training Loop (`src/training/`)
 
@@ -215,7 +221,7 @@ The system tracks:
 - Complexity distribution
 - Success rate over time
 
-## Current Phase: Phase 2 (Neural Generator) ✅
+## Current Phase: Phase 3 (RL-Based Prover) ✅
 
 **Phase 1 (MVP)** - Complete:
 - ✅ Complete formal logic system
@@ -233,7 +239,15 @@ The system tracks:
 - ✅ Online learning from new proofs
 - ✅ Adaptive temperature scheduling
 
-See **[PHASE2_NEURAL.md](PHASE2_NEURAL.md)** for complete Phase 2 documentation.
+**Phase 3 (RL-Based Prover)** - Complete:
+- ✅ Actor-critic policy network (transformer encoder + policy/value heads)
+- ✅ PPO training for tactic selection
+- ✅ Behavioral cloning warmup from heuristic prover
+- ✅ Heuristic fallback for hard conjectures
+- ✅ Experience replay from successful proofs
+- ✅ Joint training with neural generator
+
+See **[Phase 3 Experiment Results](docs/phase3/experiment-results-phase3-a100-fixed.md)** for the full A100 training run (20 epochs, ~60 min, +35 new theorems).
 
 ### Quick Start - Phase 2
 
@@ -242,17 +256,14 @@ Train with neural generator:
 python3 scripts/train_neural.py --device cuda  # Use CPU if no GPU
 ```
 
+### Quick Start - Phase 3
+
+Train with RL-based prover (requires GPU recommended):
+```bash
+python3 scripts/train_phase3.py --device cuda
+```
+
 ## Future Phases
-
-### Phase 3: RL-Based Prover
-- Replace search-based prover with policy network
-- PPO training for tactic selection
-- Experience replay from successful proofs
-
-### Phase 3: RL-Based Prover
-- Replace search-based prover with policy network
-- PPO training for tactic selection
-- Experience replay from successful proofs
 
 ### Phase 4: Full Monitoring
 - Visualization of training curves
@@ -268,17 +279,17 @@ python3 scripts/train_neural.py --device cuda  # Use CPU if no GPU
 
 ### Computational Requirements
 
-**Current (Phase 1 - CPU only)**:
+**Phase 1 (CPU only)**:
 - CPU: Multi-core recommended (4-8 cores)
 - RAM: 8-16GB
 - Storage: 10-20GB for checkpoints
 - Training time: Initial results in 2-4 hours
 
-**Future (with neural networks)**:
-- GPU: NVIDIA GPU with 8GB+ VRAM recommended
+**Phase 2 & 3 (Neural + RL)**:
+- GPU: NVIDIA GPU with 8GB+ VRAM recommended (Phase 3 run used A100-SXM4-40GB)
 - RAM: 16-32GB
 - Storage: 50-100GB
-- Training time: Results in hours, convergence in days
+- Training time: Phase 3 — 20 epochs in ~60 min on A100; longer on consumer GPUs
 
 ### Dependencies
 
@@ -286,11 +297,7 @@ Core:
 - Python 3.9+
 - PyYAML (configuration)
 - pytest (testing)
-
-Future:
-- PyTorch (neural networks)
-- Transformers (models)
-- Matplotlib/Plotly (visualization)
+- PyTorch (neural networks — Phase 2 & 3)
 
 ## Development
 
