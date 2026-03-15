@@ -1,0 +1,88 @@
+# AutoConjecture Phase 3: RL-Based Prover Configuration
+# A100 GPU (40GB) - optimized settings
+
+system:
+  random_seed: 42
+  device: cuda
+
+# Training schedule
+training:
+  num_epochs: 20
+  cycles_per_epoch: 500
+  conjectures_per_cycle: 10
+
+# Conjecture generation
+generation:
+  neural_ratio: 0.5         # 50% neural, 50% random
+  initial_complexity: 2
+  final_complexity: 15
+
+# Curriculum learning
+curriculum:
+  enabled: true
+  success_threshold: 0.25   # Advance stage when success rate > 25%
+  initial_temperature: 1.2
+  final_temperature: 0.7
+
+# RL proof engine
+rl_prover:
+  max_proof_steps: 30        # Max tactic steps per episode
+  update_interval: 50        # PPO update every N conjectures
+  bc_warmup_cycles: 200      # Behavioral cloning warm-up cycles
+  use_heuristic_fallback: true
+
+# State encoder (Transformer encoder for proof states)
+state_encoder:
+  d_model: 256
+  nhead: 4
+  num_layers: 3
+  dropout: 0.1
+  max_seq_len: 256
+
+# Actor-Critic network
+actor_critic:
+  hidden_dim: 256
+
+# PPO hyperparameters (Schulman et al., 2017)
+ppo:
+  learning_rate: 0.0003
+  clip_epsilon: 0.2
+  value_coef: 0.5
+  entropy_coef: 0.01
+  ppo_epochs: 4
+  mini_batch_size: 64
+  gamma: 0.99
+  gae_lambda: 0.95
+  max_grad_norm: 0.5
+  target_kl: 0.05
+
+# Reward structure
+rewards:
+  success: 1.0
+  step: -0.05
+  progress_coeff: 0.02
+  timeout: -0.5
+  stuck: -0.1
+
+# Neural generator (Phase 2 architecture)
+generator:
+  d_model: 256
+  nhead: 8
+  num_layers: 6
+  learning_rate: 0.0001
+  batch_size: 32
+  warmup_steps: 500
+  pretrain_epochs: 3
+  update_interval: 100       # Online update every N cycles
+
+# Heuristic prover (fallback)
+heuristic_prover:
+  max_depth: 50
+  max_iterations: 500
+
+# Checkpointing and logging
+monitoring:
+  log_interval: 50
+  checkpoint_interval: 500
+  experiment_name: phase3_a100
+  checkpoint_dir: data/checkpoints

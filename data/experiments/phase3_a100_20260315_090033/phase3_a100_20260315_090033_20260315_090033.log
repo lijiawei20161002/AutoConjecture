@@ -1,0 +1,307 @@
+[2026-03-15 09:00:33] [INFO] ============================================================
+[2026-03-15 09:00:33] [INFO] AutoConjecture Training Log
+[2026-03-15 09:00:33] [INFO] Started: 2026-03-15T09:00:33.721197
+[2026-03-15 09:00:33] [INFO] ============================================================
+
+[2026-03-15 09:00:33] [INFO] ======================================================================
+[2026-03-15 09:00:33] [INFO] AutoConjecture Phase 3: RL-Based Prover
+[2026-03-15 09:00:33] [INFO] Started: 2026-03-15T09:00:33.721308
+[2026-03-15 09:00:33] [INFO] Device: cuda
+[2026-03-15 09:00:33] [INFO] GPU: NVIDIA A100-SXM4-40GB
+[2026-03-15 09:00:33] [INFO] GPU memory: 42.4 GB
+[2026-03-15 09:00:33] [INFO] ======================================================================
+[2026-03-15 09:00:33] [INFO] 
+Configuration:
+[2026-03-15 09:00:33] [INFO]   num_epochs: 20
+[2026-03-15 09:00:33] [INFO]   cycles_per_epoch: 500
+[2026-03-15 09:00:33] [INFO]   conjectures_per_cycle: 10
+[2026-03-15 09:00:33] [INFO]   random_seed: 42
+[2026-03-15 09:00:33] [INFO]   initial_complexity: 6
+[2026-03-15 09:00:33] [INFO]   final_complexity: 15
+[2026-03-15 09:00:33] [INFO]   neural_ratio: 0.5
+[2026-03-15 09:00:33] [INFO]   use_curriculum: True
+[2026-03-15 09:00:33] [INFO]   success_threshold: 0.25
+[2026-03-15 09:00:33] [INFO]   max_proof_steps: 30
+[2026-03-15 09:00:33] [INFO]   update_interval: 50
+[2026-03-15 09:00:33] [INFO]   encoder_d_model: 256
+[2026-03-15 09:00:33] [INFO]   encoder_nhead: 4
+[2026-03-15 09:00:33] [INFO]   encoder_num_layers: 3
+[2026-03-15 09:00:33] [INFO]   encoder_dropout: 0.1
+[2026-03-15 09:00:33] [INFO]   ac_hidden_dim: 256
+[2026-03-15 09:00:33] [INFO]   ppo_clip_epsilon: 0.2
+[2026-03-15 09:00:33] [INFO]   ppo_value_coef: 0.5
+[2026-03-15 09:00:33] [INFO]   ppo_entropy_coef: 0.01
+[2026-03-15 09:00:33] [INFO]   ppo_epochs: 4
+[2026-03-15 09:00:33] [INFO]   ppo_mini_batch_size: 64
+[2026-03-15 09:00:33] [INFO]   ppo_gamma: 0.99
+[2026-03-15 09:00:33] [INFO]   ppo_gae_lambda: 0.95
+[2026-03-15 09:00:33] [INFO]   ppo_lr: 0.0003
+[2026-03-15 09:00:33] [INFO]   ppo_max_grad_norm: 0.5
+[2026-03-15 09:00:33] [INFO]   ppo_target_kl: 0.05
+[2026-03-15 09:00:33] [INFO]   gen_d_model: 256
+[2026-03-15 09:00:33] [INFO]   gen_nhead: 8
+[2026-03-15 09:00:33] [INFO]   gen_num_layers: 6
+[2026-03-15 09:00:33] [INFO]   gen_lr: 0.0001
+[2026-03-15 09:00:33] [INFO]   gen_batch_size: 32
+[2026-03-15 09:00:33] [INFO]   gen_warmup_steps: 500
+[2026-03-15 09:00:33] [INFO]   gen_pretrain_epochs: 3
+[2026-03-15 09:00:33] [INFO]   gen_update_interval: 100
+[2026-03-15 09:00:33] [INFO]   use_heuristic_fallback: True
+[2026-03-15 09:00:33] [INFO]   heuristic_max_depth: 50
+[2026-03-15 09:00:33] [INFO]   heuristic_max_iter: 500
+[2026-03-15 09:00:33] [INFO]   bc_warmup_cycles: 200
+[2026-03-15 09:00:33] [INFO]   device: cuda
+[2026-03-15 09:00:33] [INFO]   checkpoint_dir: data/checkpoints
+[2026-03-15 09:00:33] [INFO]   experiment_name: phase3_a100
+[2026-03-15 09:00:33] [INFO]   checkpoint_interval: 500
+[2026-03-15 09:00:33] [INFO]   log_interval: 50
+[2026-03-15 09:00:33] [INFO]   kb_checkpoint: data/checkpoints/neural_epoch_19_cycle_999.json
+[2026-03-15 09:00:33] [INFO] 
+[2026-03-15 09:00:33] [INFO] Phase 3 | device=cuda | experiment=phase3_a100
+[2026-03-15 09:00:33] [INFO]   Config: epochs=20, cycles/epoch=500
+[2026-03-15 09:00:33] [INFO]   Loading KB from data/checkpoints/neural_epoch_19_cycle_999.json...
+[2026-03-15 09:00:33] [INFO]   Loaded 96 theorem statements from KB checkpoint.
+[2026-03-15 09:00:36] [INFO]   Parameters: encoder=2,439,936  actor_critic=199,045  generator=6,329,361
+[2026-03-15 09:00:36] [INFO] 
+======================================================================
+[2026-03-15 09:00:36] [INFO] Phase 3: RL-Based Prover Training (PPO)
+[2026-03-15 09:00:36] [INFO] ======================================================================
+[2026-03-15 09:00:36] [INFO] 
+[Pre-training generator on existing knowledge base...]
+[2026-03-15 09:00:37] [INFO]   Pre-training done.
+[2026-03-15 09:00:37] [INFO] 
+======================================================================
+[2026-03-15 09:00:37] [INFO] Epoch 1/20
+[2026-03-15 09:00:37] [INFO] ======================================================================
+[2026-03-15 09:00:37] [INFO] Epoch 1, Cycle 0/500: KB=0  RL_rate=0.00%  H_rate=0.00%  epoch_rl=0  epoch_h=0  ppo_updates=0  complexity=6
+[2026-03-15 09:00:50] [INFO] Epoch 1, Cycle 50/500: KB=2  RL_rate=0.00%  H_rate=7.14%  epoch_rl=0  epoch_h=2  ppo_updates=0  complexity=6
+[2026-03-15 09:01:03] [INFO] Epoch 1, Cycle 100/500: KB=2  RL_rate=0.00%  H_rate=5.41%  epoch_rl=0  epoch_h=2  ppo_updates=0  complexity=6
+[2026-03-15 09:01:15] [INFO] Epoch 1, Cycle 150/500: KB=2  RL_rate=0.00%  H_rate=4.35%  epoch_rl=0  epoch_h=2  ppo_updates=0  complexity=6
+[2026-03-15 09:01:28] [INFO] Epoch 1, Cycle 200/500: KB=2  RL_rate=0.00%  H_rate=3.85%  epoch_rl=0  epoch_h=2  ppo_updates=0  complexity=6
+[2026-03-15 09:01:41] [INFO] Epoch 1, Cycle 250/500: KB=2  RL_rate=0.00%  H_rate=3.77%  epoch_rl=0  epoch_h=2  ppo_updates=0  complexity=6
+[2026-03-15 09:01:53] [INFO] Epoch 1, Cycle 300/500: KB=2  RL_rate=0.00%  H_rate=3.45%  epoch_rl=0  epoch_h=2  ppo_updates=0  complexity=6
+[2026-03-15 09:02:05] [INFO] Epoch 1, Cycle 350/500: KB=2  RL_rate=0.00%  H_rate=3.08%  epoch_rl=0  epoch_h=2  ppo_updates=0  complexity=6
+[2026-03-15 09:02:20] [INFO] Epoch 1, Cycle 400/500: KB=2  RL_rate=0.00%  H_rate=2.99%  epoch_rl=0  epoch_h=2  ppo_updates=0  complexity=6
+[2026-03-15 09:02:32] [INFO] Epoch 1, Cycle 450/500: KB=2  RL_rate=0.00%  H_rate=2.90%  epoch_rl=0  epoch_h=2  ppo_updates=0  complexity=6
+[2026-03-15 09:02:44] [INFO]   Checkpoint saved: epoch_0_cycle_499
+[2026-03-15 09:02:44] [INFO] 
+Epoch 1 done in 127.2s | RL proofs: 0 | Heuristic proofs: 2 | KB size: 2
+[2026-03-15 09:02:44] [INFO] 
+======================================================================
+[2026-03-15 09:02:44] [INFO] Epoch 2/20
+[2026-03-15 09:02:44] [INFO] ======================================================================
+[2026-03-15 09:02:44] [INFO] Epoch 2, Cycle 0/500: KB=2  RL_rate=0.00%  H_rate=2.78%  epoch_rl=0  epoch_h=0  ppo_updates=0  complexity=6
+[2026-03-15 09:02:57] [INFO] Epoch 2, Cycle 50/500: KB=4  RL_rate=0.00%  H_rate=4.12%  epoch_rl=0  epoch_h=2  ppo_updates=0  complexity=6
+[2026-03-15 09:03:10] [INFO] Epoch 2, Cycle 100/500: KB=4  RL_rate=0.00%  H_rate=3.85%  epoch_rl=0  epoch_h=2  ppo_updates=0  complexity=6
+[2026-03-15 09:03:22] [INFO] Epoch 2, Cycle 150/500: KB=4  RL_rate=0.00%  H_rate=3.51%  epoch_rl=0  epoch_h=2  ppo_updates=0  complexity=6
+[2026-03-15 09:03:35] [INFO] Epoch 2, Cycle 200/500: KB=4  RL_rate=0.00%  H_rate=3.39%  epoch_rl=0  epoch_h=2  ppo_updates=0  complexity=6
+[2026-03-15 09:03:47] [INFO] Epoch 2, Cycle 250/500: KB=4  RL_rate=0.00%  H_rate=3.25%  epoch_rl=0  epoch_h=2  ppo_updates=0  complexity=6
+[2026-03-15 09:04:00] [INFO] Epoch 2, Cycle 300/500: KB=4  RL_rate=0.00%  H_rate=3.05%  epoch_rl=0  epoch_h=2  ppo_updates=0  complexity=6
+[2026-03-15 09:04:12] [INFO] Epoch 2, Cycle 350/500: KB=4  RL_rate=0.00%  H_rate=2.99%  epoch_rl=0  epoch_h=2  ppo_updates=0  complexity=6
+[2026-03-15 09:04:25] [INFO] Epoch 2, Cycle 400/500: KB=4  RL_rate=0.00%  H_rate=2.90%  epoch_rl=0  epoch_h=2  ppo_updates=0  complexity=6
+[2026-03-15 09:04:36] [INFO] Epoch 2, Cycle 450/500: KB=4  RL_rate=0.00%  H_rate=2.82%  epoch_rl=0  epoch_h=2  ppo_updates=0  complexity=6
+[2026-03-15 09:04:50] [INFO]   Checkpoint saved: epoch_1_cycle_499
+[2026-03-15 09:04:50] [INFO] 
+Epoch 2 done in 125.5s | RL proofs: 0 | Heuristic proofs: 2 | KB size: 4
+[2026-03-15 09:04:50] [INFO] 
+======================================================================
+[2026-03-15 09:04:50] [INFO] Epoch 3/20
+[2026-03-15 09:04:50] [INFO] ======================================================================
+[2026-03-15 09:04:50] [INFO] Epoch 3, Cycle 0/500: KB=4  RL_rate=0.00%  H_rate=2.78%  epoch_rl=0  epoch_h=0  ppo_updates=0  complexity=6
+[2026-03-15 09:05:04] [INFO] Epoch 3, Cycle 50/500: KB=5  RL_rate=0.00%  H_rate=2.92%  epoch_rl=0  epoch_h=1  ppo_updates=0  complexity=6
+[2026-03-15 09:05:15] [INFO] Epoch 3, Cycle 100/500: KB=6  RL_rate=0.00%  H_rate=3.24%  epoch_rl=0  epoch_h=2  ppo_updates=0  complexity=6
+[2026-03-15 09:05:27] [INFO] Epoch 3, Cycle 150/500: KB=6  RL_rate=0.00%  H_rate=3.08%  epoch_rl=0  epoch_h=2  ppo_updates=0  complexity=6
+[2026-03-15 09:05:41] [INFO] Epoch 3, Cycle 200/500: KB=6  RL_rate=0.00%  H_rate=2.96%  epoch_rl=0  epoch_h=2  ppo_updates=1  complexity=6
+[2026-03-15 09:05:55] [INFO] Epoch 3, Cycle 250/500: KB=6  RL_rate=0.00%  H_rate=2.84%  epoch_rl=0  epoch_h=2  ppo_updates=1  complexity=6
+[2026-03-15 09:06:08] [INFO] Epoch 3, Cycle 300/500: KB=6  RL_rate=0.00%  H_rate=2.75%  epoch_rl=0  epoch_h=2  ppo_updates=1  complexity=6
+[2026-03-15 09:06:22] [INFO] Epoch 3, Cycle 350/500: KB=6  RL_rate=0.00%  H_rate=2.69%  epoch_rl=0  epoch_h=2  ppo_updates=1  complexity=6
+[2026-03-15 09:06:35] [INFO] Epoch 3, Cycle 400/500: KB=6  RL_rate=0.00%  H_rate=2.65%  epoch_rl=0  epoch_h=2  ppo_updates=1  complexity=6
+[2026-03-15 09:06:48] [INFO] Epoch 3, Cycle 450/500: KB=6  RL_rate=0.00%  H_rate=2.62%  epoch_rl=0  epoch_h=2  ppo_updates=1  complexity=6
+[2026-03-15 09:07:02] [INFO]   Checkpoint saved: epoch_2_cycle_499
+[2026-03-15 09:07:02] [INFO] 
+Epoch 3 done in 132.4s | RL proofs: 0 | Heuristic proofs: 2 | KB size: 6
+[2026-03-15 09:07:02] [INFO] 
+======================================================================
+[2026-03-15 09:07:02] [INFO] Epoch 4/20
+[2026-03-15 09:07:02] [INFO] ======================================================================
+[2026-03-15 09:07:02] [INFO] Epoch 4, Cycle 0/500: KB=6  RL_rate=0.00%  H_rate=2.55%  epoch_rl=0  epoch_h=0  ppo_updates=1  complexity=6
+[2026-03-15 09:07:21] [INFO] Epoch 4, Cycle 50/500: KB=7  RL_rate=0.37%  H_rate=2.24%  epoch_rl=1  epoch_h=0  ppo_updates=2  complexity=6
+[2026-03-15 09:07:35] [INFO] Epoch 4, Cycle 100/500: KB=8  RL_rate=0.71%  H_rate=2.13%  epoch_rl=2  epoch_h=0  ppo_updates=2  complexity=6
+[2026-03-15 09:07:48] [INFO] Epoch 4, Cycle 150/500: KB=8  RL_rate=0.69%  H_rate=2.08%  epoch_rl=2  epoch_h=0  ppo_updates=2  complexity=6
+[2026-03-15 09:08:01] [INFO] Epoch 4, Cycle 200/500: KB=9  RL_rate=1.01%  H_rate=2.03%  epoch_rl=3  epoch_h=0  ppo_updates=2  complexity=6
+[2026-03-15 09:08:15] [INFO] Epoch 4, Cycle 250/500: KB=9  RL_rate=1.01%  H_rate=2.01%  epoch_rl=3  epoch_h=0  ppo_updates=2  complexity=6
+[2026-03-15 09:08:32] [INFO] Epoch 4, Cycle 300/500: KB=9  RL_rate=0.99%  H_rate=1.97%  epoch_rl=3  epoch_h=0  ppo_updates=3  complexity=6
+[2026-03-15 09:08:45] [INFO] Epoch 4, Cycle 350/500: KB=9  RL_rate=0.97%  H_rate=1.94%  epoch_rl=3  epoch_h=0  ppo_updates=3  complexity=6
+[2026-03-15 09:08:57] [INFO] Epoch 4, Cycle 400/500: KB=9  RL_rate=0.96%  H_rate=1.93%  epoch_rl=3  epoch_h=0  ppo_updates=3  complexity=6
+[2026-03-15 09:09:11] [INFO] Epoch 4, Cycle 450/500: KB=9  RL_rate=0.95%  H_rate=1.89%  epoch_rl=3  epoch_h=0  ppo_updates=3  complexity=6
+[2026-03-15 09:09:24] [INFO]   Checkpoint saved: epoch_3_cycle_499
+[2026-03-15 09:09:24] [INFO] 
+Epoch 4 done in 141.6s | RL proofs: 3 | Heuristic proofs: 0 | KB size: 9
+[2026-03-15 09:09:24] [INFO] 
+======================================================================
+[2026-03-15 09:09:24] [INFO] Epoch 5/20
+[2026-03-15 09:09:24] [INFO] ======================================================================
+[2026-03-15 09:09:24] [INFO] Epoch 5, Cycle 0/500: KB=9  RL_rate=0.94%  H_rate=1.88%  epoch_rl=0  epoch_h=0  ppo_updates=3  complexity=6
+[2026-03-15 09:09:38] [INFO] Epoch 5, Cycle 50/500: KB=12  RL_rate=1.74%  H_rate=1.74%  epoch_rl=3  epoch_h=0  ppo_updates=3  complexity=6
+[2026-03-15 09:09:54] [INFO]   [Generator update] loss=3.1971
+[2026-03-15 09:09:54] [INFO] Epoch 5, Cycle 100/500: KB=12  RL_rate=1.67%  H_rate=1.67%  epoch_rl=3  epoch_h=0  ppo_updates=4  complexity=6
+[2026-03-15 09:10:06] [INFO] Epoch 5, Cycle 150/500: KB=12  RL_rate=1.62%  H_rate=1.62%  epoch_rl=3  epoch_h=0  ppo_updates=4  complexity=6
+[2026-03-15 09:10:21] [INFO]   [Generator update] loss=3.2248
+[2026-03-15 09:10:21] [INFO] Epoch 5, Cycle 200/500: KB=12  RL_rate=1.58%  H_rate=1.58%  epoch_rl=3  epoch_h=0  ppo_updates=4  complexity=6
+[2026-03-15 09:10:35] [INFO] Epoch 5, Cycle 250/500: KB=12  RL_rate=1.56%  H_rate=1.56%  epoch_rl=3  epoch_h=0  ppo_updates=4  complexity=6
+[2026-03-15 09:10:47] [INFO]   [Generator update] loss=3.1918
+[2026-03-15 09:10:48] [INFO] Epoch 5, Cycle 300/500: KB=12  RL_rate=1.55%  H_rate=1.55%  epoch_rl=3  epoch_h=0  ppo_updates=4  complexity=6
+[2026-03-15 09:11:02] [INFO] Epoch 5, Cycle 350/500: KB=12  RL_rate=1.53%  H_rate=1.53%  epoch_rl=3  epoch_h=0  ppo_updates=4  complexity=6
+[2026-03-15 09:11:15] [INFO]   [Generator update] loss=3.2379
+[2026-03-15 09:11:16] [INFO] Epoch 5, Cycle 400/500: KB=12  RL_rate=1.52%  H_rate=1.52%  epoch_rl=3  epoch_h=0  ppo_updates=4  complexity=6
+[2026-03-15 09:11:29] [INFO] Epoch 5, Cycle 450/500: KB=12  RL_rate=1.50%  H_rate=1.50%  epoch_rl=3  epoch_h=0  ppo_updates=4  complexity=6
+[2026-03-15 09:11:39] [INFO]   [PPO #5] pol_loss=-0.0109  val_loss=0.5963  entropy=1.2262  kl=0.0138
+[2026-03-15 09:11:45] [INFO]   [Generator update] loss=3.1469
+[2026-03-15 09:11:46] [INFO]   Checkpoint saved: epoch_4_cycle_499
+[2026-03-15 09:11:46] [INFO] 
+Epoch 5 done in 141.9s | RL proofs: 3 | Heuristic proofs: 0 | KB size: 12
+[2026-03-15 09:11:46] [INFO] 
+======================================================================
+[2026-03-15 09:11:46] [INFO] Epoch 6/20
+[2026-03-15 09:11:46] [INFO] ======================================================================
+[2026-03-15 09:11:46] [INFO] Epoch 6, Cycle 0/500: KB=12  RL_rate=1.49%  H_rate=1.49%  epoch_rl=0  epoch_h=0  ppo_updates=5  complexity=6
+[2026-03-15 09:12:00] [INFO] Epoch 6, Cycle 50/500: KB=12  RL_rate=1.38%  H_rate=1.38%  epoch_rl=0  epoch_h=0  ppo_updates=5  complexity=6
+[2026-03-15 09:12:13] [INFO]   [Generator update] loss=3.1001
+[2026-03-15 09:12:13] [INFO] Epoch 6, Cycle 100/500: KB=14  RL_rate=1.77%  H_rate=1.33%  epoch_rl=2  epoch_h=0  ppo_updates=5  complexity=6
+[2026-03-15 09:12:28] [INFO] Epoch 6, Cycle 150/500: KB=14  RL_rate=1.72%  H_rate=1.29%  epoch_rl=2  epoch_h=0  ppo_updates=6  complexity=6
+[2026-03-15 09:12:40] [INFO]   [Generator update] loss=3.1607
+[2026-03-15 09:12:40] [INFO] Epoch 6, Cycle 200/500: KB=14  RL_rate=1.69%  H_rate=1.27%  epoch_rl=2  epoch_h=0  ppo_updates=6  complexity=6
+[2026-03-15 09:12:54] [INFO] Epoch 6, Cycle 250/500: KB=14  RL_rate=1.63%  H_rate=1.22%  epoch_rl=2  epoch_h=0  ppo_updates=6  complexity=6
+[2026-03-15 09:13:08] [INFO]   [Generator update] loss=3.1625
+[2026-03-15 09:13:11] [INFO] Epoch 6, Cycle 300/500: KB=15  RL_rate=1.79%  H_rate=1.20%  epoch_rl=3  epoch_h=0  ppo_updates=7  complexity=6
+[2026-03-15 09:13:23] [INFO] Epoch 6, Cycle 350/500: KB=15  RL_rate=1.77%  H_rate=1.18%  epoch_rl=3  epoch_h=0  ppo_updates=7  complexity=6
+[2026-03-15 09:13:34] [INFO]   [Generator update] loss=3.0833
+[2026-03-15 09:13:35] [INFO] Epoch 6, Cycle 400/500: KB=15  RL_rate=1.75%  H_rate=1.17%  epoch_rl=3  epoch_h=0  ppo_updates=7  complexity=6
+[2026-03-15 09:13:46] [INFO] Epoch 6, Cycle 450/500: KB=15  RL_rate=1.74%  H_rate=1.16%  epoch_rl=3  epoch_h=0  ppo_updates=7  complexity=6
+[2026-03-15 09:13:58] [INFO]   [Generator update] loss=3.0906
+[2026-03-15 09:13:59] [INFO]   Checkpoint saved: epoch_5_cycle_499
+[2026-03-15 09:13:59] [INFO] 
+Epoch 6 done in 133.1s | RL proofs: 3 | Heuristic proofs: 0 | KB size: 15
+[2026-03-15 09:13:59] [INFO] 
+======================================================================
+[2026-03-15 09:13:59] [INFO] Epoch 7/20
+[2026-03-15 09:13:59] [INFO] ======================================================================
+[2026-03-15 09:13:59] [INFO] Epoch 7, Cycle 0/500: KB=15  RL_rate=1.73%  H_rate=1.15%  epoch_rl=0  epoch_h=0  ppo_updates=7  complexity=6
+[2026-03-15 09:14:12] [INFO] Epoch 7, Cycle 50/500: KB=15  RL_rate=1.64%  H_rate=1.09%  epoch_rl=0  epoch_h=0  ppo_updates=7  complexity=6
+[2026-03-15 09:14:29] [INFO]   [Generator update] loss=3.0872
+[2026-03-15 09:14:29] [INFO] Epoch 7, Cycle 100/500: KB=16  RL_rate=1.77%  H_rate=1.06%  epoch_rl=1  epoch_h=0  ppo_updates=8  complexity=6
+[2026-03-15 09:14:41] [INFO] Epoch 7, Cycle 150/500: KB=16  RL_rate=1.73%  H_rate=1.04%  epoch_rl=1  epoch_h=0  ppo_updates=8  complexity=6
+[2026-03-15 09:14:54] [INFO]   [Generator update] loss=3.0543
+[2026-03-15 09:14:54] [INFO] Epoch 7, Cycle 200/500: KB=17  RL_rate=1.88%  H_rate=1.03%  epoch_rl=2  epoch_h=0  ppo_updates=8  complexity=6
+[2026-03-15 09:15:05] [INFO] Epoch 7, Cycle 250/500: KB=17  RL_rate=1.87%  H_rate=1.02%  epoch_rl=2  epoch_h=0  ppo_updates=8  complexity=6
+[2026-03-15 09:15:16] [INFO]   [Generator update] loss=3.0352
+[2026-03-15 09:15:16] [INFO] Epoch 7, Cycle 300/500: KB=17  RL_rate=1.85%  H_rate=1.01%  epoch_rl=2  epoch_h=0  ppo_updates=8  complexity=6
+[2026-03-15 09:15:28] [INFO] Epoch 7, Cycle 350/500: KB=17  RL_rate=1.83%  H_rate=1.00%  epoch_rl=2  epoch_h=0  ppo_updates=8  complexity=6
+[2026-03-15 09:15:43] [INFO]   [Generator update] loss=3.0111
+[2026-03-15 09:15:43] [INFO] Epoch 7, Cycle 400/500: KB=17  RL_rate=1.82%  H_rate=1.00%  epoch_rl=2  epoch_h=0  ppo_updates=9  complexity=6
+[2026-03-15 09:15:53] [INFO] Epoch 7, Cycle 450/500: KB=17  RL_rate=1.82%  H_rate=0.99%  epoch_rl=2  epoch_h=0  ppo_updates=9  complexity=6
+[2026-03-15 09:16:04] [INFO]   [Generator update] loss=2.9742
+[2026-03-15 09:16:04] [INFO]   Checkpoint saved: epoch_6_cycle_499
+[2026-03-15 09:16:04] [INFO] 
+Epoch 7 done in 125.2s | RL proofs: 2 | Heuristic proofs: 0 | KB size: 17
+[2026-03-15 09:16:04] [INFO] 
+======================================================================
+[2026-03-15 09:16:04] [INFO] Epoch 8/20
+[2026-03-15 09:16:04] [INFO] ======================================================================
+[2026-03-15 09:16:04] [INFO] Epoch 8, Cycle 0/500: KB=17  RL_rate=1.80%  H_rate=0.98%  epoch_rl=0  epoch_h=0  ppo_updates=9  complexity=6
+[2026-03-15 09:16:17] [INFO] Epoch 8, Cycle 50/500: KB=18  RL_rate=1.87%  H_rate=0.94%  epoch_rl=1  epoch_h=0  ppo_updates=9  complexity=6
+[2026-03-15 09:16:28] [INFO]   [PPO #10] pol_loss=-0.0029  val_loss=0.4530  entropy=0.8542  kl=0.0106
+[2026-03-15 09:16:32] [INFO]   [Generator update] loss=2.9308
+[2026-03-15 09:16:32] [INFO] Epoch 8, Cycle 100/500: KB=18  RL_rate=1.82%  H_rate=0.91%  epoch_rl=1  epoch_h=0  ppo_updates=10  complexity=6
+[2026-03-15 09:16:45] [INFO] Epoch 8, Cycle 150/500: KB=18  RL_rate=1.78%  H_rate=0.89%  epoch_rl=1  epoch_h=0  ppo_updates=10  complexity=6
+[2026-03-15 09:16:55] [INFO]   [Generator update] loss=2.9059
+[2026-03-15 09:16:55] [INFO] Epoch 8, Cycle 200/500: KB=19  RL_rate=1.90%  H_rate=0.87%  epoch_rl=2  epoch_h=0  ppo_updates=10  complexity=6
+[2026-03-15 09:17:06] [INFO] Epoch 8, Cycle 250/500: KB=19  RL_rate=1.88%  H_rate=0.87%  epoch_rl=2  epoch_h=0  ppo_updates=10  complexity=6
+[2026-03-15 09:17:16] [INFO]   [Generator update] loss=2.9453
+[2026-03-15 09:17:16] [INFO] Epoch 8, Cycle 300/500: KB=19  RL_rate=1.87%  H_rate=0.86%  epoch_rl=2  epoch_h=0  ppo_updates=10  complexity=6
+[2026-03-15 09:17:26] [INFO] Epoch 8, Cycle 350/500: KB=19  RL_rate=1.86%  H_rate=0.86%  epoch_rl=2  epoch_h=0  ppo_updates=10  complexity=6
+[2026-03-15 09:17:39] [INFO]   [Generator update] loss=2.8811
+[2026-03-15 09:17:39] [INFO] Epoch 8, Cycle 400/500: KB=19  RL_rate=1.85%  H_rate=0.85%  epoch_rl=2  epoch_h=0  ppo_updates=11  complexity=6
+[2026-03-15 09:17:49] [INFO] Epoch 8, Cycle 450/500: KB=19  RL_rate=1.84%  H_rate=0.85%  epoch_rl=2  epoch_h=0  ppo_updates=11  complexity=6
+[2026-03-15 09:18:00] [INFO]   [Generator update] loss=2.8129
+[2026-03-15 09:18:00] [INFO]   Checkpoint saved: epoch_7_cycle_499
+[2026-03-15 09:18:00] [INFO] 
+Epoch 8 done in 116.3s | RL proofs: 2 | Heuristic proofs: 0 | KB size: 19
+[2026-03-15 09:18:00] [INFO] 
+======================================================================
+[2026-03-15 09:18:00] [INFO] Epoch 9/20
+[2026-03-15 09:18:00] [INFO] ======================================================================
+[2026-03-15 09:18:00] [INFO] Epoch 9, Cycle 0/500: KB=19  RL_rate=1.82%  H_rate=0.84%  epoch_rl=0  epoch_h=0  ppo_updates=11  complexity=6
+[2026-03-15 09:18:14] [INFO] Epoch 9, Cycle 50/500: KB=19  RL_rate=1.75%  H_rate=0.81%  epoch_rl=0  epoch_h=0  ppo_updates=11  complexity=6
+[2026-03-15 09:18:28] [INFO]   [Generator update] loss=2.8066
+[2026-03-15 09:18:28] [INFO] Epoch 9, Cycle 100/500: KB=20  RL_rate=1.84%  H_rate=0.79%  epoch_rl=1  epoch_h=0  ppo_updates=12  complexity=6
+[2026-03-15 09:18:39] [INFO] Epoch 9, Cycle 150/500: KB=21  RL_rate=1.95%  H_rate=0.78%  epoch_rl=2  epoch_h=0  ppo_updates=12  complexity=6
+[2026-03-15 09:18:50] [INFO]   [Generator update] loss=2.7436
+[2026-03-15 09:18:50] [INFO] Epoch 9, Cycle 200/500: KB=21  RL_rate=1.92%  H_rate=0.77%  epoch_rl=2  epoch_h=0  ppo_updates=12  complexity=6
+[2026-03-15 09:19:00] [INFO] Epoch 9, Cycle 250/500: KB=21  RL_rate=1.91%  H_rate=0.76%  epoch_rl=2  epoch_h=0  ppo_updates=12  complexity=6
+[2026-03-15 09:19:09] [INFO]   [Generator update] loss=2.6607
+[2026-03-15 09:19:09] [INFO] Epoch 9, Cycle 300/500: KB=21  RL_rate=1.89%  H_rate=0.76%  epoch_rl=2  epoch_h=0  ppo_updates=12  complexity=6
+[2026-03-15 09:19:22] [INFO] Epoch 9, Cycle 350/500: KB=21  RL_rate=1.87%  H_rate=0.75%  epoch_rl=2  epoch_h=0  ppo_updates=13  complexity=6
+[2026-03-15 09:19:31] [INFO]   [Generator update] loss=2.6453
+[2026-03-15 09:19:31] [INFO] Epoch 9, Cycle 400/500: KB=21  RL_rate=1.86%  H_rate=0.75%  epoch_rl=2  epoch_h=0  ppo_updates=13  complexity=6
+[2026-03-15 09:19:40] [INFO] Epoch 9, Cycle 450/500: KB=21  RL_rate=1.85%  H_rate=0.74%  epoch_rl=2  epoch_h=0  ppo_updates=13  complexity=6
+[2026-03-15 09:19:50] [INFO]   [Generator update] loss=2.6326
+[2026-03-15 09:19:50] [INFO]   Checkpoint saved: epoch_8_cycle_499
+[2026-03-15 09:19:50] [INFO] 
+Epoch 9 done in 110.0s | RL proofs: 2 | Heuristic proofs: 0 | KB size: 21
+[2026-03-15 09:19:50] [INFO] 
+======================================================================
+[2026-03-15 09:19:50] [INFO] Epoch 10/20
+[2026-03-15 09:19:50] [INFO] ======================================================================
+[2026-03-15 09:19:50] [INFO] Epoch 10, Cycle 0/500: KB=21  RL_rate=1.84%  H_rate=0.73%  epoch_rl=0  epoch_h=0  ppo_updates=13  complexity=6
+[2026-03-15 09:20:02] [INFO] Epoch 10, Cycle 50/500: KB=21  RL_rate=1.77%  H_rate=0.71%  epoch_rl=0  epoch_h=0  ppo_updates=13  complexity=6
+[2026-03-15 09:20:16] [INFO]   [Generator update] loss=2.5827
+[2026-03-15 09:20:17] [INFO] Epoch 10, Cycle 100/500: KB=21  RL_rate=1.74%  H_rate=0.70%  epoch_rl=0  epoch_h=0  ppo_updates=14  complexity=6
+[2026-03-15 09:20:27] [INFO] Epoch 10, Cycle 150/500: KB=22  RL_rate=1.82%  H_rate=0.68%  epoch_rl=1  epoch_h=0  ppo_updates=14  complexity=6
+[2026-03-15 09:20:39] [INFO]   [Generator update] loss=2.5421
+[2026-03-15 09:20:39] [INFO] Epoch 10, Cycle 200/500: KB=22  RL_rate=1.79%  H_rate=0.67%  epoch_rl=1  epoch_h=0  ppo_updates=14  complexity=6
+[2026-03-15 09:20:51] [INFO]   [PPO #15] pol_loss=-0.0124  val_loss=0.5215  entropy=0.7825  kl=0.0096
+[2026-03-15 09:20:54] [INFO] Epoch 10, Cycle 250/500: KB=22  RL_rate=1.77%  H_rate=0.66%  epoch_rl=1  epoch_h=0  ppo_updates=15  complexity=6
+[2026-03-15 09:21:05] [INFO]   [Generator update] loss=2.5350
+[2026-03-15 09:21:05] [INFO] Epoch 10, Cycle 300/500: KB=23  RL_rate=1.86%  H_rate=0.66%  epoch_rl=2  epoch_h=0  ppo_updates=15  complexity=6
+[2026-03-15 09:21:17] [INFO] Epoch 10, Cycle 350/500: KB=23  RL_rate=1.83%  H_rate=0.65%  epoch_rl=2  epoch_h=0  ppo_updates=15  complexity=6
+[2026-03-15 09:21:27] [INFO]   [Generator update] loss=2.4667
+[2026-03-15 09:21:27] [INFO] Epoch 10, Cycle 400/500: KB=23  RL_rate=1.82%  H_rate=0.64%  epoch_rl=2  epoch_h=0  ppo_updates=15  complexity=6
+[2026-03-15 09:21:36] [INFO] Epoch 10, Cycle 450/500: KB=23  RL_rate=1.81%  H_rate=0.64%  epoch_rl=2  epoch_h=0  ppo_updates=15  complexity=6
+[2026-03-15 09:21:44] [INFO]   [Generator update] loss=2.4490
+[2026-03-15 09:21:44] [INFO]   Checkpoint saved: epoch_9_cycle_499
+[2026-03-15 09:21:44] [INFO] 
+Epoch 10 done in 114.0s | RL proofs: 2 | Heuristic proofs: 0 | KB size: 23
+[2026-03-15 09:21:44] [INFO] 
+======================================================================
+[2026-03-15 09:21:44] [INFO] Epoch 11/20
+[2026-03-15 09:21:44] [INFO] ======================================================================
+[2026-03-15 09:21:44] [INFO] Epoch 11, Cycle 0/500: KB=23  RL_rate=1.80%  H_rate=0.64%  epoch_rl=0  epoch_h=0  ppo_updates=15  complexity=6
+[2026-03-15 09:22:03] [INFO] Epoch 11, Cycle 50/500: KB=23  RL_rate=1.73%  H_rate=0.61%  epoch_rl=0  epoch_h=0  ppo_updates=16  complexity=6
+[2026-03-15 09:22:13] [INFO]   [Generator update] loss=2.4288
+[2026-03-15 09:22:13] [INFO] Epoch 11, Cycle 100/500: KB=23  RL_rate=1.70%  H_rate=0.60%  epoch_rl=0  epoch_h=0  ppo_updates=16  complexity=6
+[2026-03-15 09:22:27] [INFO] Epoch 11, Cycle 150/500: KB=23  RL_rate=1.68%  H_rate=0.59%  epoch_rl=0  epoch_h=0  ppo_updates=17  complexity=6
+[2026-03-15 09:22:37] [INFO]   [Generator update] loss=2.3619
+[2026-03-15 09:22:37] [INFO] Epoch 11, Cycle 200/500: KB=23  RL_rate=1.66%  H_rate=0.58%  epoch_rl=0  epoch_h=0  ppo_updates=17  complexity=6
+[2026-03-15 09:22:46] [INFO] Epoch 11, Cycle 250/500: KB=23  RL_rate=1.65%  H_rate=0.58%  epoch_rl=0  epoch_h=0  ppo_updates=17  complexity=6
+[2026-03-15 09:22:57] [INFO]   [Generator update] loss=2.3327
+[2026-03-15 09:22:57] [INFO] Epoch 11, Cycle 300/500: KB=24  RL_rate=1.73%  H_rate=0.58%  epoch_rl=1  epoch_h=0  ppo_updates=17  complexity=6
+[2026-03-15 09:23:06] [INFO] Epoch 11, Cycle 350/500: KB=24  RL_rate=1.72%  H_rate=0.57%  epoch_rl=1  epoch_h=0  ppo_updates=17  complexity=6
+[2026-03-15 09:23:21] [INFO]   [Generator update] loss=2.3312
+[2026-03-15 09:23:21] [INFO] Epoch 11, Cycle 400/500: KB=24  RL_rate=1.71%  H_rate=0.57%  epoch_rl=1  epoch_h=0  ppo_updates=18  complexity=6
+[2026-03-15 09:23:30] [INFO] Epoch 11, Cycle 450/500: KB=24  RL_rate=1.70%  H_rate=0.57%  epoch_rl=1  epoch_h=0  ppo_updates=18  complexity=6
+[2026-03-15 09:23:39] [INFO]   [Generator update] loss=2.2649
+[2026-03-15 09:23:39] [INFO]   Checkpoint saved: epoch_10_cycle_499
+[2026-03-15 09:23:39] [INFO] 
+Epoch 11 done in 115.0s | RL proofs: 1 | Heuristic proofs: 0 | KB size: 24
+[2026-03-15 09:23:39] [INFO] 
+======================================================================
+[2026-03-15 09:23:39] [INFO] Epoch 12/20
+[2026-03-15 09:23:39] [INFO] ======================================================================
+[2026-03-15 09:23:39] [INFO] Epoch 12, Cycle 0/500: KB=24  RL_rate=1.69%  H_rate=0.56%  epoch_rl=0  epoch_h=0  ppo_updates=18  complexity=6
+[2026-03-15 09:23:53] [INFO] Epoch 12, Cycle 50/500: KB=26  RL_rate=1.82%  H_rate=0.55%  epoch_rl=2  epoch_h=0  ppo_updates=18  complexity=6
+[2026-03-15 09:24:06] [INFO]   [Generator update] loss=2.2503
+[2026-03-15 09:24:06] [INFO] Epoch 12, Cycle 100/500: KB=26  RL_rate=1.81%  H_rate=0.54%  epoch_rl=2  epoch_h=0  ppo_updates=19  complexity=6
+[2026-03-15 09:24:16] [INFO] Epoch 12, Cycle 150/500: KB=26  RL_rate=1.79%  H_rate=0.54%  epoch_rl=2  epoch_h=0  ppo_updates=19  complexity=6
+[2026-03-15 09:24:26] [INFO]   [Generator update] loss=2.2525
+[2026-03-15 09:24:26] [INFO] Epoch 12, Cycle 200/500: KB=26  RL_rate=1.78%  H_rate=0.53%  epoch_rl=2  epoch_h=0  ppo_updates=19  complexity=6

@@ -73,7 +73,7 @@ class RewriteTactic(Tactic):
         if not isinstance(state.goal, Equation):
             return [state]  # Can't rewrite non-equations
 
-        # Collect available equations
+        # Collect available equations from hypotheses and knowledge base
         available_eqs = []
         for hyp in state.hypotheses:
             if isinstance(hyp, Equation):
@@ -81,6 +81,11 @@ class RewriteTactic(Tactic):
             elif isinstance(hyp, Forall) and isinstance(hyp.body, Equation):
                 # Instantiate universal quantifier (simplified)
                 available_eqs.append(hyp.body)
+        for stmt in knowledge_base:
+            if isinstance(stmt, Equation):
+                available_eqs.append(stmt)
+            elif isinstance(stmt, Forall) and isinstance(stmt.body, Equation):
+                available_eqs.append(stmt.body)
 
         # Try to match goal with available equations
         new_states = []

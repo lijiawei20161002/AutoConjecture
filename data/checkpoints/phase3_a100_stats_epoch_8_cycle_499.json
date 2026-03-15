@@ -1,0 +1,10 @@
+{
+  "epoch": 8,
+  "cycle": 499,
+  "total_generated": 22500,
+  "total_attempted": 815,
+  "total_proved_rl": 15,
+  "total_proved_heuristic": 6,
+  "ppo_updates": 13,
+  "kb_size": 21
+}

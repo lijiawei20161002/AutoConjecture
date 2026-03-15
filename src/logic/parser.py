@@ -59,11 +59,23 @@ class Parser:
         """Parse a term."""
         self.skip_whitespace()
 
-        # Check for parenthesized term
+        # Check for parenthesized term (may be (t) or (t op t))
         if self.peek() == '(':
             self.consume('(')
             term = self.parse_term()
             self.skip_whitespace()
+            if self.peek() == '+':
+                self.consume('+')
+                right = self.parse_term()
+                self.skip_whitespace()
+                self.consume(')')
+                return Add(term, right)
+            elif self.peek() == '*':
+                self.consume('*')
+                right = self.parse_term()
+                self.skip_whitespace()
+                self.consume(')')
+                return Mul(term, right)
             self.consume(')')
             return term
 
@@ -143,10 +155,20 @@ class Parser:
 
         # Check for parenthesized expression
         if self.peek() == '(':
+            saved_pos = self.pos
             self.consume('(')
-            expr = self.parse_expression()
-            self.skip_whitespace()
-            self.consume(')')
+            # Try parsing as a parenthesized equation first (e.g. from KB checkpoints)
+            try:
+                expr = self.parse_equation()
+                self.skip_whitespace()
+                self.consume(')')
+            except Exception:
+                # Fall back to parenthesized sub-expression (e.g. logical connectives)
+                self.pos = saved_pos
+                self.consume('(')
+                expr = self.parse_expression()
+                self.skip_whitespace()
+                self.consume(')')
 
             # Check for binary connectives
             self.skip_whitespace()
