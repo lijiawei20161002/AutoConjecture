@@ -31,16 +31,18 @@ AutoConjecture/
 │   ├── models/         # Neural models (transformer, tokenizer, curriculum, actor-critic)
 │   ├── knowledge/      # Knowledge base storage
 │   ├── training/       # Training loops (Phase 1, 2 & 3)
-│   ├── monitoring/     # Logging and metrics
+│   ├── monitoring/     # Logging, metrics, and Phase 4 visualizer/dashboard
 │   └── utils/          # Utilities
 ├── scripts/
 │   ├── train.py        # Phase 1 training script
 │   ├── train_neural.py # Phase 2 training script
-│   └── train_phase3.py # Phase 3 training script
+│   ├── train_phase3.py # Phase 3 training script
+│   └── dashboard.py    # Phase 4 monitoring dashboard launcher
 ├── configs/
-│   ├── default.yaml        # Phase 1 configuration
-│   ├── phase2_neural.yaml  # Phase 2 configuration
-│   └── phase3_rl.yaml      # Phase 3 configuration
+│   ├── default.yaml            # Phase 1 configuration
+│   ├── phase2_neural.yaml      # Phase 2 configuration
+│   ├── phase3_rl.yaml          # Phase 3 configuration
+│   └── phase4_monitoring.yaml  # Phase 4 dashboard configuration
 ├── data/
 │   ├── checkpoints/    # Saved knowledge bases & models
 │   ├── logs/           # Training logs
@@ -221,7 +223,7 @@ The system tracks:
 - Complexity distribution
 - Success rate over time
 
-## Current Phase: Phase 3 (RL-Based Prover) ✅
+## Current Phase: Phase 4 (Full Monitoring) ✅
 
 **Phase 1 (MVP)** - Complete:
 - ✅ Complete formal logic system
@@ -249,6 +251,34 @@ The system tracks:
 
 See **[Phase 3 Experiment Results](docs/phase3/experiment-results-phase3-a100-fixed.md)** for the full A100 training run (20 epochs, ~60 min, +35 new theorems).
 
+**Phase 4 (Full Monitoring)** - Complete:
+- ✅ Interactive Streamlit web dashboard (`scripts/dashboard.py`)
+- ✅ Training curve visualisation (KB growth, success rates, PPO metrics)
+- ✅ Proof tree visualisation (interactive Plotly tree per theorem)
+- ✅ Knowledge base browser (filterable table, complexity & proof-length histograms, discovery timeline)
+- ✅ Standalone matplotlib exports for reports (`save_training_curves`, `save_kb_analysis`)
+- ✅ `src/monitoring/visualizer.py` – reusable visualisation library
+
+### Quick Start – Phase 4 Dashboard
+
+```bash
+python3 scripts/dashboard.py
+# Opens http://localhost:8501
+```
+
+Options:
+```bash
+python3 scripts/dashboard.py --port 8888 --checkpoint-dir /path/to/checkpoints
+```
+
+The dashboard has four tabs:
+| Tab | Contents |
+|-----|----------|
+| **Overview** | Top-level KPIs, KB growth sparkline, recent theorems |
+| **Training Curves** | Interactive KB-growth, success-rate, PPO-loss charts |
+| **Proof Explorer** | Select any proved theorem and view its interactive proof tree |
+| **KB Browser** | Filterable theorem table, complexity / proof-length histograms, discovery timeline |
+
 ### Quick Start - Phase 2
 
 Train with neural generator:
@@ -264,11 +294,6 @@ python3 scripts/train_phase3.py --device cuda
 ```
 
 ## Future Phases
-
-### Phase 4: Full Monitoring
-- Visualization of training curves
-- Proof tree visualization
-- Interactive web dashboard
 
 ### Phase 5: Optimization
 - GPU acceleration

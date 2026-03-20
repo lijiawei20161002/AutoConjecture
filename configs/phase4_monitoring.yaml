@@ -1,0 +1,26 @@
+# Phase 4 monitoring configuration
+# Used by the dashboard and standalone visualizer scripts.
+
+dashboard:
+  port: 8501
+  auto_refresh_seconds: 30   # Set to 0 to disable
+  theme: light
+
+paths:
+  checkpoint_dir: data/checkpoints
+  log_dir: data/logs
+  output_dir: data/visualizations  # Where static plots are saved
+
+# Static export settings (for save_training_curves / save_kb_analysis)
+export:
+  dpi: 150
+  format: png   # png | pdf | svg
+  training_curves: data/visualizations/training_curves.png
+  kb_analysis: data/visualizations/kb_analysis.png
+
+# Which metrics to highlight on the Training Curves tab
+highlighted_metrics:
+  - kb_size
+  - total_proved_rl
+  - total_proved_heuristic
+  - ppo_updates
