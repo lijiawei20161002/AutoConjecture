@@ -30,19 +30,21 @@ AutoConjecture/
 │   ├── generation/     # Conjecture generation (random, neural, novelty)
 │   ├── models/         # Neural models (transformer, tokenizer, curriculum, actor-critic)
 │   ├── knowledge/      # Knowledge base storage
-│   ├── training/       # Training loops (Phase 1, 2 & 3)
+│   ├── training/       # Training loops (Phase 1, 2, 3 & 5)
 │   ├── monitoring/     # Logging, metrics, and Phase 4 visualizer/dashboard
 │   └── utils/          # Utilities
 ├── scripts/
 │   ├── train.py        # Phase 1 training script
 │   ├── train_neural.py # Phase 2 training script
 │   ├── train_phase3.py # Phase 3 training script
+│   ├── train_phase5.py # Phase 5 training script
 │   └── dashboard.py    # Phase 4 monitoring dashboard launcher
 ├── configs/
 │   ├── default.yaml            # Phase 1 configuration
 │   ├── phase2_neural.yaml      # Phase 2 configuration
 │   ├── phase3_rl.yaml          # Phase 3 configuration
-│   └── phase4_monitoring.yaml  # Phase 4 dashboard configuration
+│   ├── phase4_monitoring.yaml  # Phase 4 dashboard configuration
+│   └── phase5_optimization.yaml # Phase 5 optimization configuration
 ├── data/
 │   ├── checkpoints/    # Saved knowledge bases & models
 │   ├── logs/           # Training logs
@@ -161,6 +163,8 @@ Phase 2 & 3 neural components:
 - **Generator Trainer**: Supervised and reinforcement learning for the generator
 - **Curriculum Scheduler**: Manages progressive difficulty increase
 - **Actor-Critic (Phase 3)**: Transformer encoder + policy/value heads for tactic selection
+- **Advanced Curriculum (Phase 5)**: Self-paced and adaptive-band strategies with per-bucket EMA tracking
+- **Prioritized Experience Buffer (Phase 5)**: Weighted replay buffer targeting low-success-rate examples
 
 ### Training Loop (`src/training/`)
 
@@ -223,7 +227,7 @@ The system tracks:
 - Complexity distribution
 - Success rate over time
 
-## Current Phase: Phase 4 (Full Monitoring) ✅
+## Current Phase: Phase 5 (Optimization) ✅
 
 **Phase 1 (MVP)** - Complete:
 - ✅ Complete formal logic system
@@ -293,12 +297,31 @@ Train with RL-based prover (requires GPU recommended):
 python3 scripts/train_phase3.py --device cuda
 ```
 
-## Future Phases
+**Phase 5 (Optimization)** - Complete:
+- ✅ Parallel heuristic proving via `ProcessPoolExecutor` (`src/training/parallel_prover.py`)
+- ✅ Advanced curriculum strategies: self-paced and adaptive-band (`src/models/advanced_curriculum.py`)
+- ✅ Prioritized experience buffer for targeted generator training
+- ✅ Optional `torch.compile()` for neural models (PyTorch >= 2.0)
+- ✅ Throughput / timing instrumentation
 
-### Phase 5: Optimization
-- GPU acceleration
-- Multiprocessing for parallel proofs
-- Advanced curriculum strategies
+### Quick Start – Phase 5
+
+```bash
+python3 scripts/train_phase5.py --device cuda
+```
+
+Options:
+```bash
+python3 scripts/train_phase5.py --config configs/phase5_optimization.yaml --device cuda
+```
+
+Key tuning knobs in `configs/phase5_optimization.yaml`:
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| `parallel_prover.workers` | 4 | Parallel proof workers (set 1 to disable) |
+| `curriculum.strategy` | `self_paced` | `self_paced` / `adaptive_band` / `linear` |
+| `experience_buffer.use_prioritized` | `true` | Prioritized replay for generator |
+| `optimization.use_torch_compile` | `false` | Enable `torch.compile` (PyTorch ≥ 2.0) |
 
 ## Technical Details
 
@@ -315,6 +338,12 @@ python3 scripts/train_phase3.py --device cuda
 - RAM: 16-32GB
 - Storage: 50-100GB
 - Training time: Phase 3 — 20 epochs in ~60 min on A100; longer on consumer GPUs
+
+**Phase 5 (Optimization)**:
+- GPU: NVIDIA GPU with 8GB+ VRAM recommended; A100 ideal
+- RAM: 16-32GB (parallel workers increase CPU memory usage)
+- Storage: 50-100GB
+- Training time: Faster than Phase 3 with parallel proving + `torch.compile`; scales with `parallel_prover.workers`
 
 ### Dependencies
 
