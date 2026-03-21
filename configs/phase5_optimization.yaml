@@ -1,0 +1,108 @@
+# AutoConjecture Phase 5: Optimization Configuration
+# A100 GPU recommended; parallel workers scale to available CPU cores.
+
+system:
+  random_seed: 42
+  device: cuda  # or "cpu"
+
+# Training schedule
+training:
+  num_epochs: 20
+  cycles_per_epoch: 500
+  conjectures_per_cycle: 10
+
+# Conjecture generation
+generation:
+  neural_ratio: 0.5
+  initial_complexity: 6
+  final_complexity: 20
+
+# Advanced curriculum strategy: "self_paced" | "adaptive_band" | "linear"
+curriculum:
+  strategy: self_paced
+
+  # Self-paced curriculum parameters
+  spc_ema_alpha: 0.10         # EMA decay for per-bucket success tracking
+  spc_target_lo: 0.10         # Lower bound of target success-rate band
+  spc_target_hi: 0.60         # Upper bound of target success-rate band
+  spc_frontier_margin: 3      # Extra complexity steps above frontier
+
+  # Adaptive-band curriculum parameters (used when strategy: adaptive_band)
+  abc_initial_halfwidth: 2
+  abc_advance_threshold: 0.40
+  abc_retreat_threshold: 0.05
+  abc_patience: 200
+
+# Parallel heuristic prover
+parallel_prover:
+  workers: 4                  # Set to 1 to disable multiprocessing
+  max_depth: 50
+  max_iterations: 500
+  timeout_per_proof: 30.0     # Seconds
+
+# RL proof engine
+rl_prover:
+  max_proof_steps: 30
+  ppo_update_interval: 50
+  bc_warmup_cycles: 200
+  use_heuristic_fallback: true
+
+# State encoder
+state_encoder:
+  d_model: 256
+  nhead: 4
+  num_layers: 3
+  dropout: 0.1
+
+# Actor-Critic
+actor_critic:
+  hidden_dim: 256
+
+# PPO hyperparameters
+ppo:
+  learning_rate: 0.0003
+  clip_epsilon: 0.2
+  value_coef: 0.5
+  entropy_coef: 0.01
+  ppo_epochs: 4
+  mini_batch_size: 64
+  gamma: 0.99
+  gae_lambda: 0.95
+  max_grad_norm: 0.5
+  target_kl: 0.05
+
+# Reward structure
+rewards:
+  success: 1.0
+  step: -0.05
+  progress_coeff: 0.02
+  timeout: -0.5
+  stuck: -0.1
+
+# Neural generator
+generator:
+  d_model: 256
+  nhead: 8
+  num_layers: 6
+  learning_rate: 0.0001
+  batch_size: 32
+  warmup_steps: 500
+  pretrain_epochs: 3
+  update_interval: 100
+
+# Prioritized experience buffer for generator training
+experience_buffer:
+  maxlen: 2000
+  target_success_rate: 0.30
+  use_prioritized: true
+
+# torch.compile (PyTorch >= 2.0 only; set false for older PyTorch)
+optimization:
+  use_torch_compile: false
+
+# Checkpointing and logging
+monitoring:
+  log_interval: 50
+  checkpoint_interval: 500
+  experiment_name: phase5_opt
+  checkpoint_dir: data/checkpoints
