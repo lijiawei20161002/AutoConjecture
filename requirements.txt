@@ -1,6 +1,6 @@
 # Core dependencies (GPU-enabled)
 torch>=2.0.0
-numpy>=1.24.0
+numpy>=2.0.0
 
 # Utilities
 pyyaml>=6.0
@@ -21,6 +21,7 @@ streamlit>=1.28.0
 
 # Graph visualization
 graphviz>=0.20.0
+scipy>=1.10.0
 networkx>=3.1
 
 # Optional: API access
