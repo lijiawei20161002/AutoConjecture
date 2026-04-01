@@ -1,0 +1,70 @@
+# ── Top-level comparison configuration ────────────────────────────────────────
+# All baselines share these settings unless overridden in their per-system block.
+
+# How long to run each system (seconds)
+budget_seconds: 3600          # 1 hour per system (adjust as needed)
+snapshot_interval_seconds: 60 # Emit a metrics snapshot every 60s
+
+# Fixed ProofEngine budget — MUST be identical for all baselines for fair comparison
+max_depth: 50
+max_iterations: 500
+timeout_per_proof: 30.0
+
+# Generation
+min_complexity: 6
+max_complexity: 20
+var_names: [x, y, z, w]
+seed: 42
+batch_size: 10
+
+# Neural model (shared by supervised, stp, autoconj_ph5)
+device: "cpu"            # Change to "cuda" if GPU available
+gen_d_model: 256
+gen_nhead: 8
+gen_num_layers: 6
+gen_lr: 0.0001
+gen_batch_size: 32
+gen_warmup_steps: 500
+pretrain_epochs: 0        # Pre-train on existing KB before comparison run
+update_interval: 100      # Supervised update every N cycles
+
+# Parallel workers for heuristic prover
+parallel_workers: 4       # Set to 1 for sequential (debugging)
+
+# Neural generation mix
+neural_ratio: 0.5         # Fraction of batch from neural model vs random
+
+# ── Per-system overrides ───────────────────────────────────────────────────────
+# Keys match runner.name; values override global settings for that runner.
+
+random:
+  # Pure random baseline: faster with smaller budget is fine for sanity checks
+  batch_size: 20
+  max_similar: 30
+
+heuristic:
+  batch_size: 20
+  template_ratio: 0.7   # 70% from algebraic templates, 30% random
+  max_similar: 50
+
+supervised:
+  neural_ratio: 0.5
+  update_interval: 100
+
+stp:
+  neural_ratio: 0.7       # More neural generation to make REINFORCE meaningful
+  frontier_k: 20          # Barely-provable threshold (proof steps)
+  reinforce_lr: 0.00001
+  reinforce_interval: 10  # REINFORCE update every 10 cycles
+  supervised_interval: 50 # Occasional supervised stability update
+  ema_alpha: 0.05
+
+autoconj_ph5:
+  curriculum_strategy: "self_paced"
+  bc_warmup_cycles: 200
+  ppo_update_interval: 50
+  max_proof_steps: 30
+  neural_ratio: 0.5
+  # Disable checkpointing during comparison to avoid disk overhead
+  checkpoint_interval: 999999
+  log_interval: 500
