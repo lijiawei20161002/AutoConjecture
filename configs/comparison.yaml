@@ -61,7 +61,7 @@ stp:
 
 autoconj_ph5:
   curriculum_strategy: "self_paced"
-  bc_warmup_cycles: 200
+  bc_warmup_cycles: 20   # Keep short for 1hr comparison; 200 is for multi-hour training runs
   ppo_update_interval: 50
   max_proof_steps: 30
   neural_ratio: 0.5
