@@ -1,0 +1,174 @@
+{
+  "benchmark": "miniF2F-test-seed1",
+  "total": 65,
+  "solved": 18,
+  "pass_at_1": 0.2769,
+  "pass_at_k": {},
+  "avg_proof_time_s": 4.003,
+  "solved_by_tactic": {
+    "decide": 16,
+    "omega": 2
+  },
+  "solved_names": [
+    "mathd_numbertheory_299",
+    "mathd_numbertheory_345",
+    "mathd_numbertheory_328",
+    "mathd_numbertheory_175",
+    "mathd_numbertheory_728",
+    "mathd_numbertheory_769",
+    "mathd_numbertheory_207",
+    "mathd_numbertheory_342",
+    "algebra_others_exirrpowirrrat",
+    "mathd_numbertheory_229",
+    "mathd_numbertheory_551",
+    "mathd_algebra_304",
+    "mathd_numbertheory_212",
+    "mathd_numbertheory_254",
+    "mathd_numbertheory_85",
+    "mathd_numbertheory_517",
+    "mathd_numbertheory_66",
+    "mathd_numbertheory_235"
+  ],
+  "unsolved_names": [
+    "mathd_numbertheory_1124",
+    "imo_1977_p6",
+    "mathd_numbertheory_430",
+    "induction_12dvd4expnp1p20",
+    "imo_1997_p5",
+    "mathd_numbertheory_277",
+    "mathd_numbertheory_559",
+    "induction_nfactltnexpnm1ngt3",
+    "imo_1959_p1",
+    "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+    "imo_1982_p1",
+    "mathd_numbertheory_293",
+    "mathd_numbertheory_5",
+    "mathd_numbertheory_483",
+    "amc12a_2003_p5",
+    "mathd_numbertheory_495",
+    "mathd_numbertheory_247",
+    "mathd_numbertheory_314",
+    "amc12b_2002_p7",
+    "mathd_numbertheory_457",
+    "amc12_2000_p12",
+    "imo_1981_p6",
+    "mathd_numbertheory_34",
+    "mathd_numbertheory_618",
+    "mathd_numbertheory_435",
+    "mathd_numbertheory_99",
+    "mathd_numbertheory_233",
+    "imo_1984_p6",
+    "mathd_numbertheory_321",
+    "mathd_numbertheory_100",
+    "amc12a_2002_p6",
+    "amc12a_2021_p8",
+    "algebra_ineq_nto1onlt2m1on",
+    "mathd_numbertheory_341",
+    "mathd_numbertheory_711",
+    "amc12_2000_p1",
+    "mathd_numbertheory_320",
+    "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+    "mathd_numbertheory_521",
+    "mathd_numbertheory_234",
+    "mathd_numbertheory_222",
+    "mathd_numbertheory_541",
+    "mathd_algebra_314",
+    "mathd_numbertheory_296",
+    "numbertheory_exk2powkeqapb2mulbpa2_aeq1",
+    "mathd_numbertheory_185",
+    "mathd_numbertheory_582"
+  ],
+  "solved_details": {
+    "mathd_numbertheory_299": {
+      "statement": "theorem mathd_numbertheory_299 :\n  (1 * 3 * 5 * 7 * 9 * 11 * 13) % 10 = 5 := sorry",
+      "tactic": "decide",
+      "proof_time_s": 4.9
+    },
+    "mathd_numbertheory_345": {
+      "statement": "theorem mathd_numbertheory_345 :\n  (2000 + 2001 + 2002 + 2003 + 2004 + 2005 + 2006) % 7 = 0 := sorry",
+      "tactic": "decide",
+      "proof_time_s": 4.14
+    },
+    "mathd_numbertheory_328": {
+      "statement": "theorem mathd_numbertheory_328 :\n  (5^999999) % 7 = 6 := sorry",
+      "tactic": "omega",
+      "proof_time_s": 8.1
+    },
+    "mathd_numbertheory_175": {
+      "statement": "theorem mathd_numbertheory_175 :\n  (2^2010) % 10 = 4 := sorry",
+      "tactic": "omega",
+      "proof_time_s": 6.51
+    },
+    "mathd_numbertheory_728": {
+      "statement": "theorem mathd_numbertheory_728 :\n  (29^13 - 5^13) % 7 = 3 := sorry",
+      "tactic": "decide",
+      "proof_time_s": 3.21
+    },
+    "mathd_numbertheory_769": {
+      "statement": "theorem mathd_numbertheory_769 :\n  (129^34 + 96^38) % 11 = 9 := sorry",
+      "tactic": "decide",
+      "proof_time_s": 3.59
+    },
+    "mathd_numbertheory_207": {
+      "statement": "theorem mathd_numbertheory_207 :\n  8 * 9^2 + 5 * 9 + 2 = 695 := sorry",
+      "tactic": "decide",
+      "proof_time_s": 3.71
+    },
+    "mathd_numbertheory_342": {
+      "statement": "theorem mathd_numbertheory_342 :\n  54 % 6 = 0 := sorry",
+      "tactic": "decide",
+      "proof_time_s": 3.94
+    },
+    "algebra_others_exirrpowirrrat": {
+      "statement": "-- Error: irrational\n-- theorem algebra_others_exirrpowirrrat :\n--   \u2203 a b, irrational a \u2227 irrational b \u2227 \u00ac irrational (a^b) := sorry",
+      "tactic": "decide",
+      "proof_time_s": 3.18
+    },
+    "mathd_numbertheory_229": {
+      "statement": "theorem mathd_numbertheory_229 :\n  (5^30) % 7 = 1 := sorry",
+      "tactic": "decide",
+      "proof_time_s": 3.7
+    },
+    "mathd_numbertheory_551": {
+      "statement": "theorem mathd_numbertheory_551 :\n  1529 % 6 = 5 := sorry",
+      "tactic": "decide",
+      "proof_time_s": 3.59
+    },
+    "mathd_algebra_304": {
+      "statement": "theorem mathd_algebra_304 :\n  91^2 = 8281 := sorry",
+      "tactic": "decide",
+      "proof_time_s": 3.29
+    },
+    "mathd_numbertheory_212": {
+      "statement": "theorem mathd_numbertheory_212 :\n  (16^17 * 17^18 * 18^19) % 10 = 8 := sorry",
+      "tactic": "decide",
+      "proof_time_s": 3.49
+    },
+    "mathd_numbertheory_254": {
+      "statement": "theorem mathd_numbertheory_254 :\n  (239 + 174 + 83) % 10 = 6 := sorry",
+      "tactic": "decide",
+      "proof_time_s": 3.17
+    },
+    "mathd_numbertheory_85": {
+      "statement": "theorem mathd_numbertheory_85 :\n  1 * 3^3 + 2 * 3^2 + 2*3 + 2 = 53 := sorry",
+      "tactic": "decide",
+      "proof_time_s": 2.98
+    },
+    "mathd_numbertheory_517": {
+      "statement": "theorem mathd_numbertheory_517 :\n  (121 * 122 * 123) % 4 = 2 := sorry",
+      "tactic": "decide",
+      "proof_time_s": 3.53
+    },
+    "mathd_numbertheory_66": {
+      "statement": "theorem mathd_numbertheory_66 :\n  194 % 11 = 7 := sorry",
+      "tactic": "decide",
+      "proof_time_s": 3.6
+    },
+    "mathd_numbertheory_235": {
+      "statement": "theorem mathd_numbertheory_235 :\n  (29 * 79 + 31 * 81) % 10 = 2 := sorry",
+      "tactic": "decide",
+      "proof_time_s": 3.43
+    }
+  },
+  "eval_time_s": 2088.5
+}

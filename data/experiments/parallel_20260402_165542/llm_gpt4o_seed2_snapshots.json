@@ -1,0 +1,952 @@
+[
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 65.34,
+    "theorems": 0,
+    "attempted": 98,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 129.86,
+    "theorems": 0,
+    "attempted": 203,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 191.29,
+    "theorems": 0,
+    "attempted": 311,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 253.27,
+    "theorems": 0,
+    "attempted": 408,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 313.4,
+    "theorems": 0,
+    "attempted": 506,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 375.72,
+    "theorems": 0,
+    "attempted": 594,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 440.42,
+    "theorems": 0,
+    "attempted": 700,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 506.07,
+    "theorems": 0,
+    "attempted": 807,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 566.83,
+    "theorems": 0,
+    "attempted": 902,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 629.97,
+    "theorems": 0,
+    "attempted": 1001,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 693.1,
+    "theorems": 0,
+    "attempted": 1077,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 753.16,
+    "theorems": 0,
+    "attempted": 1165,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 816.93,
+    "theorems": 0,
+    "attempted": 1270,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 878.47,
+    "theorems": 0,
+    "attempted": 1373,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 2189.93,
+    "theorems": 0,
+    "attempted": 1382,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 2251.35,
+    "theorems": 0,
+    "attempted": 1474,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 2316.26,
+    "theorems": 0,
+    "attempted": 1563,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 2384.51,
+    "theorems": 0,
+    "attempted": 1646,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 2444.66,
+    "theorems": 0,
+    "attempted": 1700,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 2510.5,
+    "theorems": 0,
+    "attempted": 1780,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 2574.02,
+    "theorems": 0,
+    "attempted": 1868,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 2638.29,
+    "theorems": 0,
+    "attempted": 1955,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 2700.5,
+    "theorems": 0,
+    "attempted": 2024,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 2767.22,
+    "theorems": 0,
+    "attempted": 2087,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 2832.61,
+    "theorems": 0,
+    "attempted": 2164,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 2896.51,
+    "theorems": 0,
+    "attempted": 2233,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 2957.27,
+    "theorems": 0,
+    "attempted": 2295,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 3017.36,
+    "theorems": 0,
+    "attempted": 2361,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 3079.45,
+    "theorems": 0,
+    "attempted": 2441,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 3142.99,
+    "theorems": 0,
+    "attempted": 2511,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 3207.73,
+    "theorems": 0,
+    "attempted": 2587,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 3277.39,
+    "theorems": 0,
+    "attempted": 2664,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 3341.07,
+    "theorems": 0,
+    "attempted": 2742,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 3405.16,
+    "theorems": 0,
+    "attempted": 2817,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 3465.58,
+    "theorems": 0,
+    "attempted": 2891,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 3527.99,
+    "theorems": 0,
+    "attempted": 2977,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 3592.66,
+    "theorems": 0,
+    "attempted": 3043,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  },
+  {
+    "system": "llm_gpt4o",
+    "wall_clock_s": 3603.83,
+    "theorems": 0,
+    "attempted": 3055,
+    "proved": 0,
+    "theorems_per_hour": 0.0,
+    "success_rate": 0.0,
+    "avg_complexity": 0.0,
+    "non_triviality_rate": 0.0,
+    "diversity_score": 0.0,
+    "provability_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "complexity_histogram": {
+      "<10": 0,
+      "10-14": 0,
+      "15-19": 0,
+      "20-24": 0,
+      "25+": 0
+    }
+  }
+]

@@ -22,21 +22,29 @@ class Lean4ProofResult:
     error_messages: List[str]        # Errors from failed tactic attempts
 
 
-# Default tactic portfolio, ordered by likelihood of success on Peano arithmetic
-DEFAULT_TACTIC_PORTFOLIO = [
+# Core portfolio: works without Mathlib (Lean 4 stdlib only).
+# Mathlib tactics (ring, norm_num, aesop) are appended last; they succeed
+# when Mathlib is available but error quickly when it is not.
+NO_MATHLIB_TACTIC_PORTFOLIO = [
     "decide",
-    "norm_num",
-    "ring",
     "omega",
     "simp",
     "simp [Nat.add_comm, Nat.add_assoc, Nat.mul_comm, Nat.mul_assoc]",
-    "simp [Nat.add_comm]",
-    "simp [Nat.mul_comm]",
+    "simp [Nat.left_distrib, Nat.right_distrib, Nat.mul_comm]",
+]
+
+MATHLIB_TACTIC_PORTFOLIO = NO_MATHLIB_TACTIC_PORTFOLIO + [
+    "norm_num",
+    "ring",
     "ring_nf; simp",
+    "simp [Nat.pow_succ, Nat.pow_zero, Nat.mul_comm]",
     "induction x <;> simp [*]",
-    "induction x <;> ring",
+    "induction n <;> simp [*]",
     "aesop",
 ]
+
+# Default used when Lean4TacticProver is constructed without an explicit portfolio
+DEFAULT_TACTIC_PORTFOLIO = MATHLIB_TACTIC_PORTFOLIO
 
 
 class Lean4TacticProver:

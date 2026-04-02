@@ -1,0 +1,15 @@
+{
+  "timestamp": "20260402_165542",
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "llm_budget_s": 3600.0,
+  "skip_llm": false,
+  "skip_lean": false,
+  "minif2f_dir": "/Users/lijiawei/Desktop/AutoConjecture/data/benchmarks/minif2f_lean4.jsonl",
+  "lean_exec": "/Users/lijiawei/.elan/bin/lean",
+  "no_mathlib": true,
+  "out_dir": "/Users/lijiawei/Desktop/AutoConjecture/data/experiments/parallel_20260402_165542"
+}

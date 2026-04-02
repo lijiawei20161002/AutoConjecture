@@ -1,0 +1,18 @@
+{"name": "mathd_numbertheory_299", "statement": "theorem mathd_numbertheory_299 :\n  (1 * 3 * 5 * 7 * 9 * 11 * 13) % 10 = 5 := sorry", "tactic": "decide", "proof_time_s": 4.81, "informal": null}
+{"name": "mathd_numbertheory_345", "statement": "theorem mathd_numbertheory_345 :\n  (2000 + 2001 + 2002 + 2003 + 2004 + 2005 + 2006) % 7 = 0 := sorry", "tactic": "decide", "proof_time_s": 3.83, "informal": null}
+{"name": "mathd_numbertheory_328", "statement": "theorem mathd_numbertheory_328 :\n  (5^999999) % 7 = 6 := sorry", "tactic": "omega", "proof_time_s": 7.21, "informal": null}
+{"name": "mathd_numbertheory_175", "statement": "theorem mathd_numbertheory_175 :\n  (2^2010) % 10 = 4 := sorry", "tactic": "omega", "proof_time_s": 6.4, "informal": null}
+{"name": "mathd_numbertheory_728", "statement": "theorem mathd_numbertheory_728 :\n  (29^13 - 5^13) % 7 = 3 := sorry", "tactic": "decide", "proof_time_s": 3.52, "informal": null}
+{"name": "mathd_numbertheory_769", "statement": "theorem mathd_numbertheory_769 :\n  (129^34 + 96^38) % 11 = 9 := sorry", "tactic": "decide", "proof_time_s": 3.1, "informal": null}
+{"name": "mathd_numbertheory_207", "statement": "theorem mathd_numbertheory_207 :\n  8 * 9^2 + 5 * 9 + 2 = 695 := sorry", "tactic": "decide", "proof_time_s": 3.93, "informal": null}
+{"name": "mathd_numbertheory_342", "statement": "theorem mathd_numbertheory_342 :\n  54 % 6 = 0 := sorry", "tactic": "decide", "proof_time_s": 3.8, "informal": null}
+{"name": "algebra_others_exirrpowirrrat", "statement": "-- Error: irrational\n-- theorem algebra_others_exirrpowirrrat :\n--   \u2203 a b, irrational a \u2227 irrational b \u2227 \u00ac irrational (a^b) := sorry", "tactic": "decide", "proof_time_s": 3.22, "informal": null}
+{"name": "mathd_numbertheory_229", "statement": "theorem mathd_numbertheory_229 :\n  (5^30) % 7 = 1 := sorry", "tactic": "decide", "proof_time_s": 2.89, "informal": null}
+{"name": "mathd_numbertheory_551", "statement": "theorem mathd_numbertheory_551 :\n  1529 % 6 = 5 := sorry", "tactic": "decide", "proof_time_s": 3.53, "informal": null}
+{"name": "mathd_algebra_304", "statement": "theorem mathd_algebra_304 :\n  91^2 = 8281 := sorry", "tactic": "decide", "proof_time_s": 2.91, "informal": null}
+{"name": "mathd_numbertheory_212", "statement": "theorem mathd_numbertheory_212 :\n  (16^17 * 17^18 * 18^19) % 10 = 8 := sorry", "tactic": "decide", "proof_time_s": 3.37, "informal": null}
+{"name": "mathd_numbertheory_254", "statement": "theorem mathd_numbertheory_254 :\n  (239 + 174 + 83) % 10 = 6 := sorry", "tactic": "decide", "proof_time_s": 3.54, "informal": null}
+{"name": "mathd_numbertheory_85", "statement": "theorem mathd_numbertheory_85 :\n  1 * 3^3 + 2 * 3^2 + 2*3 + 2 = 53 := sorry", "tactic": "decide", "proof_time_s": 3.47, "informal": null}
+{"name": "mathd_numbertheory_517", "statement": "theorem mathd_numbertheory_517 :\n  (121 * 122 * 123) % 4 = 2 := sorry", "tactic": "decide", "proof_time_s": 3.42, "informal": null}
+{"name": "mathd_numbertheory_66", "statement": "theorem mathd_numbertheory_66 :\n  194 % 11 = 7 := sorry", "tactic": "decide", "proof_time_s": 3.26, "informal": null}
+{"name": "mathd_numbertheory_235", "statement": "theorem mathd_numbertheory_235 :\n  (29 * 79 + 31 * 81) % 10 = 2 := sorry", "tactic": "decide", "proof_time_s": 4.06, "informal": null}
