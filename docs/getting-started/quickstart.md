@@ -1,5 +1,62 @@
 # AutoConjecture Quick Start Guide
 
+## Key Concepts (Read This First)
+
+Before running anything, make sure you understand these two ideas — they are the core of the entire system.
+
+### Conjectures vs. Theorems
+
+A **conjecture** is a mathematical statement that *might* be true, but hasn't been proven yet.
+A **theorem** is a conjecture that *has* been formally proven.
+
+```
+Conjecture: ∀x. (x + 0) = x     ← candidate, unverified
+Theorem:    ∀x. (x + 0) = x     ← same statement, after proof succeeds
+```
+
+This system's job is:
+1. Generate conjectures automatically
+2. Try to prove them
+3. Promote proven ones to theorems in the knowledge base
+
+The key challenge is not just generating *true* statements — it's generating statements that are *provable with the available tactics*. This is called **difficulty calibration**.
+
+### The Proof Verifier
+
+The system uses automated tactics to verify proofs. Think of each tactic as a specialized solver:
+
+| Tactic | What it handles |
+|--------|----------------|
+| `decide` | Numeric facts by direct computation — e.g., `0 + 0 = 0` |
+| `omega` | Linear arithmetic — e.g., equalities involving `+` |
+| `simp` | Simplification — e.g., rewrites using known axioms |
+| `reflexivity` | Closes `a = a` goals immediately |
+| `rewrite` | Replaces equals with equals in the goal |
+
+If none of these tactics can close a goal, the proof **fails** — the conjecture is discarded.
+This is why the success rate has a ceiling (~7%): tactics like `omega` and `decide` don't support induction, so statements requiring inductive proofs cannot be verified here.
+
+### The Generate → Prove → Learn Loop
+
+Every training cycle does this:
+
+```
+Generate N conjectures
+       ↓
+Filter (novelty + complexity)
+       ↓
+Attempt proof with tactics
+       ↓
+Succeeded? → Add to knowledge base (now a theorem)
+Failed?    → Discard (or use as negative RL signal)
+       ↓
+Knowledge base grows → harder proofs become possible
+```
+
+With RL training (Phase 3), the generator *learns from this feedback* — it gets rewarded for generating provable conjectures and steered away from generating unprovable ones.
+
+---
+
 ## Installation Complete! ✓
 
 Your AutoConjecture system is fully implemented and tested.
@@ -149,19 +206,42 @@ python3 -c "import json; print(json.dumps(json.load(open('data/logs/metrics.json
 ## Understanding the Output
 
 ### Success Rate
-- **2-5%**: Normal for random generation (Phase 1)
-- **5-10%**: Good - system finding interesting patterns
-- **>10%**: Excellent - knowledge base is helping
+
+The **success rate** is the fraction of attempted proofs that succeed.
+
+- **2-5%**: Normal for Phase 1 (random generation, no learning)
+- **5-10%**: Good — the knowledge base is helping prove more things
+- **>10%**: Excellent — system is building momentum from prior theorems
+- **~7% ceiling**: Expected with basic tactics; due to lack of inductive proof support (see Key Concepts above)
 
 ### Proof Complexity
-- **< 20**: Simple theorems (identities with 0, 1)
-- **20-30**: Medium complexity
-- **> 30**: Complex multi-step reasoning
+
+Complexity measures how many logical sub-terms a conjecture contains.
+
+- **< 20**: Simple theorems (e.g., identities with 0, multiplication by zero)
+- **20-30**: Medium — involve several nested operations or variables
+- **> 30**: Complex multi-step reasoning; harder for tactics to close
 
 ### Knowledge Base Growth
-- Should grow roughly linearly with cycles
-- Plateaus indicate need for harder conjectures
-- Can increase max_complexity if growth stops
+
+The **knowledge base (KB)** stores all proven theorems. Previously proven theorems can be used as lemmas in future proofs — this is the "learn" part of generate-prove-learn.
+
+- KB should grow roughly linearly with cycles
+- A plateau means the generator is producing conjectures that are too hard (outside the provable region)
+- Fix: increase `min_complexity`/`max_complexity` gradually, or switch to Phase 2 (neural generator with curriculum)
+
+### Reading the Log Output
+
+```
+Epoch 1, Cycle 100: KB size = 15, Success rate = 12.3%, Epoch proofs = 12
+✓ Proved: ∀x.(x + 0 = x)
+  Proof length: 3 steps
+```
+
+- `KB size`: total theorems discovered so far
+- `Success rate`: proofs succeeded / proofs attempted this epoch
+- `✓ Proved`: a new theorem — this statement is now a verified theorem in the KB
+- `Proof length`: how many tactic steps the proof required
 
 ## Next Steps (Future Phases)
 

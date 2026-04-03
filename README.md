@@ -12,6 +12,84 @@ AutoConjecture implements a generate-prove-learn cycle:
 
 The system starts with only Peano axioms and progressively builds a knowledge base of proven theorems.
 
+---
+
+## Core Concepts (Start Here if You're New)
+
+### What is a Conjecture?
+
+A **conjecture** is a mathematical statement that is *believed* to be true but has not yet been proven.
+
+| Term | Meaning |
+|------|---------|
+| **Conjecture** | Unproven hypothesis — "I think this is true" |
+| **Theorem** | A conjecture that has been formally proven |
+
+For example, the system might generate:
+
+```
+∀x. (x + S(0)) = S(x)      ← this is a conjecture
+```
+
+Once the prover verifies it with a valid proof, it becomes a **theorem** and gets added to the knowledge base. The key insight of AutoConjecture is not just asking "is it true?" but "is it *provable right now*?" — that is **difficulty calibration**.
+
+```
+Generate conjecture → Attempt proof → Proven? → Add to knowledge base as theorem
+```
+
+### What is Lean 4?
+
+**Lean 4** is a formal proof assistant — think of it as a *compiler for mathematics*:
+
+- Just as a Python interpreter checks your code syntax, Lean checks logical correctness
+- If Lean accepts a proof, it is **100% machine-verified correct** — no hidden assumptions
+- In this system, Lean 4 acts as the **ground-truth verifier** for discovered theorems
+
+### What are Tactics?
+
+Tactics are automated proof strategies that the prover uses to close a proof goal:
+
+| Tactic | What it does | Example use |
+|--------|-------------|-------------|
+| `decide` | Brute-force computation; checks by enumeration | Prove `0 + 0 = 0` |
+| `omega` | Linear arithmetic solver | Prove statements involving `+` and concrete numbers |
+| `simp` | Simplification via rewrite rules | Reduce `x + 0` to `x` using the zero-identity axiom |
+| `rewrite` | Replace equal terms | Substitute known equalities into the goal |
+| `reflexivity` | Close `a = a` goals directly | Finish proofs once both sides match |
+
+### Why is There a Proof Ceiling (~7%)?
+
+Without Mathlib (Lean's standard math library), the built-in tactics are limited:
+
+- `decide` and `omega` handle **computational** and **linear** facts well
+- But they cannot do **induction**, **algebraic reasoning**, or **number theory**
+
+So a statement like `∀x. x + 1 = 1 + x` (commutativity) cannot be closed by these tactics alone — it requires an inductive argument. This is why the system hits a ceiling: it can only prove what its current tactic set supports.
+
+**This is actually a feature, not a bug**: it defines a clear measurable difficulty level, and AutoConjecture learns to generate conjectures that *stay within this provable region* rather than wasting attempts on unprovable goals.
+
+### The Full Pipeline
+
+```
+[Generator: RL / Neural / Random]
+         ↓
+  Conjecture (unproven)
+         ↓
+[Prover: tactics — decide, omega, simp, ...]
+         ↓
+  Proof succeeds?
+   Yes → becomes a Theorem → stored in Knowledge Base
+   No  → discarded (or used as negative signal for RL)
+         ↓
+[RL Feedback: reward proven conjectures, penalize unprovable ones]
+```
+
+This feedback loop is what separates AutoConjecture from a baseline LLM:
+- **GPT-4o (no feedback)**: generates true but too-hard conjectures
+- **AutoConjecture (with RL)**: learns to generate *provable* conjectures — difficulty calibration
+
+---
+
 ## Features
 
 - **Custom Proof System**: Built from scratch with formal logic representation
@@ -132,19 +210,21 @@ Edit `configs/default.yaml` to customize:
 
 ## System Architecture
 
+> **New to formal logic?** See the [Core Concepts](#core-concepts-start-here-if-youre-new) section above before reading this.
+
 ### Logic System (`src/logic/`)
 
-Implements first-order logic over Peano arithmetic:
-- **Terms**: Variables, Zero, Successor, Addition, Multiplication
-- **Expressions**: Equations, Quantifiers (∀, ∃), Logical connectives (∧, ∨, ¬, →)
-- **Axioms**: Peano axioms defining natural numbers
+Implements first-order logic over Peano arithmetic — the foundation of natural number arithmetic:
+- **Terms**: Variables, Zero (`0`), Successor (`S(x)` means x+1), Addition, Multiplication
+- **Expressions**: Equations (`a = b`), Quantifiers (`∀x`, `∃x`), Logical connectives (`∧`, `∨`, `¬`, `→`)
+- **Axioms**: The Peano axioms — minimal rules that define how natural numbers work
 
 ### Prover System (`src/prover/`)
 
-Automated theorem prover with:
-- **Tactics**: Rewrite, Substitute, Simplify, Reflexivity, Assumption
-- **Proof Engine**: Best-first search through proof states
-- **Heuristics**: Guides search toward simpler goals
+This is the **ground-truth verifier** — it decides whether a conjecture becomes a theorem:
+- **Tactics**: Rewrite, Substitute, Simplify, Reflexivity, Assumption — see [Core Concepts](#what-are-tactics) for what each does
+- **Proof Engine**: Best-first search through proof states (tries to close the goal using available tactics)
+- **Heuristics**: Guides search toward simpler sub-goals first
 
 ### Generation System (`src/generation/`)
 
