@@ -1,0 +1,1 @@
+{"statement": "\u2200x.((0 + x) = x)", "proof_length": 3, "proof_steps": ["  induction \u2192 QED", "  simplify \u2192 QED", "  simplify \u2192 QED"], "complexity": 18.0, "timestamp": "2026-04-03T13:02:50.434433", "epoch": 0, "cycle": 2}

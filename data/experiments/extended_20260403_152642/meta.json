@@ -1,0 +1,8 @@
+{
+  "timestamp": "20260403_152642",
+  "budget_s": 1200.0,
+  "max_iterations": 5000,
+  "max_depth": 30,
+  "prover": "extended (induction + unification rewriting)",
+  "skip_llm": false
+}

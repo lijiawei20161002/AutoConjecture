@@ -1,0 +1,16 @@
+{"statement": "(0 = (0 * S((0 + z))))", "proof_length": 0, "proof_steps": [], "complexity": 14.0, "timestamp": "2026-04-03T13:38:59.994240", "epoch": 0, "cycle": 47}
+{"statement": "((0 * ((0 + 0) + w)) = 0)", "proof_length": 0, "proof_steps": [], "complexity": 15.0, "timestamp": "2026-04-03T13:39:19.747259", "epoch": 0, "cycle": 101}
+{"statement": "(((S(0) + (0 + 0)) * 0) = (((y + 0) * 0) + 0))", "proof_length": 0, "proof_steps": [], "complexity": 22.0, "timestamp": "2026-04-03T13:39:25.791336", "epoch": 0, "cycle": 117}
+{"statement": "((((y + w) + 0) * 0) = ((0 * 0) * (0 + S(w))))", "proof_length": 0, "proof_steps": [], "complexity": 23.0, "timestamp": "2026-04-03T13:39:44.376527", "epoch": 0, "cycle": 158}
+{"statement": "((0 + w) = (((0 * w) * 0) + w))", "proof_length": 0, "proof_steps": [], "complexity": 17.0, "timestamp": "2026-04-03T13:40:22.049357", "epoch": 0, "cycle": 233}
+{"statement": "((((x + 0) + y) * ((z + 0) * (w * 0))) = (y * 0))", "proof_length": 0, "proof_steps": [], "complexity": 26.0, "timestamp": "2026-04-03T13:40:33.885072", "epoch": 0, "cycle": 260}
+{"statement": "((((z + w) * (0 * 0)) * (S(z) * S(0))) = 0)", "proof_length": 0, "proof_steps": [], "complexity": 22.0, "timestamp": "2026-04-03T13:41:23.739329", "epoch": 0, "cycle": 333}
+{"statement": "(0 = ((S(w) * (x * x)) * 0))", "proof_length": 0, "proof_steps": [], "complexity": 17.0, "timestamp": "2026-04-03T13:41:47.891178", "epoch": 0, "cycle": 370}
+{"statement": "((0 + 0) = ((S(w) * (0 + z)) * (w * 0)))", "proof_length": 0, "proof_steps": [], "complexity": 21.0, "timestamp": "2026-04-03T13:42:10.640626", "epoch": 0, "cycle": 410}
+{"statement": "(((0 * (0 + 0)) * 0) = (0 * z))", "proof_length": 0, "proof_steps": [], "complexity": 17.0, "timestamp": "2026-04-03T13:42:13.207367", "epoch": 0, "cycle": 414}
+{"statement": "(0 = (0 + 0))", "proof_length": 0, "proof_steps": [], "complexity": 8.0, "timestamp": "2026-04-03T13:42:19.248332", "epoch": 0, "cycle": 428}
+{"statement": "(((0 * w) * 0) = (0 * (0 + w)))", "proof_length": 0, "proof_steps": [], "complexity": 16.0, "timestamp": "2026-04-03T13:42:22.497719", "epoch": 0, "cycle": 432}
+{"statement": "(S(0) = S(((0 + 0) * (0 + z))))", "proof_length": 0, "proof_steps": [], "complexity": 17.0, "timestamp": "2026-04-03T13:42:58.022959", "epoch": 0, "cycle": 489}
+{"statement": "(S((0 + (0 * w))) = (0 + S(0)))", "proof_length": 0, "proof_steps": [], "complexity": 17.0, "timestamp": "2026-04-03T13:43:08.625273", "epoch": 0, "cycle": 509}
+{"statement": "((0 * (x * w)) = ((S(w) * 0) + ((0 + 0) + 0)))", "proof_length": 0, "proof_steps": [], "complexity": 23.0, "timestamp": "2026-04-03T13:43:32.581082", "epoch": 0, "cycle": 548}
+{"statement": "((x * (0 * (0 * 0))) = ((0 * w) * ((w * 0) * (x + 0))))", "proof_length": 0, "proof_steps": [], "complexity": 26.0, "timestamp": "2026-04-03T13:43:41.059485", "epoch": 0, "cycle": 558}

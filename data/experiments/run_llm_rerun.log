@@ -1,0 +1,54 @@
+
+Output: /Users/lijiawei/Desktop/AutoConjecture/data/experiments/extended_20260403_172446
+Systems: ['llm_gpt4o']
+Budget:  1200.0s per system
+Prover:  max_iterations=5000, max_depth=30
+
+======================================================================
+  System: llm_gpt4o   budget=1200.0s
+======================================================================
+[llm_gpt4o] model=gpt-4o, batch=10
+llm_gpt4o          | thm=   13 | thm/hr= 1231.8 | succ=46.43% | non-triv=100.00% | div=1.000 | P@10=61.54% | P@20=100.00% | t=38s | llm_calls=3 parse_fail=0
+llm_gpt4o          | thm=   24 | thm/hr= 1101.9 | succ=46.15% | non-triv=100.00% | div=1.000 | P@10=58.33% | P@20=100.00% | t=78s | llm_calls=6 parse_fail=1
+llm_gpt4o          | thm=   32 | thm/hr=  989.0 | succ=47.76% | non-triv=100.00% | div=1.000 | P@10=53.12% | P@20=100.00% | t=116s | llm_calls=9 parse_fail=12
+llm_gpt4o          | thm=   41 | thm/hr=  955.3 | succ=48.24% | non-triv=100.00% | div=1.000 | P@10=48.78% | P@20=92.68% | t=154s | llm_calls=12 parse_fail=20
+llm_gpt4o          | thm=   45 | thm/hr=  854.8 | succ=46.88% | non-triv=100.00% | div=1.000 | P@10=46.67% | P@20=91.11% | t=190s | llm_calls=14 parse_fail=21
+llm_gpt4o          | thm=   51 | thm/hr=  797.8 | succ=45.95% | non-triv=100.00% | div=1.000 | P@10=47.06% | P@20=92.16% | t=230s | llm_calls=18 parse_fail=25
+llm_gpt4o          | thm=   64 | thm/hr=  837.5 | succ=47.76% | non-triv=100.00% | div=1.000 | P@10=42.19% | P@20=92.19% | t=275s | llm_calls=22 parse_fail=25
+llm_gpt4o          | thm=   71 | thm/hr=  788.3 | succ=48.97% | non-triv=100.00% | div=1.000 | P@10=42.25% | P@20=92.96% | t=324s | llm_calls=27 parse_fail=36
+llm_gpt4o          | thm=   72 | thm/hr=  701.4 | succ=46.75% | non-triv=100.00% | div=1.000 | P@10=41.67% | P@20=93.06% | t=370s | llm_calls=29 parse_fail=36
+llm_gpt4o          | thm=   77 | thm/hr=  615.7 | succ=46.11% | non-triv=98.70% | div=1.000 | P@10=42.86% | P@20=92.21% | t=450s | llm_calls=31 parse_fail=37
+llm_gpt4o          | thm=   92 | thm/hr=  685.1 | succ=49.73% | non-triv=98.91% | div=1.000 | P@10=44.57% | P@20=91.30% | t=483s | llm_calls=36 parse_fail=38
+llm_gpt4o          | thm=   97 | thm/hr=  664.2 | succ=49.24% | non-triv=98.97% | div=1.000 | P@10=44.33% | P@20=91.75% | t=526s | llm_calls=38 parse_fail=38
+llm_gpt4o          | thm=  104 | thm/hr=  672.1 | succ=49.76% | non-triv=99.04% | div=1.000 | P@10=44.23% | P@20=91.35% | t=557s | llm_calls=41 parse_fail=38
+llm_gpt4o          | thm=  109 | thm/hr=  655.3 | succ=50.23% | non-triv=99.08% | div=1.000 | P@10=45.87% | P@20=91.74% | t=599s | llm_calls=44 parse_fail=50
+llm_gpt4o          | thm=  116 | thm/hr=  658.4 | succ=51.10% | non-triv=99.14% | div=1.000 | P@10=47.41% | P@20=92.24% | t=634s | llm_calls=46 parse_fail=50
+llm_gpt4o          | thm=  122 | thm/hr=  660.7 | succ=51.69% | non-triv=99.18% | div=1.000 | P@10=47.54% | P@20=92.62% | t=665s | llm_calls=48 parse_fail=50
+llm_gpt4o          | thm=  125 | thm/hr=  646.4 | succ=51.44% | non-triv=99.20% | div=1.000 | P@10=47.20% | P@20=92.80% | t=696s | llm_calls=49 parse_fail=50
+llm_gpt4o          | thm=  130 | thm/hr=  619.7 | succ=50.58% | non-triv=99.23% | div=1.000 | P@10=48.46% | P@20=93.08% | t=755s | llm_calls=51 parse_fail=51
+llm_gpt4o          | thm=  142 | thm/hr=  640.4 | succ=51.64% | non-triv=99.30% | div=1.000 | P@10=47.89% | P@20=92.96% | t=798s | llm_calls=56 parse_fail=61
+llm_gpt4o          | thm=  147 | thm/hr=  626.6 | succ=52.13% | non-triv=99.32% | div=1.000 | P@10=46.94% | P@20=93.20% | t=845s | llm_calls=57 parse_fail=61
+llm_gpt4o          | thm=  156 | thm/hr=  631.7 | succ=52.70% | non-triv=99.36% | div=1.000 | P@10=46.79% | P@20=92.31% | t=889s | llm_calls=62 parse_fail=72
+[llm_gpt4o] LLM call failed (attempt 1): Request timed out.
+[llm_gpt4o] LLM call failed (attempt 2): Request timed out.
+[llm_gpt4o] LLM call failed (attempt 3): Request timed out.
+llm_gpt4o          | thm=  160 | thm/hr=  562.5 | succ=52.46% | non-triv=99.38% | div=1.000 | P@10=46.25% | P@20=91.88% | t=1024s | llm_calls=65 parse_fail=82
+[llm_gpt4o] LLM call failed (attempt 1): Connection error.
+llm_gpt4o          | thm=  168 | thm/hr=  569.5 | succ=53.16% | non-triv=99.40% | div=1.000 | P@10=47.62% | P@20=92.26% | t=1062s | llm_calls=67 parse_fail=82
+llm_gpt4o          | thm=  176 | thm/hr=  558.9 | succ=53.33% | non-triv=99.43% | div=1.000 | P@10=48.86% | P@20=92.61% | t=1134s | llm_calls=69 parse_fail=83
+llm_gpt4o          | thm=  192 | thm/hr=  592.2 | succ=54.86% | non-triv=99.48% | div=1.000 | P@10=50.00% | P@20=93.23% | t=1167s | llm_calls=74 parse_fail=86
+llm_gpt4o          | thm=  194 | thm/hr=  578.2 | succ=54.65% | non-triv=99.48% | div=1.000 | P@10=49.48% | P@20=92.78% | t=1208s | llm_calls=76 parse_fail=87
+
+  [llm_gpt4o] FINAL: llm_gpt4o          | thm=  194 | thm/hr=  578.2 | succ=54.65% | non-triv=99.48% | div=1.000 | P@10=49.48% | P@20=92.78% | t=1208s
+  [llm_gpt4o] Wall-clock: 1207.9s
+  [llm_gpt4o] 194 theorems saved to /Users/lijiawei/Desktop/AutoConjecture/data/experiments/extended_20260403_172446/kb_llm_gpt4o.jsonl
+
+====================================================================================================
+COMPARISON TABLE  (extended prover: induction + unification rewriting)
+====================================================================================================
+System               Theorems   Thm/hr   Succ%  Non-triv%    Div   P@10   P@20
+----------------------------------------------------------------------------------------------------
+  llm_gpt4o                 194    578.2  54.65%     99.48%  1.000 49.48% 92.78% 
+====================================================================================================
+
+Summary saved to /Users/lijiawei/Desktop/AutoConjecture/data/experiments/extended_20260403_172446/summary.json

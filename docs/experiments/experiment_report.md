@@ -173,13 +173,17 @@ These are correct theorems that the heuristic BFS prover simply cannot close.
 
 ### Track A: Theorem Discovery (internal benchmark)
 
-| System | Theorems/hour | Notes |
-|--------|:---:|-------|
-| **AutoConjecture Phase 3 (RL)** | **35** | PPO RL prover + neural generator |
-| Heuristic baseline | 14 | Template bank + BFS |
-| STP (reimpl.) | 12 | REINFORCE frontier-reward, heuristic prover |
-| Supervised baseline | 8 | CE-only neural generator |
-| **LLM GPT-4o baseline** | **0** | No prover-generator feedback loop |
+| System | Theorems/hour | Theorems (20 min) | Success Rate | Notes |
+|--------|:---:|:---:|:---:|-------|
+| **AutoConjecture Phase 3 (RL)** | **35** | — | — | PPO RL prover + neural generator |
+| **LLM GPT-4o baseline** | **578** | **194** | **54.6%** | Extended prover; corrected run (2026-04-03) |
+| Heuristic baseline | 547 | 183 | 33.7% | Template bank + extended prover |
+| Random baseline | 140 | 47 | 7.3% | Random conjecture generator |
+| STP (reimpl.) | 69 | 23 | 2.0% | REINFORCE frontier-reward, extended prover |
+
+> **Note:** The Extended Prover results (rows 2–5) use the extended prover (induction + unification rewriting,
+> max_iter=5000, max_depth=30) from the 2026-04-03 comparison run. The Phase 3 (RL) row uses the original
+> heuristic BFS prover and is not directly comparable.
 
 ### Track B: MiniF2F-test pass@1
 

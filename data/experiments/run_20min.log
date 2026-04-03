@@ -1,0 +1,125 @@
+
+Output: /Users/lijiawei/Desktop/AutoConjecture/data/experiments/extended_20260403_152642
+Systems: ['random', 'heuristic', 'stp', 'llm_gpt4o']
+Budget:  1200.0s per system
+Prover:  max_iterations=5000, max_depth=30
+
+======================================================================
+  System: random   budget=1200.0s
+======================================================================
+random             | thm=   13 | thm/hr=  779.8 | succ=12.75% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=60s
+random             | thm=   17 | thm/hr=  497.5 | succ=11.04% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=123s
+random             | thm=   25 | thm/hr=  491.7 | succ=12.08% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=183s
+random             | thm=   29 | thm/hr=  429.2 | succ=11.84% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=243s
+random             | thm=   30 | thm/hr=  353.4 | succ=10.83% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=306s
+random             | thm=   34 | thm/hr=  333.0 | succ=10.93% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=368s
+random             | thm=   35 | thm/hr=  292.1 | succ=10.09% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=431s
+random             | thm=   36 | thm/hr=  262.9 | succ= 9.40% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=493s
+random             | thm=   40 | thm/hr=  259.0 | succ= 9.48% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=556s
+random             | thm=   42 | thm/hr=  245.4 | succ= 9.25% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=616s
+random             | thm=   42 | thm/hr=  222.6 | succ= 8.75% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=679s
+random             | thm=   42 | thm/hr=  203.8 | succ= 8.33% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=742s
+random             | thm=   44 | thm/hr=  197.2 | succ= 8.30% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=803s
+random             | thm=   44 | thm/hr=  183.5 | succ= 7.97% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=863s
+random             | thm=   45 | thm/hr=  175.3 | succ= 7.84% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=924s
+random             | thm=   46 | thm/hr=  168.2 | succ= 7.84% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=985s
+random             | thm=   46 | thm/hr=  158.5 | succ= 7.65% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=1045s
+random             | thm=   46 | thm/hr=  149.9 | succ= 7.46% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=1105s
+random             | thm=   47 | thm/hr=  145.3 | succ= 7.46% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=1165s
+
+  [random] FINAL: random             | thm=   47 | thm/hr=  140.4 | succ= 7.32% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=1205s
+  [random] Wall-clock: 1204.8s
+  [random] 47 theorems saved to /Users/lijiawei/Desktop/AutoConjecture/data/experiments/extended_20260403_152642/kb_random.jsonl
+
+======================================================================
+  System: heuristic   budget=1200.0s
+======================================================================
+[heuristic] Template pool: 308 conjectures
+heuristic          | thm=   36 | thm/hr= 2121.5 | succ=55.38% | non-triv=100.00% | div=1.000 | P@10=38.89% | P@20=100.00% | t=61s
+heuristic          | thm=   63 | thm/hr= 1660.8 | succ=53.85% | non-triv=100.00% | div=1.000 | P@10=52.38% | P@20=100.00% | t=137s
+heuristic          | thm=   73 | thm/hr= 1309.5 | succ=51.05% | non-triv=100.00% | div=1.000 | P@10=49.32% | P@20=100.00% | t=201s
+heuristic          | thm=   87 | thm/hr= 1172.2 | succ=51.79% | non-triv=100.00% | div=1.000 | P@10=47.13% | P@20=100.00% | t=267s
+heuristic          | thm=   99 | thm/hr= 1063.5 | succ=48.29% | non-triv=100.00% | div=1.000 | P@10=50.51% | P@20=100.00% | t=335s
+heuristic          | thm=  107 | thm/hr=  959.7 | succ=46.72% | non-triv=100.00% | div=1.000 | P@10=52.34% | P@20=100.00% | t=401s
+heuristic          | thm=  116 | thm/hr=  892.2 | succ=44.11% | non-triv=100.00% | div=1.000 | P@10=52.59% | P@20=100.00% | t=468s
+heuristic          | thm=  130 | thm/hr=  863.5 | succ=42.07% | non-triv=100.00% | div=1.000 | P@10=52.31% | P@20=100.00% | t=542s
+heuristic          | thm=  139 | thm/hr=  826.5 | succ=40.41% | non-triv=100.00% | div=1.000 | P@10=53.96% | P@20=100.00% | t=605s
+heuristic          | thm=  145 | thm/hr=  774.4 | succ=39.84% | non-triv=100.00% | div=1.000 | P@10=55.86% | P@20=100.00% | t=674s
+heuristic          | thm=  145 | thm/hr=  699.2 | succ=38.16% | non-triv=100.00% | div=1.000 | P@10=55.86% | P@20=100.00% | t=747s
+heuristic          | thm=  155 | thm/hr=  675.8 | succ=37.35% | non-triv=100.00% | div=1.000 | P@10=55.48% | P@20=100.00% | t=826s
+heuristic          | thm=  168 | thm/hr=  669.0 | succ=37.33% | non-triv=100.00% | div=1.000 | P@10=56.55% | P@20=100.00% | t=904s
+heuristic          | thm=  172 | thm/hr=  631.1 | succ=36.44% | non-triv=100.00% | div=1.000 | P@10=56.40% | P@20=100.00% | t=981s
+heuristic          | thm=  174 | thm/hr=  601.2 | succ=35.44% | non-triv=100.00% | div=1.000 | P@10=56.90% | P@20=100.00% | t=1042s
+heuristic          | thm=  176 | thm/hr=  570.0 | succ=34.38% | non-triv=100.00% | div=1.000 | P@10=56.25% | P@20=100.00% | t=1112s
+heuristic          | thm=  182 | thm/hr=  556.5 | succ=33.83% | non-triv=100.00% | div=1.000 | P@10=56.59% | P@20=100.00% | t=1177s
+
+  [heuristic] FINAL: heuristic          | thm=  183 | thm/hr=  546.9 | succ=33.70% | non-triv=100.00% | div=1.000 | P@10=56.83% | P@20=100.00% | t=1205s
+  [heuristic] Wall-clock: 1204.5s
+  [heuristic] 183 theorems saved to /Users/lijiawei/Desktop/AutoConjecture/data/experiments/extended_20260403_152642/kb_heuristic.jsonl
+
+======================================================================
+  System: stp   budget=1200.0s
+======================================================================
+stp                | thm=    3 | thm/hr=  174.9 | succ= 2.52% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=62s
+stp                | thm=    4 | thm/hr=  118.2 | succ= 1.90% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=122s
+stp                | thm=    6 | thm/hr=  116.9 | succ= 2.01% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=185s
+  [stp] supervised update loss=3.3228
+stp                | thm=    7 | thm/hr=  103.0 | succ= 1.91% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=245s
+stp                | thm=   12 | thm/hr=  141.4 | succ= 2.67% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=305s
+  [stp] supervised update loss=3.3157
+stp                | thm=   14 | thm/hr=  137.6 | succ= 2.65% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=366s
+stp                | thm=   16 | thm/hr=  134.9 | succ= 2.79% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=427s
+  [stp] supervised update loss=3.2697
+stp                | thm=   16 | thm/hr=  118.0 | succ= 2.65% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=488s
+  [stp] supervised update loss=3.2756
+stp                | thm=   17 | thm/hr=  111.4 | succ= 2.69% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=549s
+stp                | thm=   17 | thm/hr=  100.3 | succ= 2.57% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=610s
+stp                | thm=   18 | thm/hr=   96.4 | succ= 2.57% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=672s
+  [stp] supervised update loss=3.2800
+stp                | thm=   19 | thm/hr=   93.1 | succ= 2.54% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=735s
+  [stp] supervised update loss=3.2369
+stp                | thm=   19 | thm/hr=   86.0 | succ= 2.36% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=795s
+stp                | thm=   19 | thm/hr=   79.9 | succ= 2.21% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=856s
+  [stp] supervised update loss=3.2256
+stp                | thm=   20 | thm/hr=   78.6 | succ= 2.20% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=916s
+stp                | thm=   21 | thm/hr=   77.4 | succ= 2.19% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=977s
+  [stp] supervised update loss=3.2262
+stp                | thm=   21 | thm/hr=   72.9 | succ= 2.08% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=1037s
+stp                | thm=   21 | thm/hr=   68.8 | succ= 1.99% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=1099s
+  [stp] supervised update loss=3.2220
+stp                | thm=   23 | thm/hr=   71.4 | succ= 2.08% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=1160s
+
+  [stp] FINAL: stp                | thm=   23 | thm/hr=   68.8 | succ= 2.01% | non-triv=100.00% | div=1.000 | P@10=100.00% | P@20=100.00% | t=1204s
+  [stp] Wall-clock: 1203.7s
+  [stp] 23 theorems saved to /Users/lijiawei/Desktop/AutoConjecture/data/experiments/extended_20260403_152642/kb_stp.jsonl
+
+======================================================================
+  System: llm_gpt4o   budget=1200.0s
+======================================================================
+[llm_gpt4o] model=gpt-4o, batch=10
+[llm_gpt4o] LLM call failed (attempt 1): Request timed out.
+[llm_gpt4o] LLM call failed (attempt 2): Request timed out.
+[llm_gpt4o] LLM call failed (attempt 3): Request timed out.
+llm_gpt4o          | thm=    0 | thm/hr=    0.0 | succ= 0.00% | non-triv= 0.00% | div=0.000 | P@10=0.00% | P@20=0.00% | t=105s | llm_calls=0 parse_fail=0
+[llm_gpt4o] LLM call failed (attempt 1): Request timed out.
+[llm_gpt4o] LLM call failed (attempt 2): Request timed out.
+[llm_gpt4o] LLM call failed (attempt 3): Request timed out.
+llm_gpt4o          | thm=    0 | thm/hr=    0.0 | succ= 0.00% | non-triv= 0.00% | div=0.000 | P@10=0.00% | P@20=0.00% | t=211s | llm_calls=0 parse_fail=0
+[llm_gpt4o] LLM call failed (attempt 1): Request timed out.
+[llm_gpt4o] LLM call failed (attempt 2): Request timed out.
+[llm_gpt4o] LLM call failed (attempt 3): Request timed out.
+llm_gpt4o          | thm=    0 | thm/hr=    0.0 | succ= 0.00% | non-triv= 0.00% | div=0.000 | P@10=0.00% | P@20=0.00% | t=317s | llm_calls=0 parse_fail=0
+[llm_gpt4o] LLM call failed (attempt 1): Request timed out.
+[llm_gpt4o] LLM call failed (attempt 2): Request timed out.
+[llm_gpt4o] LLM call failed (attempt 3): Request timed out.
+llm_gpt4o          | thm=    0 | thm/hr=    0.0 | succ= 0.00% | non-triv= 0.00% | div=0.000 | P@10=0.00% | P@20=0.00% | t=419s | llm_calls=0 parse_fail=0
+[llm_gpt4o] LLM call failed (attempt 1): Request timed out.
+[llm_gpt4o] LLM call failed (attempt 2): Request timed out.
+[llm_gpt4o] LLM call failed (attempt 3): Request timed out.
+llm_gpt4o          | thm=    0 | thm/hr=    0.0 | succ= 0.00% | non-triv= 0.00% | div=0.000 | P@10=0.00% | P@20=0.00% | t=480s | llm_calls=0 parse_fail=0
+[llm_gpt4o] LLM call failed (attempt 1): Request timed out.
+[llm_gpt4o] LLM call failed (attempt 2): Request timed out.
+llm_gpt4o          | thm=    1 | thm/hr=    6.5 | succ=10.00% | non-triv=100.00% | div=0.000 | P@10=0.00% | P@20=100.00% | t=550s | llm_calls=1 parse_fail=0
+llm_gpt4o          | thm=   16 | thm/hr=   92.5 | succ=34.78% | non-triv=100.00% | div=1.000 | P@10=43.75% | P@20=100.00% | t=623s | llm_calls=5 parse_fail=0
+llm_gpt4o          | thm=   32 | thm/hr=  167.2 | succ=45.07% | non-triv=100.00% | div=1.000 | P@10=46.88% | P@20=96.88% | t=689s | llm_calls=9 parse_fail=6
+llm_gpt4o          | thm=   49 | thm/hr=  235.3 | succ=49.49% | non-triv=100.00% | div=1.000 | P@10=51.02% | P@20=97.96% | t=750s | llm_calls=14 parse_fail=10

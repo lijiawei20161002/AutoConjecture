@@ -270,7 +270,7 @@ class LLMBaselineRunner(BaselineRunner):
             "system": self.name,
             "elapsed_s": round(elapsed, 2),
             "theorem": str(expr),
-            "proof_steps": getattr(proof, "steps", None),
+            "proof_steps": [str(s) for s in proof.steps] if proof.steps else [],
             "complexity": self.complexity_est.estimate(expr),
             "ts": time.strftime("%Y-%m-%dT%H:%M:%S"),
         }

@@ -1,0 +1,12 @@
+{"statement": "(0 = (0 * S((0 + z))))", "proof_length": 0, "proof_steps": [], "complexity": 14.0, "timestamp": "2026-04-03T12:58:10.097825", "epoch": 0, "cycle": 47}
+{"statement": "((0 * ((0 + 0) + w)) = 0)", "proof_length": 0, "proof_steps": [], "complexity": 15.0, "timestamp": "2026-04-03T12:58:33.549484", "epoch": 0, "cycle": 101}
+{"statement": "(((S(0) + (0 + 0)) * 0) = (((y + 0) * 0) + 0))", "proof_length": 0, "proof_steps": [], "complexity": 22.0, "timestamp": "2026-04-03T12:58:40.043955", "epoch": 0, "cycle": 117}
+{"statement": "((((y + w) + 0) * 0) = ((0 * 0) * (0 + S(w))))", "proof_length": 0, "proof_steps": [], "complexity": 23.0, "timestamp": "2026-04-03T12:59:06.101041", "epoch": 0, "cycle": 158}
+{"statement": "((0 + w) = (((0 * w) * 0) + w))", "proof_length": 0, "proof_steps": [], "complexity": 17.0, "timestamp": "2026-04-03T12:59:59.292807", "epoch": 0, "cycle": 233}
+{"statement": "((((x + 0) + y) * ((z + 0) * (w * 0))) = (y * 0))", "proof_length": 0, "proof_steps": [], "complexity": 26.0, "timestamp": "2026-04-03T13:00:14.139630", "epoch": 0, "cycle": 260}
+{"statement": "((((z + w) * (0 * 0)) * (S(z) * S(0))) = 0)", "proof_length": 0, "proof_steps": [], "complexity": 22.0, "timestamp": "2026-04-03T13:01:10.317096", "epoch": 0, "cycle": 333}
+{"statement": "(0 = ((S(w) * (x * x)) * 0))", "proof_length": 0, "proof_steps": [], "complexity": 17.0, "timestamp": "2026-04-03T13:01:38.407914", "epoch": 0, "cycle": 370}
+{"statement": "((0 + 0) = ((S(w) * (0 + z)) * (w * 0)))", "proof_length": 0, "proof_steps": [], "complexity": 21.0, "timestamp": "2026-04-03T13:02:05.593258", "epoch": 0, "cycle": 410}
+{"statement": "(((0 * (0 + 0)) * 0) = (0 * z))", "proof_length": 0, "proof_steps": [], "complexity": 17.0, "timestamp": "2026-04-03T13:02:08.337253", "epoch": 0, "cycle": 414}
+{"statement": "(0 = (0 + 0))", "proof_length": 0, "proof_steps": [], "complexity": 8.0, "timestamp": "2026-04-03T13:02:16.419947", "epoch": 0, "cycle": 428}
+{"statement": "(((0 * w) * 0) = (0 * (0 + w)))", "proof_length": 0, "proof_steps": [], "complexity": 16.0, "timestamp": "2026-04-03T13:02:20.633051", "epoch": 0, "cycle": 432}
